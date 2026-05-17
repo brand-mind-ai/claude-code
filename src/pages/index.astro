@@ -1,0 +1,19 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const entries = await getCollection(
+  "pl",
+  (e: CollectionEntry<"pl">) => e.data.canonicalPath === "/"
+);
+const entry = entries[0];
+const { Content } = entry ? await entry.render() : { Content: () => null };
+const title = entry?.data.seoTitle ?? entry?.data.title ?? "Hotel Zacisze Turawa";
+const description = entry?.data.description;
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/">
+  <main>
+    <Content />
+  </main>
+</BaseLayout>

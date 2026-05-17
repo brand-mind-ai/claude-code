@@ -1,9 +1,11 @@
 {
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "Bash(npm *)",
       "Bash(npx *)",
       "Bash(node *)",
+      "Bash(python3 *)",
       "Bash(git *)",
       "Bash(gh *)",
       "Bash(ls *)",

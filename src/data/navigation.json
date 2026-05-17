@@ -1,0 +1,11 @@
+{
+  "primary": [
+    { "label": "Pokoje", "path": "/pokoje" },
+    { "label": "Pakiety", "path": "/pakiety_pobytowe" },
+    { "label": "SPA", "path": "/spa" },
+    { "label": "Restauracja", "path": "/restauracja" },
+    { "label": "Konferencje", "path": "/konferencje" },
+    { "label": "Galeria", "path": "/galeria" },
+    { "label": "Kontakt", "path": "/kontakt" }
+  ]
+}

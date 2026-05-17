@@ -1,2 +1,6 @@
 .DS_Store
-assets/photos/
+node_modules/
+dist/
+.astro/
+.env
+.env.*

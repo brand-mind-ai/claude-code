@@ -1,0 +1,35 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection(
+    "pl",
+    (e: CollectionEntry<"pl">) =>
+      e.data.status === "captured" && e.data.canonicalPath !== "/"
+  );
+
+  return entries.map((entry: CollectionEntry<"pl">) => ({
+    params: { slug: entry.data.canonicalPath.replace(/^\//, "") },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"pl">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { title, seoTitle, description, canonicalPath } = entry.data;
+---
+
+<BaseLayout
+  title={seoTitle ?? title}
+  description={description}
+  canonicalPath={canonicalPath}
+>
+  <main>
+    <Content />
+  </main>
+</BaseLayout>

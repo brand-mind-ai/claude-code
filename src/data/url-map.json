@@ -1,0 +1,616 @@
+[
+  {
+    "canonicalPath": "/",
+    "locale": "pl",
+    "pageType": "home",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/index.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/"
+  },
+  {
+    "canonicalPath": "/strona_glowna",
+    "locale": "pl",
+    "pageType": "home",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/strona_glowna.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/strona_glowna",
+    "notes": "Likely duplicate of /; preserve for redirect later"
+  },
+  {
+    "canonicalPath": "/pokoje",
+    "locale": "pl",
+    "pageType": "rooms",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/pokoje.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pokoje"
+  },
+  {
+    "canonicalPath": "/pokoj_2os_classic",
+    "locale": "pl",
+    "pageType": "room-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/pokoj_2os_classic.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pokoj_2os_classic"
+  },
+  {
+    "canonicalPath": "/pokoj_2os_lux",
+    "locale": "pl",
+    "pageType": "room-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/pokoj_2os_lux.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pokoj_2os_lux"
+  },
+  {
+    "canonicalPath": "/pokoj_lux_dbl",
+    "locale": "pl",
+    "pageType": "room-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/pokoj_lux_dbl.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pokoj_lux_dbl"
+  },
+  {
+    "canonicalPath": "/apartament_w_domku_wolnostojacym",
+    "locale": "pl",
+    "pageType": "room-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/apartament_w_domku_wolnostojacym.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/apartament_w_domku_wolnostojacym"
+  },
+  {
+    "canonicalPath": "/pokoj_classic_z_dostawka",
+    "locale": "pl",
+    "pageType": "room-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/pokoj_classic_z_dostawka.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pokoj_classic_z_dostawka"
+  },
+  {
+    "canonicalPath": "/pokoj_na_poddaszu",
+    "locale": "pl",
+    "pageType": "room-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/pokoj_na_poddaszu.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pokoj_na_poddaszu"
+  },
+  {
+    "canonicalPath": "/pakiety_pobytowe",
+    "locale": "pl",
+    "pageType": "packages",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/pakiety_pobytowe.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pakiety_pobytowe"
+  },
+  {
+    "canonicalPath": "/lejdis",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/lejdis.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/lejdis"
+  },
+  {
+    "canonicalPath": "/wspanialy-weekend",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/wspanialy-weekend.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/wspanialy-weekend"
+  },
+  {
+    "canonicalPath": "/zawsze_mlodzi_",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/zawsze_mlodzi_.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/zawsze_mlodzi_"
+  },
+  {
+    "canonicalPath": "/rocznica_slubu",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/rocznica_slubu.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/rocznica_slubu"
+  },
+  {
+    "canonicalPath": "/wakacje-4-dni",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/wakacje-4-dni.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/wakacje-4-dni"
+  },
+  {
+    "canonicalPath": "/wakacje_6_dni_nad_jeziorem_turawskim_2021",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/wakacje_6_dni_nad_jeziorem_turawskim_2021.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/wakacje_6_dni_nad_jeziorem_turawskim_2021"
+  },
+  {
+    "canonicalPath": "/wakacje_nad_jeziorem_turawskim_2021",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/wakacje_nad_jeziorem_turawskim_2021.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/wakacje_nad_jeziorem_turawskim_2021"
+  },
+  {
+    "canonicalPath": "/boze_cialo_w_zaciszu_",
+    "locale": "pl",
+    "pageType": "package-detail",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/boze_cialo_w_zaciszu_.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/boze_cialo_w_zaciszu_"
+  },
+  {
+    "canonicalPath": "/spa",
+    "locale": "pl",
+    "pageType": "spa",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/spa.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/spa"
+  },
+  {
+    "canonicalPath": "/restauracja",
+    "locale": "pl",
+    "pageType": "restaurant",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/restauracja.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/restauracja"
+  },
+  {
+    "canonicalPath": "/restauracja_",
+    "locale": "pl",
+    "pageType": "restaurant",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/restauracja_.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/restauracja_",
+    "notes": "Possible duplicate of /restauracja; check and redirect if so"
+  },
+  {
+    "canonicalPath": "/konferencje",
+    "locale": "pl",
+    "pageType": "conferences",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/konferencje.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/konferencje"
+  },
+  {
+    "canonicalPath": "/oferta_dla_firm",
+    "locale": "pl",
+    "pageType": "conferences",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/oferta_dla_firm.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/oferta_dla_firm",
+    "notes": "B2B offer page; may overlap with /konferencje"
+  },
+  {
+    "canonicalPath": "/galeria",
+    "locale": "pl",
+    "pageType": "gallery",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/galeria.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/galeria"
+  },
+  {
+    "canonicalPath": "/kontakt",
+    "locale": "pl",
+    "pageType": "contact",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/kontakt.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/kontakt"
+  },
+  {
+    "canonicalPath": "/ceny_i_rezerwacja",
+    "locale": "pl",
+    "pageType": "booking",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/ceny_i_rezerwacja.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/ceny_i_rezerwacja"
+  },
+  {
+    "canonicalPath": "/vouchery",
+    "locale": "pl",
+    "pageType": "vouchers",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/vouchery.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/vouchery"
+  },
+  {
+    "canonicalPath": "/atrakcje",
+    "locale": "pl",
+    "pageType": "attractions",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/atrakcje.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/atrakcje"
+  },
+  {
+    "canonicalPath": "/opinie",
+    "locale": "pl",
+    "pageType": "reviews",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/opinie.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/opinie"
+  },
+  {
+    "canonicalPath": "/regulamin",
+    "locale": "pl",
+    "pageType": "legal",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/regulamin.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/regulamin"
+  },
+  {
+    "canonicalPath": "/polityka-prywatnosci-cookies-zaciszeturawa.pdf",
+    "locale": "pl",
+    "pageType": "legal",
+    "status": "captured",
+    "contentFile": null,
+    "sourceUrl": "https://www.zaciszeturawa.pl/polityka-prywatnosci-cookies-zaciszeturawa.pdf",
+    "notes": "PDF served from public/documents/ — not a content collection page"
+  },
+  {
+    "canonicalPath": "/praca",
+    "locale": "pl",
+    "pageType": "jobs",
+    "status": "captured",
+    "contentFile": "src/content/pl/pages/praca.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/praca"
+  },
+  {
+    "canonicalPath": "/strefa_spa",
+    "locale": "pl",
+    "pageType": "spa",
+    "status": "redirect-pending",
+    "contentFile": null,
+    "sourceUrl": "https://www.zaciszeturawa.pl/strefa_spa",
+    "notes": "Returns 404 on live site. Likely redirect → /spa; confirm after full crawl"
+  },
+  {
+    "canonicalPath": "/link",
+    "locale": "pl",
+    "pageType": "booking",
+    "status": "redirect-pending",
+    "contentFile": null,
+    "sourceUrl": "https://www.zaciszeturawa.pl/link?role=booking",
+    "notes": "Query-param redirect /link?role=booking → /ceny_i_rezerwacja; preserve behavior in new site"
+  },
+  {
+    "canonicalPath": "/en",
+    "locale": "en",
+    "pageType": "home",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/en.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/en"
+  },
+  {
+    "canonicalPath": "/about_us",
+    "locale": "en",
+    "pageType": "other",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/about_us.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/about_us"
+  },
+  {
+    "canonicalPath": "/offer",
+    "locale": "en",
+    "pageType": "packages",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/offer.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/offer"
+  },
+  {
+    "canonicalPath": "/rooms",
+    "locale": "en",
+    "pageType": "rooms",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/rooms.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/rooms"
+  },
+  {
+    "canonicalPath": "/spa_en",
+    "locale": "en",
+    "pageType": "spa",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/spa_en.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/spa_en"
+  },
+  {
+    "canonicalPath": "/restaurant",
+    "locale": "en",
+    "pageType": "restaurant",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/restaurant.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/restaurant"
+  },
+  {
+    "canonicalPath": "/conferences",
+    "locale": "en",
+    "pageType": "conferences",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/conferences.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/conferences"
+  },
+  {
+    "canonicalPath": "/gallery",
+    "locale": "en",
+    "pageType": "gallery",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/gallery.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/gallery"
+  },
+  {
+    "canonicalPath": "/contact",
+    "locale": "en",
+    "pageType": "contact",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/contact.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/contact"
+  },
+  {
+    "canonicalPath": "/prices_and_booking",
+    "locale": "en",
+    "pageType": "booking",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/prices_and_booking.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/prices_and_booking"
+  },
+  {
+    "canonicalPath": "/ladies_night",
+    "locale": "en",
+    "pageType": "package-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/ladies_night.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/ladies_night"
+  },
+  {
+    "canonicalPath": "/romantic_weekend",
+    "locale": "en",
+    "pageType": "package-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/romantic_weekend.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/romantic_weekend"
+  },
+  {
+    "canonicalPath": "/forever_young_55",
+    "locale": "en",
+    "pageType": "package-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/forever_young_55.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/forever_young_55"
+  },
+  {
+    "canonicalPath": "/wedding_anniversary_",
+    "locale": "en",
+    "pageType": "package-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/wedding_anniversary_.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/wedding_anniversary_"
+  },
+  {
+    "canonicalPath": "/classic-room",
+    "locale": "en",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/classic-room.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/classic-room"
+  },
+  {
+    "canonicalPath": "/deluxe-room",
+    "locale": "en",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/deluxe-room.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/deluxe-room"
+  },
+  {
+    "canonicalPath": "/garden-apartment",
+    "locale": "en",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/garden-apartment.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/garden-apartment"
+  },
+  {
+    "canonicalPath": "/classic-room-extra-bed",
+    "locale": "en",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/classic-room-extra-bed.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/classic-room-extra-bed"
+  },
+  {
+    "canonicalPath": "/room-attic",
+    "locale": "en",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/room-attic.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/room-attic"
+  },
+  {
+    "canonicalPath": "/rodo",
+    "locale": "en",
+    "pageType": "legal",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/rodo.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/rodo"
+  },
+  {
+    "canonicalPath": "/statute",
+    "locale": "en",
+    "pageType": "legal",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/statute.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/statute"
+  },
+  {
+    "canonicalPath": "/job",
+    "locale": "en",
+    "pageType": "jobs",
+    "status": "deferred",
+    "contentFile": "src/content/en/pages/job.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/job"
+  },
+  {
+    "canonicalPath": "/de",
+    "locale": "de",
+    "pageType": "home",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/de.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/de"
+  },
+  {
+    "canonicalPath": "/uber_uns",
+    "locale": "de",
+    "pageType": "other",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/uber_uns.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/uber_uns"
+  },
+  {
+    "canonicalPath": "/pakete",
+    "locale": "de",
+    "pageType": "packages",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/pakete.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/pakete"
+  },
+  {
+    "canonicalPath": "/raume",
+    "locale": "de",
+    "pageType": "rooms",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/raume.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/raume"
+  },
+  {
+    "canonicalPath": "/spa_de",
+    "locale": "de",
+    "pageType": "spa",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/spa_de.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/spa_de"
+  },
+  {
+    "canonicalPath": "/restaurant_de",
+    "locale": "de",
+    "pageType": "restaurant",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/restaurant_de.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/restaurant_de"
+  },
+  {
+    "canonicalPath": "/konferenzen",
+    "locale": "de",
+    "pageType": "conferences",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/konferenzen.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/konferenzen"
+  },
+  {
+    "canonicalPath": "/galerie",
+    "locale": "de",
+    "pageType": "gallery",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/galerie.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/galerie"
+  },
+  {
+    "canonicalPath": "/kontakt_de",
+    "locale": "de",
+    "pageType": "contact",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/kontakt_de.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/kontakt_de"
+  },
+  {
+    "canonicalPath": "/preise_und_buchung",
+    "locale": "de",
+    "pageType": "booking",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/preise_und_buchung.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/preise_und_buchung"
+  },
+  {
+    "canonicalPath": "/ladies_de",
+    "locale": "de",
+    "pageType": "package-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/ladies_de.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/ladies_de"
+  },
+  {
+    "canonicalPath": "/tolles_wochenende",
+    "locale": "de",
+    "pageType": "package-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/tolles_wochenende.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/tolles_wochenende"
+  },
+  {
+    "canonicalPath": "/fur_immer_jung_55",
+    "locale": "de",
+    "pageType": "package-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/fur_immer_jung_55.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/fur_immer_jung_55"
+  },
+  {
+    "canonicalPath": "/classic_zimmer",
+    "locale": "de",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/classic_zimmer.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/classic_zimmer"
+  },
+  {
+    "canonicalPath": "/deluxe_zimmer",
+    "locale": "de",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/deluxe_zimmer.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/deluxe_zimmer"
+  },
+  {
+    "canonicalPath": "/garten_apartment",
+    "locale": "de",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/garten_apartment.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/garten_apartment"
+  },
+  {
+    "canonicalPath": "/classic_zimmer_mit_extrabett",
+    "locale": "de",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/classic_zimmer_mit_extrabett.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/classic_zimmer_mit_extrabett"
+  },
+  {
+    "canonicalPath": "/raum_auf_dem_dachboden",
+    "locale": "de",
+    "pageType": "room-detail",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/raum_auf_dem_dachboden.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/raum_auf_dem_dachboden"
+  },
+  {
+    "canonicalPath": "/satzung",
+    "locale": "de",
+    "pageType": "legal",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/satzung.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/satzung"
+  },
+  {
+    "canonicalPath": "/arbeiten",
+    "locale": "de",
+    "pageType": "jobs",
+    "status": "deferred",
+    "contentFile": "src/content/de/pages/arbeiten.md",
+    "sourceUrl": "https://www.zaciszeturawa.pl/arbeiten"
+  }
+]
