@@ -1,0 +1,230 @@
+---
+import siteData from "../data/site.json";
+import navData from "../data/navigation.json";
+
+const { phone, email, address, mapsUrl, facebookUrl, instagramUrl } = siteData;
+const { primary: navLinks } = navData;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" aria-label="Hotel Zacisze – strona główna">
+        <img src="/zacisze-logo.svg" alt="Hotel Zacisze" class="footer-logo" width="160" height="50" />
+      </a>
+      <address>
+        <a href={mapsUrl} target="_blank" rel="noopener noreferrer">{address}</a>
+      </address>
+      <div class="footer-contact">
+        <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
+        <a href={`mailto:${email}`}>{email}</a>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Nawigacja w stopce">
+      <ul>
+        {navLinks.map((item) => (
+          <li><a href={item.path}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="footer-legal">
+      <ul>
+        <li><a href="/kontakt">Kontakt</a></li>
+        <li><a href="/rodo">RODO</a></li>
+        <li><a href="/regulamin">Regulamin</a></li>
+        <li><a href="/praca">Praca</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {year} Hotel Zacisze ★★★ Turawa. Wszelkie prawa zastrzeżone.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--dark);
+    color: var(--muted);
+    margin-top: auto;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  /* Brand block */
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-logo {
+    height: 2.25rem;
+    width: auto;
+    filter: brightness(0) invert(1) opacity(0.85);
+  }
+
+  .footer-brand address {
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .footer-brand address a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-brand address a:hover {
+    color: var(--surface);
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer-contact a {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-contact a:hover {
+    color: var(--surface);
+  }
+
+  /* Main nav */
+  .footer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-nav a:hover {
+    color: var(--surface);
+  }
+
+  /* Legal + social block */
+  .footer-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .footer-legal ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+  }
+
+  .footer-legal a {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover {
+    color: var(--surface);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-social a:hover {
+    color: var(--surface);
+  }
+
+  .footer-social svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    border-top: 1px solid color-mix(in srgb, var(--muted) 30%, transparent);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.75rem;
+    color: color-mix(in srgb, var(--muted) 60%, transparent);
+  }
+
+  /* Tablet */
+  @media (min-width: 640px) {
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 960px) {
+    .footer-inner {
+      grid-template-columns: 2fr 1fr 1fr;
+      padding-top: 4rem;
+    }
+
+    .footer-brand {
+      grid-column: auto;
+    }
+  }
+</style>
