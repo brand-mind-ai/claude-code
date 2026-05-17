@@ -1,18 +1,41 @@
 ---
-session_id: claude-code-session-2026-05-17
-updated: 2026-05-17
+session_id: claude-code-session-2026-05-18
+updated: 2026-05-18
 ---
 
 # Zacisze Handover
 
+## ⚠️ SESSION START RULES — READ FIRST, DO NOTHING ELSE UNTIL VERIFIED
+
+**Working directory must be:**
+```
+/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/
+```
+
+**GitHub repo is:**
+```
+https://github.com/brand-mind-ai/claude-code/
+```
+
+**Branch: `main` — always work on main, never create new branches or worktrees.**
+
+If the session working directory is anything else — STOP. Tell Martin to close the session and reopen it pointing at the folder above. Do not read files, do not run any commands.
+
+Run `git status` as first command to confirm you are in the right folder on `main`.
+
+---
+
 ## Current focus
-Website rebuild is now a Claude Code project. All Codex references have been removed. Repo is confirmed as `https://github.com/brand-mind-ai/claude-code`. Project folder is `/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/`. Stack locked: Astro + TypeScript + Pages CMS + GitHub + Cloudflare Pages + Lenis + GSAP ScrollTrigger. MVP is Polish-only, no language picker. Launch domain: `zaciszeturawa.com`. Final canonical: `zaciszeturawa.pl`.
+Astro scaffold is complete and merged to `main`. All PL content stubs exist at `src/content/pl/pages/*.md` with frontmatter only — no body content yet.
+
+**Next task: Session 3 — Content Body Crawl**
+Crawl all 32 PL `status: captured` pages from `src/data/url-map.json`, extract visible body text, and write it as Markdown into each stub below the frontmatter `---`.
 
 ## Next steps (prioritized)
-1. **Scaffold Astro project** — run `npm create astro@latest` in the project folder, use the file structure from PLAN.md. This is Day 1 / Session 2 work.
-2. **Push to `brand-mind-ai/claude-code`** — initialize git in the project folder (or use the scaffold output) and push the foundation commit.
-3. **Connect Pages CMS** — `.pages.yml` must be in repo root for pagescms.org to detect it.
-4. **Run full URL/content inventory** — crawl all 74+ known URLs, extract PL content into `src/content/pl/*.md` stubs, defer EN/DE.
+1. **Content crawl** — crawl all PL `status: captured` URLs in `src/data/url-map.json`, write body content into `src/content/pl/pages/*.md` stubs. Use `curl` via Python subprocess (not urllib — SSL fails on macOS). Extract headings, paragraphs, lists, CTAs in reading order. Do not invent or improve copy.
+2. **Run `npm run build` and `npm run typecheck`** — both must pass 0 errors after crawl.
+3. **Commit and push to `main`** on `https://github.com/brand-mind-ai/claude-code/`.
+4. **Session 4** — `Header.astro` + `Footer.astro` + responsive navigation.
 5. **Build Polish pages** — home, rooms, packages, SPA, restaurant, conferences, gallery, contact, booking, legal.
 6. **GuestSage booking flow** — hero date picker → GuestSage URL with arrivalDate/departureDate/personsCount. No invented room/rate IDs.
 7. **Motion layer** — Lenis + GSAP as Astro islands only on pages that use them.
@@ -35,8 +58,15 @@ Website rebuild is now a Claude Code project. All Codex references have been rem
 - Design references Martin selected for this build: `https://www.dangleterre.com/en`, `https://www.odins-crow.com/`, `https://farmform.be/`, `https://hutstuf.com/`.
 - Initial build must preserve current content and images before design refinement.
 
+## Active artifacts (Session 3 complete)
+- `src/content/pl/pages/*.md` — 31 stubs with frontmatter, body content still empty — **crawl is the next task**
+- `src/data/url-map.json` — 32 PL captured URLs
+- `src/data/navigation.json`, `src/data/site.json` — CMS data
+- `.pages.yml` — Pages CMS config
+- `astro.config.mjs`, `package.json`, `tsconfig.json` — scaffold complete
+
 ## Open questions / blockers
-- Target repo confirmed: `https://github.com/brand-mind-ai/claude-code` (empty, ready for first push). Old `zacisze-turawa` repo exists but is a stub — ignore it.
+- Repo is `https://github.com/brand-mind-ai/claude-code` on `main`. Old `zacisze-turawa` repo is a stub — ignore it.
 - Need full internal crawl beyond sitemap and homepage before claiming final route coverage.
 - Need GuestSage room IDs, rate plan IDs, child age IDs, and any package/filter IDs before using targeted booking links.
 - Need final redirect decision for `/strefa_spa` after full crawl; likely redirect to `/spa`, but not final yet.

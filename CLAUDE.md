@@ -1,16 +1,14 @@
 # Zacisze Website Rebuild Agent Instructions
 
+## ⛔ MANDATORY FIRST CHECK — DO THIS BEFORE ANYTHING ELSE
+
+**Working directory:** `/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/`
+**GitHub repo:** `https://github.com/brand-mind-ai/claude-code/`
+**Branch:** `main` — always work on main. Never create new branches or worktrees.
+
+Run `git status` as the very first command. If the output does not show `On branch main` inside the folder above — STOP. Do not read files. Do not run any other commands. Tell Martin: "Wrong directory — please close this session and reopen it from `/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/`."
+
 ## Startup
-
-**FIRST: verify working directory before doing anything else.**
-
-Check that the session working directory is exactly:
-
-```text
-/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/
-```
-
-or one of its worktrees under `.claude/worktrees/`. If the working directory is anything else, stop immediately and tell Martin to restart the session with the correct project folder selected. Do not read files, do not run commands, do not continue.
 
 Then read in this order:
 
