@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(ls *)",
+      "Bash(find . *)",
+      "Bash(find /Users/macbookpro/Documents/Claude/Projects/Claude\\ Code/zaciszeturawa-pl/*)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(rm *)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(touch *)",
+      "Bash(chmod *)",
+      "Bash(curl *)",
+      "Bash(grep *)"
+    ],
+    "deny": [
+      "Bash(find /Users/macbookpro/Downloads*)",
+      "Bash(find /Users/macbookpro/Desktop*)",
+      "Bash(find /Users/macbookpro/Documents/Claude/Projects/Claude\\ Code/zaciszeturawa-pl/../*)",
+      "Bash(cat /Users/macbookpro/Documents/Claude/Projects/Claude\\ Code/zaciszeturawa-pl/../*)"
+    ]
+  }
+}
