@@ -2,7 +2,17 @@
 
 ## Startup
 
-At the start of every session in this project, read in this order:
+**FIRST: verify working directory before doing anything else.**
+
+Check that the session working directory is exactly:
+
+```text
+/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/
+```
+
+or one of its worktrees under `.claude/worktrees/`. If the working directory is anything else, stop immediately and tell Martin to restart the session with the correct project folder selected. Do not read files, do not run commands, do not continue.
+
+Then read in this order:
 
 1. `CLAUDE.md`
 2. `_HANDOVER.md`
