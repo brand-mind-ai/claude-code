@@ -14,7 +14,11 @@ export default defineConfig({
   site,
   integrations: [
     sitemap({
-      filter: (url) => !url.includes("/strona_glowna"),
+      // Exclude pages that are redirect targets or placeholder stubs
+      filter: (url) => {
+        const EXCLUDE = ["/strona_glowna", "/restauracja_", "/ceny_i_rezerwacja"];
+        return !EXCLUDE.some((p) => url.includes(p));
+      },
     }),
   ],
 });
