@@ -4,7 +4,7 @@ translationKey: package-vacation-lake
 canonicalPath: /wakacje_nad_jeziorem_turawskim_2021
 sourceUrl: https://www.zaciszeturawa.pl/wakacje_nad_jeziorem_turawskim_2021
 pageType: package-detail
-title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Oferta"
+title: "Wakacje 8 dni nad Jeziorem Turawskim"
 seoTitle: "Wakacje 8 dni nad Jeziorem Turawskim — Pakiet tygodniowy | Hotel Zacisze"
 description: "Pakiet Wakacje 8 dni nad Jeziorem Turawskim — 7 noclegów, śniadania, SPA, basen, ognisko i rower w cenie. Idealne dla rodzin. Od 1418 zł / os."
 status: captured

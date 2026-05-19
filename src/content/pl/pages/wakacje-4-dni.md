@@ -4,7 +4,7 @@ translationKey: package-vacation-4
 canonicalPath: /wakacje-4-dni
 sourceUrl: https://www.zaciszeturawa.pl/wakacje-4-dni
 pageType: package-detail
-title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Oferta"
+title: "Wakacje 4 dni nad jeziorem"
 seoTitle: "Wakacje 4 dni nad Jeziorem Turawskim — Pakiet z SPA | Hotel Zacisze Turawa"
 description: "Pakiet Wakacje 4 dni w Hotelu Zacisze Turawa — 3 noclegi, śniadania bufetowe, Strefa SPA, basen zewnętrzny i plaża nad Jeziorem Turawskim. Od 608 zł / os."
 status: captured
