@@ -10,6 +10,8 @@ description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Tura
 status: captured
 ---
 
+
+
 Nasza resturacja w ramach noclegu serwuje codzienne śniadania, zapraszamy też Gości spoza hotelu.
 
 Od poniedziałku do piatku w godzinach 7:30 do 9:30, weekendy oraz świetą 8:30 - 10:30.
@@ -47,17 +49,3 @@ Bez względu na to, czy planujesz przyjęcie komunijne, urodzinowe, chrzciny czy
 [szczegóły Wakacje nad Jeziorem Turawskim 8 dni 8 dni, od 1418 zł / osoba](/wakacje_nad_jeziorem_turawskim_2021)
 
 ### Wakacje nad Jeziorem Turawskim 8 dni
-
-Wyślij
-
-ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
-
-[+48 77 402 90 30](tel:+48 77 402 90 30)
-
-- RODO
-
-- Regulamin
-
-- Praca
-
-[Powered by](https://www.hotelsystems.pl)

@@ -11,6 +11,8 @@ status: captured
 heroImage: "/assets/current/hotel/Copy of 024.jpg"
 ---
 
+
+
 #### Pokój na poddaszu
 
 Luksusowo wyposażony pokój z oknami dachowymi o standardzie hotelu ★★★ Pokoje występują w dwóch wariantach - z osobnymi łóżkami, bądź z jednym łóżkiem małżeńskim. Istnieje możliwość łączenia łóżek.
@@ -26,7 +28,3 @@ Luksusowo wyposażony pokój z oknami dachowymi o standardzie hotelu ★★★ P
 #### Adres
 
 - ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
-
-[+48 77 402 90 30](tel:+48 77 402 90 30)
-
-[Powrót](/)

@@ -11,6 +11,8 @@ status: captured
 heroImage: "/assets/current/hotel/645740576_1480793004051426_5360198729458927980_n.jpg"
 ---
 
+
+
 Twoja oaza spokoju na Opolszczyźnie. Położone nad brzegiem Jeziora Turawskiego, otoczone lasem miejsce, w którym naprawdę odpoczniesz — niezależnie od pory roku. Zacznij dzień od kawy na nasłonecznionym tarasie z widokiem na zieleń, a potem wybierz swój sposób na relaks. Latem dzień płynie przy basenie — w leżaku, z książką, bez pośpiechu. Gdy ciągnie Cię do ruchu, okoliczne lasy kryją kilometry szlaków rowerowych wiodących przez bory sosnowe, idealnych zarówno na rodzinną przejażdżkę, jak i dłuższą trasę. Po aktywnym dniu — grill na świeżym powietrzu albo odprężenie w strefie SPA. Odkryj uroki Hotelu Zacisze nad Jeziorem Turawskim.
 
 Zaledwie 150 metrów od plaży, nad północnym brzegiem Jeziora Turawskiego. Wokół — sosnowo-dębowy las i ciągnące się kilometrami Bory Stobrawsko-Turawskie. Żadnych dróg szybkiego ruchu, tylko cisza i natura.
@@ -60,19 +62,3 @@ Podaruj bliskiej osobie niezapomniany prezent!
 - bardzo dobre jedzenie, obsługa w barze bardzo miła, drinki duże. ~Klaudia
 
 - Komfort, czystość, miły personel hotelu, piękna okolica ~Genowefa
-
-Wyślij
-
-ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
-
-[+48 77 402 90 30](tel:+48 77 402 90 30)
-
-- Kontakt
-
-- RODO
-
-- Regulamin
-
-- Praca
-
-[Powered by](https://www.hotelsystems.pl)

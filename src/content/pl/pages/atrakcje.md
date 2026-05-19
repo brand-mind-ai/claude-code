@@ -11,6 +11,8 @@ status: captured
 heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
 ---
 
+
+
 Odkryj niezapomnianą przyjemność wypoczynku w naszym hotelu z odkrytym basenem w sezonie letnim. Nasz elegancki i przestronny basen zewnętrzny to idealne miejsce na odprężenie podczas ciepłych letnich dni. Dla pełnego komfortu i relaksu przygotowaliśmy dla Państwa bezpłatne leżaki oraz ręczniki basenowe.
 
 Zanurz się w błękitnej wodzie, poczuj relaksujące promienie słońca i rozkoszuj się widokiem otaczającego leśnego krajobrazu!
@@ -40,19 +42,3 @@ Dla naszych gości, którzy cenią wspólne spotkania pod gołym niebem i niezap
 [szczegóły Wakacje nad Jeziorem Turawskim 8 dni 8 dni, od 1418 zł / osoba](/wakacje_nad_jeziorem_turawskim_2021)
 
 ### Wakacje nad Jeziorem Turawskim 8 dni
-
-Wyślij
-
-ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
-
-[+48 77 402 90 30](tel:+48 77 402 90 30)
-
-- Kontakt
-
-- RODO
-
-- Regulamin
-
-- Praca
-
-[Powered by](https://www.hotelsystems.pl)

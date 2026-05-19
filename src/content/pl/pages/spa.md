@@ -11,6 +11,8 @@ status: captured
 heroImage: "/assets/current/hotel/Copy of 071.jpg"
 ---
 
+
+
 Strefa SPA w cenie każdego noclegu — bez limitów, codziennie od 16:00 do 22:00. Sauna sucha, jacuzzi, balia z zimną wodą, grota solna i siłownia czekają na Ciebie po całym dniu nad jeziorem. Nie nocujesz u nas? Zapraszamy na 3-godzinny pakiet SPA za 65 zł/os. — pełny dostęp do wszystkich stref.
 
 Sauna głównie wpływa na nasz układ krążenia, roszerza naczynia krwionośne, zwiększa szybkość przepływu krwi, przyspiesza akcję serca o około 50%. Sauna powoduje także pocenie się ciała, przez co nasz orgaznizm pozbywa się toksyn. Podwyższona temperatura powoduje rozluźnienie się mięśni oraz poprawia ruchomość stawów. Badania wskazują, że pobyt w saunie powoduje:
@@ -54,19 +56,3 @@ Jeśli czujesz potrzebę wzmocnienia odporności organizmu, seans w grocie solne
 [szczegóły Wakacje nad Jeziorem Turawskim 8 dni 8 dni, od 1418 zł / osoba](/wakacje_nad_jeziorem_turawskim_2021)
 
 ### Wakacje nad Jeziorem Turawskim 8 dni
-
-Wyślij
-
-ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
-
-[+48 77 402 90 30](tel:+48 77 402 90 30)
-
-- Kontakt
-
-- RODO
-
-- Regulamin
-
-- Praca
-
-[Powered by](https://www.hotelsystems.pl)

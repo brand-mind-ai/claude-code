@@ -11,6 +11,8 @@ status: captured
 heroImage: "/assets/current/hotel/032.jpg"
 ---
 
+
+
 #### Pokój Classic z opcją dostawki
 
 Luksusowo wyposażony pokój o standardzie hotelu ★★★ z możliwością dostawki. Istnieje możliwość połączenia łóżek.
@@ -26,7 +28,3 @@ Luksusowo wyposażony pokój o standardzie hotelu ★★★ z możliwością dos
 #### Adres
 
 - ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
-
-[+48 77 402 90 30](tel:+48 77 402 90 30)
-
-[Powrót](/)

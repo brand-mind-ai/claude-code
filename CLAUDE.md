@@ -2,11 +2,11 @@
 
 ## ⛔ MANDATORY FIRST CHECK — DO THIS BEFORE ANYTHING ELSE
 
-**Working directory:** `/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/`
+**Working directory:** `/Users/macbookpro/CLAUDE CODE/Zacisze-CC/`
 **GitHub repo:** `https://github.com/brand-mind-ai/claude-code/`
 **Branch:** `main` — always work on main. Never create new branches or worktrees.
 
-Run `git status` as the very first command. If the output does not show `On branch main` inside the folder above — STOP. Do not read files. Do not run any other commands. Tell Martin: "Wrong directory — please close this session and reopen it from `/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/`."
+Run `git status` as the very first command. If the output does not show `On branch main` inside the folder above — STOP. Do not read files. Do not run any other commands. Tell Martin: "Wrong directory — please close this session and reopen it from `/Users/macbookpro/CLAUDE CODE/Zacisze-CC/`."
 
 ## Startup
 

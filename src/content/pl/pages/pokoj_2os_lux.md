@@ -11,6 +11,8 @@ status: captured
 heroImage: "/assets/current/hotel/Copy of 003.jpg"
 ---
 
+
+
 #### Pokój Lux TWIN
 
 Ekskluzywny, bogato wyposażony pokój w standardzie hotelu ★★★ Pokój Lux oferuje większa powierzchnię od pokoju Classic, ponadto do dyspozycji gości oddajemy dodatkowe wygodne fotele, stolik oraz sofę. Istnieje możliwość łączenia łóżek.
@@ -26,7 +28,3 @@ Ekskluzywny, bogato wyposażony pokój w standardzie hotelu ★★★ Pokój Lux
 #### Adres
 
 - ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
-
-[+48 77 402 90 30](tel:+48 77 402 90 30)
-
-[Powrót](/)
