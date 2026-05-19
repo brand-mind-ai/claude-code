@@ -1,0 +1,256 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+
+// Real reviews from Booking.com — captured from live site
+const reviews = [
+  { text: "Świetne jedzenie, miła obsługa, dobre drinki :)", author: "Barbara" },
+  { text: "Otoczenie, basen, cisza oraz lokalizacja.", author: "Ryszard" },
+  { text: "Bardzo dobre jedzenie, obsługa w barze bardzo miła, drinki duże.", author: "Klaudia" },
+  { text: "Komfort, czystość, miły personel hotelu, piękna okolica.", author: "Genowefa" },
+  { text: "Miła obsługa i atmosfera, przestronne pokoje Lux, basen zewnętrzny, smaczne śniadania.", author: "Judyta" },
+  { text: "Wspaniała i miła obsługa w recepcji jak i w restauracji. Pobyt bardzo udany.", author: "Daria" },
+  { text: "Ogromny szacunek dla całej obsługi hotelu. Ci ludzie tworzą klimat, dla którego warto tam wrócić.", author: "Sebastian" },
+  { text: "Hotel położony w urokliwym miejscu, dużo zieleni, super basen, plac zabaw dla dzieci. Obsługa bardzo życzliwa i pomocna. Na pewno tam jeszcze wrócimy.", author: "Magdalena" },
+  { text: "Uprzejmość i dostępność obsługi, wszystko dało się załatwić, zawsze z uśmiechem i profesjonalnie.", author: "Paweł" },
+  { text: "Byliśmy już pięć razy i na pewno wrócimy. Najlepszy klimat robi ogród i basen zewnętrzny. Miła obsługa, dobre jedzenie.", author: "Magdalena" },
+  { text: "Hotel na wysokim poziomie. Najfajniejszy teren wokół hotelu — przecudny! Obsługa nieskazitelna. Śniadania wyśmienite, wszystkiego do wyboru.", author: "Przemysław" },
+  { text: "Hotel w którym można wypocząć blisko do jeziora. Obsługa miła i uprzejma, a jedzenie bardzo dobre.", author: "Joanna" },
+  { text: "Strefa spa, posiłki, niesamowita obsługa.", author: "Mirela" },
+  { text: "Wysoki standard, SPA, bardzo dobre posiłki w restauracji.", author: "Jarosław" },
+  { text: "Obsługa, pokoje, pyszne jedzenie — super atmosfera.", author: "Tomasz" },
+  { text: "Piękna okolica, bardzo miła obsługa, pyszne śniadania.", author: "Katarzyna" },
+  { text: "Bardzo ładna okolica, doskonale zagospodarowany teren, zwłaszcza ogród! Przemiła i profesjonalna obsługa! Wyśmienita kuchnia!", author: "Anonimowy" },
+  { text: "Dobrze wyposażony pokój, bardzo wygodne łóżko i piękna łazienka. Smaczne śniadanie i miła obsługa.", author: "Alicja, Falmirowice" },
+  { text: "Hotel godny polecenia. Będąc w Hotelu Zacisze czujesz się jak wyjątkowy gość.", author: "Tadeusz, Siemkowice" },
+  { text: "Hotel modern, ruhige Lage nicht weit zur See. Personal freundlich, Zimmer sauber.", author: "Johanna, Wolken" },
+];
+---
+
+<BaseLayout
+  title="Opinie gości — Hotel Zacisze ★★★ Turawa"
+  description="Co mówią goście o Hotelu Zacisze w Turawie? Przeczytaj opinie z Booking.com i Google. Ocena 9.3/10."
+  canonicalPath="/opinie"
+  ogImage="/assets/current/hotel/Copy of 094.jpg"
+>
+  <!-- HERO -->
+  <header class="reviews-hero">
+    <img
+      src="/assets/current/hotel/Copy of 094.jpg"
+      alt="Taras letni Hotelu Zacisze"
+      class="reviews-hero-img"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="reviews-hero-inner">
+      <p class="kicker">Opinie gości</p>
+      <h1>Co mówią o nas goście</h1>
+      <div class="rating-badge">
+        <span class="rating-score">9.3</span>
+        <span class="rating-label">/ 10 · Booking.com</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- REVIEWS GRID -->
+  <section class="reviews-section">
+    <div class="reviews-inner">
+      <ul class="reviews-grid">
+        {reviews.map((r) => (
+          <li class="review-card">
+            <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="review-text">{r.text}</p>
+            <footer class="review-author">— {r.author}</footer>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <aside class="page-booking">
+    <div class="page-booking-inner">
+      <p>Przekonaj się sam — zarezerwuj pobyt i dołącz do tysięcy zadowolonych gości.</p>
+      <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" class="btn-book-page">
+        Sprawdź dostępność i rezerwuj
+      </a>
+    </div>
+  </aside>
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .reviews-hero {
+    position: relative;
+    min-height: 45vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .reviews-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.4;
+  }
+
+  .reviews-hero-inner {
+    position: relative;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .reviews-hero-inner h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--surface);
+    line-height: 1.15;
+    max-width: 20ch;
+  }
+
+  .rating-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .rating-score {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--surface);
+    line-height: 1;
+  }
+
+  .rating-label {
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  /* REVIEWS */
+  .reviews-section {
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .reviews-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .reviews-grid {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 960px) {
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .review-card {
+    background: var(--surface);
+    border: 1px solid var(--muted);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .quote-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .review-text {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex: 1;
+    font-style: italic;
+  }
+
+  .review-author {
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    margin-top: auto;
+  }
+
+  /* BOOKING CTA */
+  .page-booking {
+    background: var(--surface);
+    border-top: 1px solid var(--muted);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-booking-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .page-booking-inner p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    max-width: 52ch;
+  }
+
+  .btn-book-page {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: var(--dark);
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book-page:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  @media (min-width: 640px) {
+    .page-booking-inner {
+      flex-direction: row;
+      align-items: center;
+    }
+    .page-booking-inner p { margin: 0; }
+  }
+</style>
