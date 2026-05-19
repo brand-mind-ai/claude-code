@@ -1,6 +1,6 @@
 ---
-session_id: claude-code-session-2026-05-18-c
-updated: 2026-05-18
+session_id: claude-code-session-2026-05-19-a
+updated: 2026-05-19
 ---
 
 # Zacisze Handover
@@ -27,14 +27,14 @@ Run `git status` first. Confirm `On branch main` and the working directory above
 ---
 
 ## Current focus
-Content crawl complete. All 31 PL stubs now have real body content. Next: Session 4 — Header.astro + Footer.astro + responsive navigation.
+Sessions 5–10 complete. Full Polish MVP built: homepage, rooms, gallery, contact, all 27 content pages via `[...slug].astro`, security headers, redirects, sitemap, OG meta. Build clean. Site is ready to deploy to Cloudflare Pages.
 
 ## Next steps (prioritized)
-1. **Session 4** — `Header.astro` + `Footer.astro` + responsive navigation (social icons, phone, Google Maps link, no language picker in MVP).
-2. **Build Polish pages** — home, rooms, packages, SPA, restaurant, conferences, gallery, contact, booking, legal.
-3. **GuestSage booking flow** — hero date picker → GuestSage URL with arrivalDate/departureDate/personsCount. No invented room/rate IDs.
-4. **Motion layer** — Lenis + GSAP as Astro islands only on pages that use them.
-5. **EN/DE rebuild** — after Polish MVP is live and approved.
+1. **Deploy to Cloudflare Pages** — Martin action: Cloudflare Dashboard → Pages → Connect to Git → brand-mind-ai/claude-code → build: `npm run build`, output dir: `dist`, no env vars needed.
+2. **GuestSage booking integration** — get room IDs, rate plan IDs from Martin; wire targeted room booking links once IDs confirmed.
+3. **Motion layer** — Lenis + GSAP ScrollTrigger as Astro islands; deferred until MVP deployed and approved.
+4. **EN/DE rebuild** — after Polish MVP live and Martin approves design.
+5. **Final cutover** — switch `ASTRO_SITE` env var from `.com` to `.pl` in Cloudflare, update robots.txt, verify canonicals.
 
 ## Cleanup completed (2026-05-18)
 - `main` already contained all work from `claude/crazy-euler-7d514a` — no merge needed.
@@ -59,27 +59,29 @@ Content crawl complete. All 31 PL stubs now have real body content. Next: Sessio
 - Design references Martin selected for this build: `https://www.dangleterre.com/en`, `https://www.odins-crow.com/`, `https://farmform.be/`, `https://hutstuf.com/`.
 - Initial build must preserve current content and images before design refinement.
 
-## Active artifacts (Session 4 start)
-- `src/content/pl/pages/*.md` — 31 stubs, all with real body content crawled from live site
-- `scripts/crawl_pl_pages.py` — crawl script (curl + BeautifulSoup, targets article.articleContent)
-- `src/data/url-map.json` — 32 PL captured URLs
-- `src/data/navigation.json`, `src/data/site.json` — CMS data
-- `.pages.yml` — Pages CMS config
-- `astro.config.mjs`, `package.json`, `tsconfig.json` — scaffold complete
-- `npm run build` → 31 pages built, 0 errors ✓
-- `npm run typecheck` → 0 errors, 0 warnings ✓
+## Active artifacts (Sessions 5–10)
+- `src/pages/index.astro` — homepage: hero + booking widget, USPs, intro, features, packages, reviews, CTA
+- `src/pages/pokoje.astro` — room grid (6 rooms from `rooms.json`); responsive 1→2→3 col
+- `src/pages/galeria.astro` — photo gallery (5 categories, 33 photos from `gallery.json`); hero + hover grid
+- `src/pages/kontakt.astro` — contact info, Google Maps embed, 3-col directions section
+- `src/pages/[...slug].astro` — dynamic route for all 27 content pages via `pl` collection
+- `src/layouts/ContentLayout.astro` — dark hero header + prose area + conditional booking CTA strip
+- `src/layouts/BaseLayout.astro` — full OG/Twitter meta, canonical, default OG image
+- `src/data/homepage.json` — homepage CMS data (hero, USPs, features, packages, reviews)
+- `src/data/rooms.json` — 6 room objects with photos, descriptions, capacities
+- `src/data/gallery.json` — 33 photos across 5 categories (all real hotel photos)
+- `src/content/pl/pages/*.md` — 31 pages with real crawled content + heroImage frontmatter; boilerplate stripped
+- `public/_headers` — CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy
+- `public/_redirects` — /strefa_spa→/spa, /strona_glowna→/, /restauracja_→/restauracja, /ceny_i_rezerwacja→GuestSage
+- `public/robots.txt` — Allow: /, sitemap link
+- `astro.config.mjs` — sitemap integration, ASTRO_SITE env var for domain switching
+- `npm run build` → 31 pages, 0 errors ✓ | `npm run typecheck` → 0 errors, 0 warnings, 0 hints ✓
 
 ## Open questions / blockers
-- Repo is `https://github.com/brand-mind-ai/claude-code` on `main`. Old `zacisze-turawa` repo is a stub — ignore it.
-- Need full internal crawl beyond sitemap and homepage before claiming final route coverage.
-- Need GuestSage room IDs, rate plan IDs, child age IDs, and any package/filter IDs before using targeted booking links.
-- Need final redirect decision for `/strefa_spa` after full crawl; likely redirect to `/spa`, but not final yet.
-- Need Martin to share the complete brand kit and reference material before final visual design implementation.
-- Need proof that GuestSage iframe checkout still works after security headers are applied.
-- Need final choice before `.com` launch: allow `.com` indexing temporarily with self-canonicals, or noindex `.com` until `.pl` cutover.
-
-## Active artifacts
--
+- **Deploy action needed by Martin**: Cloudflare Pages → Connect to Git → brand-mind-ai/claude-code → build cmd: `npm run build`, output dir: `dist`
+- Need GuestSage room IDs, rate plan IDs for targeted room-specific booking links
+- Need proof that GuestSage iframe checkout still works after CSP headers applied (test in report-only mode if broken)
+- Need final choice before `.com` launch: allow `.com` indexing temporarily with self-canonicals, or noindex until `.pl` cutover
 
 
 

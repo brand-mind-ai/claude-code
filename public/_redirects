@@ -3,6 +3,12 @@
 # Known 404 on live site — redirect to working SPA page
 /strefa_spa  /spa  301
 
+# Old homepage slug used by some internal links
+/strona_glowna  /  301
+
+# Typo variant of /restauracja seen in live site
+/restauracja_  /restauracja  301
+
 # Redirect bare domain to www (handled by Cloudflare domain settings, but belt+braces)
 # https://zaciszeturawa.com  https://www.zaciszeturawa.com  301
 
