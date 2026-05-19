@@ -18,7 +18,7 @@ const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a
 const displayTitle = title.replace(/\s[–—-]\s.*$/, "").replace(/\s★★★.*$/, "").trim();
 ---
 
-<BaseLayout title={seoTitle ?? title} description={description} canonicalPath={canonicalPath}>
+<BaseLayout title={seoTitle ?? title} description={description} canonicalPath={canonicalPath} ogImage={heroImage}>
   <div class="page-wrap">
     <!-- PAGE HEADER -->
     <header class:list={["page-header", heroImage && "page-header--photo"]}>

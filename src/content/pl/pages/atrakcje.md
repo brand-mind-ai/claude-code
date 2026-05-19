@@ -24,21 +24,3 @@ Dla dorosłych ceniących aktywność fizyczną, nasza siłownia zewnętrzna to 
 Nasz hotel oferuje nie tylko relaksujący pobyt, ale także umożliwia aktywny wypoczynek dzięki wypożyczalni rowerów. Goście mogą odkrywać uroki okolicznych terenów i zapierających dech tras rowerowych w okolicy malowniczego Jeziora Turawskiego. Te piękne i urozmaicone trasy oferują niezapomniane widoki, prowadząc przez dziewicze lasy i nad brzegami jezior, co sprawia, że jazda rowerem staje się nie tylko sportowym doświadczeniem, ale także prawdziwą przyjemnością dla zmysłów.
 
 Dla naszych gości, którzy cenią wspólne spotkania pod gołym niebem i niezapomniane doznania kulinarne, przygotowaliśmy specjalne miejsce w naszym ogrodzie, dedykowane organizacji grillowania. To idealne miejsce dla grup zorganizowanych oraz dla gości korzystających z naszych pakietów wakacyjnych, pragnących spędzić czas na świeżym powietrzu i delektować się smakiem grillowanych potraw w otoczeniu pięknej przyrody. Nasz kompleksowo wyposażony grill, malowniczo umiejscowiony w ogrodzie, zapewnia niezapomniane chwile przy grillowanych przysmakach w towarzystwie bliskich czy nowo poznanych osób.
-
-[Zobacz wszystkie](pakiety_pobytowe)
-
-[szczegóły Długi weekend czerwcowy 3 dni, od 620 zł / osoba](/boze_cialo_w_zaciszu_)
-
-### Długi weekend czerwcowy
-
-[szczegóły Wakacje nad Jeziorem Turawskim 4 dni 4 dni, od 608 zł / osoba](/wakacje-4-dni)
-
-### Wakacje nad Jeziorem Turawskim 4 dni
-
-[szczegóły Wakacje nad Jeziorem Turawskim 6 dni 6 dni, od 1025 zł / osoba](/wakacje_6_dni_nad_jeziorem_turawskim_2021)
-
-### Wakacje nad Jeziorem Turawskim 6 dni
-
-[szczegóły Wakacje nad Jeziorem Turawskim 8 dni 8 dni, od 1418 zł / osoba](/wakacje_nad_jeziorem_turawskim_2021)
-
-### Wakacje nad Jeziorem Turawskim 8 dni

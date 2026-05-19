@@ -38,21 +38,3 @@ Jest także zalecana przez lekarzy jako forma leczenia bólu, sztywności stawó
 Już 45 minut w jaskini solnej wystarczy, by korzyści dla zdrowia były porównywalne z efektami kilkudniowego pobytu nad morzem!
 
 Jeśli czujesz potrzebę wzmocnienia odporności organizmu, seans w grocie solnej to doskonały pomysł. Wizyta w komnacie solnej jest wskazana również przy niektórych schorzeniach, takich jak choroby dróg oddechowych, niedoczynność tarczycy, zapalenie zatok, bezsenność, nerwicę, alergię, choroby układu nerwoweg oraz układu krążenia.
-
-[Zobacz wszystkie](pakiety_pobytowe)
-
-[szczegóły Długi weekend czerwcowy 3 dni, od 620 zł / osoba](/boze_cialo_w_zaciszu_)
-
-### Długi weekend czerwcowy
-
-[szczegóły Wakacje nad Jeziorem Turawskim 4 dni 4 dni, od 608 zł / osoba](/wakacje-4-dni)
-
-### Wakacje nad Jeziorem Turawskim 4 dni
-
-[szczegóły Wakacje nad Jeziorem Turawskim 6 dni 6 dni, od 1025 zł / osoba](/wakacje_6_dni_nad_jeziorem_turawskim_2021)
-
-### Wakacje nad Jeziorem Turawskim 6 dni
-
-[szczegóły Wakacje nad Jeziorem Turawskim 8 dni 8 dni, od 1418 zł / osoba](/wakacje_nad_jeziorem_turawskim_2021)
-
-### Wakacje nad Jeziorem Turawskim 8 dni

@@ -30,35 +30,3 @@ Szkolenia, eventy firmowe, spotkania z kluczowymi klientami — organizujemy wsz
 Podaruj bliskiej osobie niezapomniany prezent!
 
 [Więcej](/vouchery)
-
-[Zobacz wszystkie](pakiety_pobytowe)
-
-[szczegóły Długi weekend czerwcowy 3 dni, od 620 zł / osoba](/boze_cialo_w_zaciszu_)
-
-### Długi weekend czerwcowy
-
-[szczegóły Wakacje nad Jeziorem Turawskim 4 dni 4 dni, od 608 zł / osoba](/wakacje-4-dni)
-
-### Wakacje nad Jeziorem Turawskim 4 dni
-
-[szczegóły Wakacje nad Jeziorem Turawskim 6 dni 6 dni, od 1025 zł / osoba](/wakacje_6_dni_nad_jeziorem_turawskim_2021)
-
-### Wakacje nad Jeziorem Turawskim 6 dni
-
-[szczegóły Wakacje nad Jeziorem Turawskim 8 dni 8 dni, od 1418 zł / osoba](/wakacje_nad_jeziorem_turawskim_2021)
-
-### Wakacje nad Jeziorem Turawskim 8 dni
-
-[Rezerwuj](ceny_i_rezerwacja)
-
-[szczegóły](/pokoj_2os_classic)
-
-- Świetne jedzenie, miła obsługa, dobre drinki :) ~Barbara
-
-- Otoczenie , basen,cisza oraz lokalizacja ~Ryszard
-
-- Duży taras ~Mateusz
-
-- bardzo dobre jedzenie, obsługa w barze bardzo miła, drinki duże. ~Klaudia
-
-- Komfort, czystość, miły personel hotelu, piękna okolica ~Genowefa
