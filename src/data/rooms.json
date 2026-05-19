@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Pokój Classic",
+    "slug": "/pokoj_2os_classic",
+    "image": "/assets/current/hotel/004.jpg",
+    "description": "Luksusowo wyposażony pokój w standardzie ★★★. Dwa warianty — z osobnymi łóżkami lub łóżkiem małżeńskim, z możliwością łączenia.",
+    "capacity": "2 osoby"
+  },
+  {
+    "title": "Pokój Lux TWIN",
+    "slug": "/pokoj_2os_lux",
+    "image": "/assets/current/hotel/Copy of 003.jpg",
+    "description": "Ekskluzywny, bogato wyposażony pokój z większą powierzchnią od Classic. Do dyspozycji: wygodne fotele, stolik i sofa. Możliwość łączenia łóżek.",
+    "capacity": "2 osoby"
+  },
+  {
+    "title": "Pokój Classic z dostawką",
+    "slug": "/pokoj_classic_z_dostawka",
+    "image": "/assets/current/hotel/032.jpg",
+    "description": "Luksusowo wyposażony pokój Classic z opcją dostawki — idealny dla rodzin z dzieckiem. Możliwość połączenia łóżek.",
+    "capacity": "2–3 osoby"
+  },
+  {
+    "title": "Pokój Lux DBL",
+    "slug": "/pokoj_lux_dbl",
+    "image": "/assets/current/hotel/046.jpg",
+    "description": "Ekskluzywny pokój Lux z dużym podwójnym łóżkiem i dostępem do przestronnego tarasu. Większa powierzchnia, wysoki standard wykończenia.",
+    "capacity": "2 osoby"
+  },
+  {
+    "title": "Pokój na poddaszu",
+    "slug": "/pokoj_na_poddaszu",
+    "image": "/assets/current/hotel/Copy of 024.jpg",
+    "description": "Niepowtarzalny pokój z oknami dachowymi w standardzie ★★★. Dwa warianty — z osobnymi łóżkami lub łóżkiem małżeńskim.",
+    "capacity": "2 osoby"
+  },
+  {
+    "title": "Apartament w ogrodzie",
+    "slug": "/apartament_w_domku_wolnostojacym",
+    "image": "/assets/current/hotel/Copy of 101.jpg",
+    "description": "Luksusowy apartament w wolnostojącym domku. Przedsionek, duży pokój dzienny z łóżkiem małżeńskim, sofa oraz osobna sypialnia z dwoma łóżkami.",
+    "capacity": "2–4 osoby"
+  }
+]

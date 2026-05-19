@@ -1,0 +1,344 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import site from "../data/site.json";
+
+const { phone, phoneMobile, email, address, mapsUrl, facebookUrl, instagramUrl } = site;
+---
+
+<BaseLayout
+  title="Kontakt — Hotel Zacisze ★★★ Turawa"
+  description="Skontaktuj się z Hotelem Zacisze w Turawie. Adres, telefon, e-mail i dojazd."
+  canonicalPath="/kontakt"
+>
+  <div class="page-header">
+    <img src="/assets/current/hotel/Copy of 080.jpg" alt="Wejście do Hotelu Zacisze" class="page-header-img" />
+    <div class="page-header-inner">
+      <h1>Kontakt</h1>
+      <p>Jesteśmy do Twojej dyspozycji</p>
+    </div>
+  </div>
+
+  <main class="contact-main">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+          <section class="info-block">
+            <h2>Adres</h2>
+            <p>Hotel Zacisze ★★★<br/>ul. Biwakowa 2<br/>46-045 Turawa k. Opola</p>
+            <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="map-link">
+              Otwórz w Google Maps →
+            </a>
+          </section>
+
+          <section class="info-block">
+            <h2>Telefon i e-mail</h2>
+            <div class="contact-links">
+              <a href={`tel:${phone.replace(/\s/g, "")}`} class="contact-link">
+                <span class="cl-label">Recepcja</span>
+                <span class="cl-value">{phone}</span>
+              </a>
+              <a href={`tel:${phoneMobile.replace(/\s/g, "")}`} class="contact-link">
+                <span class="cl-label">Komórka</span>
+                <span class="cl-value">{phoneMobile}</span>
+              </a>
+              <a href={`mailto:${email}`} class="contact-link">
+                <span class="cl-label">E-mail</span>
+                <span class="cl-value">{email}</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="info-block">
+            <h2>Dane firmy</h2>
+            <dl class="firm-data">
+              <div><dt>NIP</dt><dd>631-100-77-63</dd></div>
+              <div><dt>REGON</dt><dd>272335020</dd></div>
+              <div><dt>GPS</dt><dd>50.740835, 18.119496</dd></div>
+            </dl>
+          </section>
+
+          <section class="info-block">
+            <h2>Konto bankowe</h2>
+            <p class="bank-account">72 1140 2004 0000 3502 7736 2950</p>
+            <p class="bank-name">mBANK — Hotel Zacisze, ul. Biwakowa 2, 46-045 Turawa k. Opola</p>
+          </section>
+
+          <section class="info-block">
+            <h2>Social media</h2>
+            <div class="social-links">
+              <a href={facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+          </section>
+        </div>
+
+        <!-- MAP EMBED -->
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=Hotel+Zacisze+ul.+Biwakowa+2+Turawa&output=embed&z=15"
+            width="100%"
+            height="100%"
+            style="border:0; min-height: 400px;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokalizacja Hotelu Zacisze na mapie"
+          ></iframe>
+        </div>
+
+      </div>
+
+      <!-- DOJAZD -->
+      <section class="directions">
+        <h2>Jak do nas dotrzeć</h2>
+        <div class="directions-grid">
+          <div class="dir-item">
+            <h3>Samochodem</h3>
+            <p>Z Opola: droga nr 454 w kierunku Turawy, ok. 20 minut. Hotel przy ul. Biwakowej 2, bezpośrednio przy plaży.</p>
+          </div>
+          <div class="dir-item">
+            <h3>Pociągiem</h3>
+            <p>Najbliższa stacja kolejowa: Opole Główne (~18 km). Z Opola taxi lub autobus w kierunku Turawy.</p>
+          </div>
+          <div class="dir-item">
+            <h3>Samolotem</h3>
+            <p>Port lotniczy Katowice (ok. 80 km) lub Wrocław (ok. 100 km). Transfer na zamówienie — skontaktuj się z recepcją.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .page-header {
+    position: relative;
+    height: 45vh;
+    min-height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    background: var(--dark);
+  }
+
+  .page-header-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0.5;
+  }
+
+  .page-header-inner {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--surface);
+  }
+
+  .page-header p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    margin-top: 0.5rem;
+  }
+
+  .contact-main {
+    padding: 4rem 0;
+    background: var(--bg);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* CONTACT GRID */
+  .contact-grid {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1.5fr;
+      align-items: start;
+    }
+  }
+
+  /* INFO BLOCKS */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info-block h2 {
+    font-size: 0.6875rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .info-block p {
+    font-size: 0.9375rem;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .map-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+
+  .map-link:hover { color: var(--text-secondary); }
+
+  /* CONTACT LINKS */
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover { color: var(--text-secondary); }
+
+  .cl-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .cl-value {
+    font-size: 1rem;
+  }
+
+  /* FIRM DATA */
+  .firm-data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .firm-data div { display: flex; gap: 1rem; }
+
+  .firm-data dt {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    width: 4rem;
+    flex-shrink: 0;
+  }
+
+  .firm-data dd {
+    font-size: 0.9375rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  /* BANK */
+  .bank-account {
+    font-family: monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+
+  .bank-name {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem !important;
+  }
+
+  /* SOCIAL */
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-links a {
+    font-size: 0.875rem;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+
+  .social-links a:hover { color: var(--text-secondary); }
+
+  /* MAP */
+  .map-wrap {
+    border: 1px solid var(--muted);
+    overflow: hidden;
+    min-height: 400px;
+  }
+
+  .map-wrap iframe { display: block; }
+
+  /* DIRECTIONS */
+  .directions {
+    border-top: 1px solid var(--muted);
+    padding-top: 3rem;
+  }
+
+  .directions h2 {
+    font-size: 1.375rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .directions-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .dir-item h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .dir-item p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  @media (min-width: 640px) {
+    .directions-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

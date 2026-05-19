@@ -3,10 +3,15 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import ContentLayout from "../layouts/ContentLayout.astro";
 
 export async function getStaticPaths() {
+  // These paths have dedicated page files — exclude to avoid route conflicts
+  const DEDICATED = new Set(["/galeria", "/kontakt", "/pokoje"]);
+
   const entries = await getCollection(
     "pl",
     (e: CollectionEntry<"pl">) =>
-      e.data.status === "captured" && e.data.canonicalPath !== "/"
+      e.data.status === "captured" &&
+      e.data.canonicalPath !== "/" &&
+      !DEDICATED.has(e.data.canonicalPath)
   );
 
   return entries.map((entry: CollectionEntry<"pl">) => ({

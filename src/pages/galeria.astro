@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import gallery from "../data/gallery.json";
+---
+
+<BaseLayout
+  title="Galeria — Hotel Zacisze ★★★ Turawa"
+  description="Zdjęcia Hotelu Zacisze w Turawie — pokoje, strefa SPA, restauracja, otoczenie lasu i Jezioro Turawskie."
+  canonicalPath="/galeria"
+>
+  <div class="page-header">
+    <img src="/assets/current/hotel/645740576_1480793004051426_5360198729458927980_n.jpg" alt="Jezioro Turawskie z lotu ptaka" class="page-header-img" />
+    <div class="page-header-inner">
+      <h1>Galeria</h1>
+      <p>Odkryj Hotel Zacisze w obrazach</p>
+    </div>
+  </div>
+
+  <main class="gallery-main">
+    <div class="container">
+      {gallery.map((section) => (
+        <section class="gallery-section">
+          <h2 class="gallery-heading">{section.category}</h2>
+          <div class="photo-grid">
+            {section.photos.map((photo) => (
+              <figure class="photo-item">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  class="photo-img"
+                />
+              </figure>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .page-header {
+    position: relative;
+    height: 50vh;
+    min-height: 320px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    background: var(--dark);
+  }
+
+  .page-header-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    opacity: 0.5;
+  }
+
+  .page-header-inner {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--surface);
+  }
+
+  .page-header p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    margin-top: 0.5rem;
+  }
+
+  .gallery-main {
+    padding: 4rem 0;
+    background: var(--bg);
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .gallery-section {
+    margin-bottom: 4rem;
+  }
+
+  .gallery-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .gallery-heading {
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--muted);
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .photo-item {
+    margin: 0;
+    overflow: hidden;
+    background: var(--dark);
+    aspect-ratio: 4/3;
+  }
+
+  .photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.3s;
+  }
+
+  .photo-item:hover .photo-img {
+    transform: scale(1.04);
+    opacity: 0.9;
+  }
+
+  @media (min-width: 640px) {
+    .photo-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 960px) {
+    .photo-grid { grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+  }
+</style>
