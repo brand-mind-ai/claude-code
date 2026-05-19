@@ -1,0 +1,348 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import packagesData from "../data/packages.json";
+
+const bookingBase = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+---
+
+<BaseLayout
+  title="Hotel Zacisze ★★★ Turawa – Restauracja"
+  description="Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób."
+  canonicalPath="/restauracja"
+  ogImage="/assets/current/hotel/Copy of Copy of Zacisze41.jpg"
+>
+  <div class="page-hero" style="background-image: url('/assets/current/hotel/Copy of Copy of Zacisze41.jpg')">
+    <div class="page-hero-inner">
+      <h1>Restauracja</h1>
+    </div>
+  </div>
+
+  <section class="rest-section">
+    <div class="rest-inner">
+      <div class="rest-intro">
+        <h2>Śniadania i dania restauracyjne</h2>
+        <p>Nasza restauracja w ramach noclegu serwuje codzienne śniadania, zapraszamy też Gości spoza hotelu.</p>
+        <p>Od poniedziałku do piątku w godzinach 7:30 do 9:30, weekendy oraz święta 8:30–10:30.</p>
+        <p>Popołudniami zachęcamy do skorzystania z naszej karty menu i dań restauracyjnych.</p>
+        <p>Nasza restauracja jest czynna od 15:00 do 21:00, w każdą niedzielę zapraszamy już od 13:00.</p>
+      </div>
+
+      <div class="rest-feature">
+        <div class="rest-feature-img-wrap">
+          <img src="/assets/current/hotel/Copy of Copy of Zacisze43.jpg" alt="Sala bankietowa" class="rest-feature-img" loading="lazy" />
+        </div>
+        <div class="rest-feature-text">
+          <h2>Wesela i uroczystości</h2>
+          <p>Ślub i przyjęcie weselne to wyjątkowe momenty, których magia pozostaje w pamięci na zawsze. W Hotelu Zacisze pragniemy uczynić te chwile niezapomnianymi, spełniając wszystkie Wasze marzenia związane z tym niezwykłym dniem. Nasza przestronna i elegancka sala bankietowa oraz profesjonalna obsługa pozwalają na stworzenie wyjątkowej oprawy przyjęcia weselnego, dostosowanej do Waszych indywidualnych oczekiwań i preferencji.</p>
+          <p>Hotel Zacisze to nie tylko miejsce na organizację wydarzenia — to wspólne tworzenie niezwykłych wspomnień, w urokliwym otoczeniu przyrody i elegancji, gdzie marzenia stają się rzeczywistością.</p>
+          <a href="/up/files/Oferta%20Weselna%202024%20(1).pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf">Otwórz pełną ofertę weselną</a>
+        </div>
+      </div>
+
+      <div class="rest-feature rest-feature--reversed">
+        <div class="rest-feature-img-wrap">
+          <img src="/assets/current/hotel/Copy of Copy of Zacisze46.jpg" alt="Restauracja" class="rest-feature-img" loading="lazy" />
+        </div>
+        <div class="rest-feature-text">
+          <h2>Imprezy okolicznościowe</h2>
+          <p>Nasza restauracja to wyjątkowe miejsce, które zachwyca swoimi nastrojowymi i nowoczesnymi wnętrzami, idealnymi do organizacji różnorodnych wydarzeń dla grup nawet do 100 osób. Nasi doświadczeni kucharze, z pasją do kulinarnego rzemiosła, dbają nie tylko o wyśmienity smak, lecz także o zdrowe i wykwintne podanie każdego dania.</p>
+          <p>Jesteśmy dumni z naszej wszechstronnej karty menu, bogatej w smaki i inspiracje, które zaspokoją nawet najbardziej wyrafinowane gusta.</p>
+          <p>Bez względu na to, czy planujesz przyjęcie komunijne, urodzinowe, chrzciny czy inną niezapomnianą uroczystość, nasza restauracja jest idealnym miejscem, aby uczynić to wydarzenie wyjątkowym.</p>
+          <a href="/kontakt" class="btn-contact-link">Kontakt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages-section">
+    <div class="packages-inner">
+      <h2 class="section-title">Oferty pobytowe</h2>
+      <div class="carousel-wrap">
+        <div class="carousel" id="rest-carousel">
+          {packagesData.map((pkg) => (
+            <article class="pkg-card">
+              <a href={pkg.path} class="pkg-img-wrap">
+                <img src={pkg.image} alt={pkg.title} class="pkg-img" loading="lazy" />
+              </a>
+              <div class="pkg-info">
+                <h3 class="pkg-title">{pkg.title}</h3>
+                <p class="pkg-meta">{pkg.duration} · od {pkg.price} zł / os.</p>
+                <a href={pkg.path} class="btn-details">Szczegóły</a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <button class="carousel-btn carousel-prev" aria-label="Poprzedni">&#8592;</button>
+        <button class="carousel-btn carousel-next" aria-label="Następny">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-strip">
+    <div class="booking-strip-inner">
+      <p>Zarezerwuj pobyt w Hotelu Zacisze</p>
+      <a href={bookingBase} target="_blank" rel="noopener noreferrer" class="btn-book">Rezerwuj online</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const carousel = document.getElementById("rest-carousel");
+  document.querySelector(".carousel-prev")?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: -320, behavior: "smooth" });
+  });
+  document.querySelector(".carousel-next")?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: 320, behavior: "smooth" });
+  });
+</script>
+
+<style>
+  .page-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .rest-section {
+    padding: 4rem 0;
+  }
+
+  .rest-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .rest-intro {
+    max-width: 760px;
+  }
+
+  .rest-intro h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .rest-intro p {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .rest-feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .rest-feature {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .rest-feature--reversed .rest-feature-img-wrap {
+      order: 2;
+    }
+
+    .rest-feature--reversed .rest-feature-text {
+      order: 1;
+    }
+  }
+
+  .rest-feature-img-wrap { overflow: hidden; }
+
+  .rest-feature-img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+  }
+
+  .rest-feature-text h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .rest-feature-text p {
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .btn-pdf,
+  .btn-contact-link {
+    display: inline-flex;
+    margin-top: 0.5rem;
+    padding: 0.55rem 1.25rem;
+    background: var(--dark);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-pdf:hover,
+  .btn-contact-link:hover { background: var(--text-secondary); }
+
+  .packages-section {
+    background: #f0ebe3;
+    padding: 4rem 0;
+  }
+
+  .packages-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text);
+  }
+
+  .carousel-wrap {
+    position: relative;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+
+  .carousel::-webkit-scrollbar { display: none; }
+
+  .pkg-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .pkg-img-wrap { display: block; overflow: hidden; }
+
+  .pkg-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .pkg-card:hover .pkg-img { transform: scale(1.04); }
+
+  .pkg-info { padding: 1rem; }
+
+  .pkg-title {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+
+  .pkg-meta {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.9rem;
+  }
+
+  .btn-details {
+    display: inline-flex;
+    padding: 0.4rem 1rem;
+    background: var(--dark);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-details:hover { background: var(--text-secondary); }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+    z-index: 2;
+  }
+
+  .carousel-btn:hover { opacity: 1; }
+  .carousel-prev { left: -0.5rem; }
+  .carousel-next { right: -0.5rem; }
+
+  .booking-strip {
+    background: var(--dark);
+    padding: 2.5rem 1.25rem;
+  }
+
+  .booking-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .btn-book {
+    display: inline-flex;
+    padding: 0.6rem 1.75rem;
+    background: var(--surface);
+    color: var(--dark);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--surface);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book:hover {
+    background: transparent;
+    color: var(--surface);
+  }
+</style>

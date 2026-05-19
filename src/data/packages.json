@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Długi weekend czerwcowy",
+    "path": "/boze_cialo_w_zaciszu_",
+    "duration": "3 dni",
+    "price": "620",
+    "image": "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
+  },
+  {
+    "title": "Wakacje nad Jeziorem Turawskim 4 dni",
+    "path": "/wakacje-4-dni",
+    "duration": "4 dni",
+    "price": "608",
+    "image": "/assets/current/hotel/490343791_1196676219129774_3695689002660428792_n.jpg"
+  },
+  {
+    "title": "Wakacje nad Jeziorem Turawskim 6 dni",
+    "path": "/wakacje_6_dni_nad_jeziorem_turawskim_2021",
+    "duration": "6 dni",
+    "price": "1025",
+    "image": "/assets/current/hotel/495793406_1220022830128446_3764504780736735331_n.jpg"
+  },
+  {
+    "title": "Wakacje nad Jeziorem Turawskim 8 dni",
+    "path": "/wakacje_nad_jeziorem_turawskim_2021",
+    "duration": "8 dni",
+    "price": "1418",
+    "image": "/assets/current/hotel/645740576_1480793004051426_5360198729458927980_n.jpg"
+  }
+]

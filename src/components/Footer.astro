@@ -1,0 +1,157 @@
+---
+import siteData from "../data/site.json";
+import navData from "../data/navigation.json";
+
+const { phone, email, address, facebookUrl, instagramUrl } = siteData;
+const navLinks = navData.primary;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" aria-label="Hotel Zacisze – strona główna">
+        <img src="/zacisze-logo.svg" alt="Hotel Zacisze" class="footer-logo" width="140" height="44" />
+      </a>
+      <address class="footer-address">
+        {address}
+      </address>
+      <div class="footer-contact">
+        <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
+        <a href={`mailto:${email}`}>{email}</a>
+      </div>
+      <div class="footer-social">
+        <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Nawigacja w stopce">
+      <ul>
+        {navLinks.map((item) => (
+          <li><a href={item.path}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="footer-legal">
+      <ul>
+        <li><a href="/kontakt">Kontakt</a></li>
+        <li><a href="/rodo">RODO</a></li>
+        <li><a href="/regulamin">Regulamin</a></li>
+        <li><a href="/praca">Praca</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© {year} Hotel Zacisze Turawa</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--dark);
+    color: var(--muted);
+    padding-top: 3rem;
+  }
+
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem 2.5rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .footer-inner { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 960px) {
+    .footer-inner { grid-template-columns: 2fr 1fr 1fr; }
+  }
+
+  .footer-logo {
+    height: 2.25rem;
+    width: auto;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+    filter: brightness(10);
+  }
+
+  .footer-address {
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact a {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-contact a:hover { color: #fff; }
+
+  .footer-social {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .footer-social a {
+    display: flex;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  .footer-social a:hover { color: #fff; }
+  .footer-social svg { width: 1.2rem; height: 1.2rem; }
+
+  .footer-nav ul,
+  .footer-legal ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-nav a,
+  .footer-legal a {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-nav a:hover,
+  .footer-legal a:hover { color: #fff; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1rem 1.25rem;
+  }
+
+  .footer-bottom-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.3);
+  }
+</style>

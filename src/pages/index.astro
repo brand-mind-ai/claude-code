@@ -1,19 +1,621 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import rooms from "../data/rooms.json";
+import packages from "../data/packages.json";
 
-const entries = await getCollection(
-  "pl",
-  (e: CollectionEntry<"pl">) => e.data.canonicalPath === "/"
-);
-const entry = entries[0];
-const { Content } = entry ? await entry.render() : { Content: () => null };
-const title = entry?.data.seoTitle ?? entry?.data.title ?? "Hotel Zacisze Turawa";
-const description = entry?.data.description;
+const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+
+const reviews = [
+  { text: "Świetne jedzenie, miła obsługa, dobre drinki :)", author: "Barbara" },
+  { text: "Otoczenie, basen, cisza oraz lokalizacja.", author: "Ryszard" },
+  { text: "Duży taras.", author: "Mateusz" },
+  { text: "Bardzo dobre jedzenie, obsługa w barze bardzo miła, drinki duże.", author: "Klaudia" },
+  { text: "Komfort, czystość, miły personel hotelu, piękna okolica.", author: "Genowefa" },
+];
 ---
 
-<BaseLayout title={title} description={description} canonicalPath="/">
-  <main>
-    <Content />
-  </main>
+<BaseLayout
+  title="Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim"
+  description="Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
+  canonicalPath="/"
+  ogImage="/assets/current/hotel/Copy of 103.jpg"
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-media">
+      <img
+        src="/assets/current/hotel/Copy of 103.jpg"
+        alt="Hotel Zacisze w Turawie nad Jeziorem Turawskim"
+        class="hero-img"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Hotel Zacisze w Turawie</h1>
+      <p class="hero-sub">150 m od plaży · Jezioro Turawskie · SPA · Restauracja</p>
+    </div>
+    <div class="date-picker-wrap">
+      <form class="date-picker" id="date-picker-form">
+        <div class="dp-field">
+          <label for="dp-arrival">Przyjazd</label>
+          <input type="date" id="dp-arrival" name="arrival" required />
+        </div>
+        <div class="dp-field">
+          <label for="dp-departure">Wyjazd</label>
+          <input type="date" id="dp-departure" name="departure" required />
+        </div>
+        <div class="dp-field">
+          <label for="dp-persons">Osoby</label>
+          <select id="dp-persons" name="persons">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <button type="submit" class="dp-btn">Szukaj</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- INTRO / ABOUT -->
+  <section class="intro">
+    <div class="intro-inner">
+      <div class="intro-text">
+        <h2>Twoja oaza spokoju na Opolszczyźnie</h2>
+        <p>Położone nad brzegiem Jeziora Turawskiego, otoczone lasem miejsce, w którym naprawdę odpoczniesz — niezależnie od pory roku. Zacznij dzień od kawy na nasłonecznionym tarasie z widokiem na zieleń, a potem wybierz swój sposób na relaks. Latem dzień płynie przy basenie — w leżaku, z książką, bez pośpiechu. Gdy ciągnie Cię do ruchu, okoliczne lasy kryją kilometry szlaków rowerowych wiodących przez bory sosnowe, idealnych zarówno na rodzinną przejażdżkę, jak i dłuższą trasę. Po aktywnym dniu — grill na świeżym powietrzu albo odprężenie w strefie SPA.</p>
+        <p>Zaledwie 150 metrów od plaży, nad północnym brzegiem Jeziora Turawskiego. Wokół — sosnowo-dębowy las i ciągnące się kilometrami Bory Stobrawsko-Turawskie. Żadnych dróg szybkiego ruchu, tylko cisza i natura.</p>
+        <p>150 metrów od plaży. Sosnowy las za oknem. Jezioro Turawskie na wyciągnięcie ręki. Hotel ★★★ Zacisze to rodzinny hotel w Turawie — cichy, kameralny, otoczony naturą Borów Stobrawsko-Turawskich. Przyjeżdżasz tu odpocząć i naprawdę odpoczywasz. Strefa SPA z jacuzzi, sauną i grotą solną. Restauracja z kuchnią regionalną i europejską. Sale konferencyjne do 150 osób. 75 miejsc noclegowych w pokojach i apartamentach z ogrodami.</p>
+        <p class="intro-direct"><strong>Rezerwuj bezpośrednio</strong> — gwarancja najniższej ceny, śniadanie i SPA w cenie każdego noclegu.</p>
+        <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" class="btn-primary">Sprawdź dostępność</a>
+      </div>
+      <div class="intro-photo">
+        <img
+          src="/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
+          alt="Jezioro Turawskie w pobliżu Hotelu Zacisze"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- RESTAURANT -->
+  <section class="section-banner">
+    <div class="section-banner-inner">
+      <div class="section-banner-photo">
+        <img
+          src="/assets/current/hotel/Copy of Copy of Zacisze41.jpg"
+          alt="Restauracja Hotelu Zacisze"
+          loading="lazy"
+        />
+      </div>
+      <div class="section-banner-text">
+        <h2>Restauracja</h2>
+        <p>Nasza restauracja w ramach noclegu serwuje codzienne śniadania, zapraszamy też Gości spoza hotelu. Kuchnia europejska z regionalnymi akcentami. Nastrojowe wnętrze z widokiem na otaczającą przyrodę.</p>
+        <a href="/restauracja" class="btn-link">Czytaj Więcej →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section class="section-banner section-banner--reverse">
+    <div class="section-banner-inner">
+      <div class="section-banner-photo">
+        <img
+          src="/assets/current/hotel/Copy of 017.jpg"
+          alt="Sala konferencyjna Hotelu Zacisze"
+          loading="lazy"
+        />
+      </div>
+      <div class="section-banner-text">
+        <h2>Konferencje</h2>
+        <p>Szkolenia, eventy firmowe, spotkania z kluczowymi klientami — organizujemy wszystko od A do Z. Dwie klimatyzowane sale konferencyjne, sala bankietowa i 75 miejsc noclegowych w jednym obiekcie.</p>
+        <a href="/konferencje" class="btn-link">Więcej →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOUCHERS -->
+  <section class="vouchers-section">
+    <div class="vouchers-inner">
+      <h2>Vouchery</h2>
+      <p>Podaruj bliskiej osobie niezapomniany prezent!</p>
+      <a href="/vouchery" class="btn-link-light">Więcej →</a>
+    </div>
+  </section>
+
+  <!-- PACKAGES CAROUSEL -->
+  <section class="packages-section">
+    <div class="packages-inner">
+      <div class="section-head">
+        <h2>Oferty</h2>
+        <a href="/pakiety_pobytowe" class="see-all">Zobacz wszystkie →</a>
+      </div>
+      <div class="carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev" aria-label="Poprzedni" data-carousel="packages">&#8249;</button>
+        <div class="carousel" id="carousel-packages">
+          {packages.map((pkg) => (
+            <article class="offer-card">
+              <a href={pkg.path} class="offer-card-link">
+                <div class="offer-card-img">
+                  <img src={pkg.image} alt={pkg.title} loading="lazy" />
+                </div>
+                <div class="offer-card-body">
+                  <h3>{pkg.title}</h3>
+                  <p class="offer-meta">{pkg.duration} · od {pkg.price} zł / osoba</p>
+                  <span class="offer-details">szczegóły</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+        <button class="carousel-btn carousel-btn--next" aria-label="Następny" data-carousel="packages">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS SLIDER -->
+  <section class="rooms-section">
+    <div class="rooms-inner">
+      <div class="section-head">
+        <h2>Pokoje</h2>
+        <a href="/pokoje" class="see-all">Wszystkie pokoje →</a>
+      </div>
+      <div class="carousel-wrap">
+        <button class="carousel-btn carousel-btn--prev" aria-label="Poprzedni" data-carousel="rooms">&#8249;</button>
+        <div class="carousel" id="carousel-rooms">
+          {rooms.map((room) => (
+            <article class="room-card">
+              <div class="room-card-img">
+                <img src={room.image} alt={room.title} loading="lazy" />
+              </div>
+              <div class="room-card-body">
+                <h3>{room.title}</h3>
+                {room.price && <p class="room-price">od <strong>{room.price} zł</strong> /os.</p>}
+                <div class="room-card-actions">
+                  <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm">Rezerwuj</a>
+                  <a href={room.path} class="btn-link-sm">szczegóły</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <button class="carousel-btn carousel-btn--next" aria-label="Następny" data-carousel="rooms">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section">
+    <div class="reviews-inner">
+      <div class="ratings-badges">
+        <div class="rating-badge">
+          <span class="rating-score">8.3</span>
+          <span class="rating-platform">Booking.com</span>
+        </div>
+        <div class="rating-badge">
+          <span class="rating-score">4.3/5</span>
+          <span class="rating-platform">Google</span>
+        </div>
+        <div class="rating-badge">
+          <span class="rating-score">8.8</span>
+          <span class="rating-platform">Facebook</span>
+        </div>
+      </div>
+      <ul class="reviews-list">
+        {reviews.map((r) => (
+          <li class="review-item">
+            <p class="review-text">&#8222;{r.text}&#8221;</p>
+            <span class="review-author">~ {r.author}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <h2>Newsletter</h2>
+      <form class="newsletter-form" id="newsletter-form" novalidate>
+        <label for="nl-email" class="sr-only">Adres e-mail</label>
+        <input type="email" id="nl-email" name="email" placeholder="Twój adres e-mail" required />
+        <button type="submit">Wyślij</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <section class="contact-strip">
+    <div class="contact-strip-inner">
+      <address>
+        <strong>Hotel Zacisze</strong><br />
+        ul. Biwakowa 2, 46-045 Turawa k. Opola
+      </address>
+      <a href="tel:+48774029030" class="contact-phone">+48 77 402 90 30</a>
+      <a href="/kontakt" class="btn-outline">Kontakt</a>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<script>
+  const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+
+  // Date picker
+  const form = document.getElementById("date-picker-form");
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const arrival = fd.get("arrival");
+    const departure = fd.get("departure");
+    const persons = fd.get("persons");
+    if (arrival && departure) {
+      const params = new URLSearchParams({ arrivalDate: String(arrival), departureDate: String(departure), personsCount: String(persons) });
+      window.open(`${BOOKING_BASE}/offers?${params}`, "_blank", "noopener");
+    } else {
+      window.open(BOOKING_BASE, "_blank", "noopener");
+    }
+  });
+
+  const today = new Date().toISOString().split("T")[0];
+  const arrInput = document.getElementById("dp-arrival");
+  const depInput = document.getElementById("dp-departure");
+  if (arrInput) arrInput.setAttribute("min", today);
+  if (depInput) depInput.setAttribute("min", today);
+  arrInput?.addEventListener("change", () => {
+    const val = arrInput.getAttribute("value") || arrInput.value;
+    if (depInput && val) depInput.setAttribute("min", val);
+  });
+
+  // Carousels
+  document.querySelectorAll(".carousel-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-carousel");
+      const carousel = document.getElementById("carousel-" + id);
+      if (!carousel) return;
+      const card = carousel.querySelector(".offer-card, .room-card");
+      const cardWidth = card ? card.offsetWidth + 16 : 300;
+      const dir = btn.classList.contains("carousel-btn--prev") ? -1 : 1;
+      carousel.scrollBy({ left: dir * cardWidth, behavior: "smooth" });
+    });
+  });
+
+  // Newsletter
+  const nlForm = document.getElementById("newsletter-form");
+  nlForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = nlForm.querySelector("input");
+    if (input) { input.value = ""; input.placeholder = "Dziękujemy za zapis!"; }
+  });
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  .hero-media { position: absolute; inset: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.72) 100%);
+  }
+  .hero-content {
+    position: relative;
+    padding: 2rem 1.25rem 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: #fff;
+    max-width: 16ch;
+    line-height: 1.15;
+  }
+  .hero-sub { margin-top: 0.5rem; font-size: 0.9375rem; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; }
+
+  /* DATE PICKER */
+  .date-picker-wrap {
+    position: relative;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    padding: 1rem 1.25rem;
+  }
+  .date-picker {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+  }
+  .dp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+    min-width: 130px;
+  }
+  .dp-field label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+  .dp-field input,
+  .dp-field select {
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 0.9375rem;
+    font-family: var(--font-body);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  .dp-field input:focus, .dp-field select:focus { border-color: rgba(255,255,255,0.7); }
+  .dp-field input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: 0.6; cursor: pointer; }
+  .dp-field select option { color: var(--text); background: var(--bg); }
+  .dp-btn {
+    padding: 0.5rem 1.5rem;
+    background: var(--surface);
+    color: var(--dark);
+    border: 1px solid var(--surface);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    align-self: flex-end;
+    border-radius: 0;
+  }
+  .dp-btn:hover { background: transparent; color: #fff; border-color: #fff; }
+
+  /* INTRO */
+  .intro { padding: 4rem 1.25rem; background: var(--bg); }
+  .intro-inner { max-width: 1280px; margin: 0 auto; display: grid; gap: 3rem; }
+  @media (min-width: 768px) { .intro-inner { grid-template-columns: 1fr 1fr; align-items: center; } }
+  .intro-text h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; margin-bottom: 1rem; }
+  .intro-text p { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 0.875rem; }
+  .intro-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+
+  /* SECTION BANNERS */
+  .section-banner { background: var(--surface); border-top: 1px solid var(--muted); padding: 3rem 1.25rem; }
+  .section-banner-inner { max-width: 1280px; margin: 0 auto; display: grid; gap: 2.5rem; }
+  @media (min-width: 768px) {
+    .section-banner-inner { grid-template-columns: 1fr 1fr; align-items: center; }
+    .section-banner--reverse .section-banner-photo { order: 2; }
+    .section-banner--reverse .section-banner-text { order: 1; }
+  }
+  .section-banner-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .section-banner-text h2 { font-size: clamp(1.4rem, 3vw, 1.875rem); font-weight: 400; margin-bottom: 1rem; }
+  .section-banner-text p { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 1.25rem; }
+
+  /* VOUCHERS */
+  .vouchers-section { background: var(--dark); padding: 2.5rem 1.25rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  .vouchers-inner { max-width: 600px; margin: 0 auto; }
+  .vouchers-section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; color: var(--surface); margin-bottom: 0.75rem; }
+  .vouchers-section p { font-size: 0.9375rem; color: var(--muted); margin-bottom: 1.25rem; }
+
+  /* SECTION HEAD */
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+  .section-head h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; }
+  .see-all { font-size: 0.875rem; color: var(--text-secondary); text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+  .see-all:hover { color: var(--text); }
+
+  /* PACKAGES + ROOMS */
+  .packages-section { padding: 3rem 1.25rem; background: var(--bg); border-top: 1px solid var(--muted); }
+  .packages-inner { max-width: 1280px; margin: 0 auto; }
+  .rooms-section { padding: 3rem 1.25rem; background: var(--surface); border-top: 1px solid var(--muted); }
+  .rooms-inner { max-width: 1280px; margin: 0 auto; }
+
+  /* CAROUSEL */
+  .carousel-wrap { position: relative; }
+  .carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+  .carousel::-webkit-scrollbar { display: none; }
+
+  .offer-card, .room-card {
+    flex: 0 0 calc(100% - 1rem);
+    scroll-snap-align: start;
+    background: var(--surface);
+    border: 1px solid var(--muted);
+    overflow: hidden;
+  }
+  @media (min-width: 480px) { .offer-card, .room-card { flex: 0 0 calc(50% - 0.5rem); } }
+  @media (min-width: 960px) {
+    .offer-card { flex: 0 0 calc(25% - 0.75rem); }
+    .room-card  { flex: 0 0 calc(33.333% - 0.675rem); }
+  }
+
+  .offer-card-link { display: block; text-decoration: none; color: inherit; }
+  .offer-card-img img, .room-card-img img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: opacity 0.3s;
+  }
+  .offer-card:hover .offer-card-img img, .room-card:hover .room-card-img img { opacity: 0.88; }
+
+  .offer-card-body, .room-card-body { padding: 1rem; }
+  .offer-card-body h3, .room-card-body h3 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+  }
+  .offer-meta { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+  .offer-details {
+    font-size: 0.8125rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .room-price { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem; }
+  .room-price strong { font-weight: 700; color: var(--text); font-size: 1rem; }
+  .room-card-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+  .carousel-btn {
+    display: none;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: #fff;
+    border: 1px solid var(--muted);
+    cursor: pointer;
+    font-size: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: background 0.2s;
+    line-height: 1;
+  }
+  .carousel-btn:hover { background: var(--muted); }
+  .carousel-btn--prev { left: -1rem; }
+  .carousel-btn--next { right: -1rem; }
+  @media (min-width: 640px) { .carousel-btn { display: flex; } }
+
+  /* REVIEWS */
+  .reviews-section { padding: 3rem 1.25rem; background: var(--bg); border-top: 1px solid var(--muted); }
+  .reviews-inner { max-width: 1280px; margin: 0 auto; }
+  .ratings-badges { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .rating-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--muted);
+    min-width: 110px;
+  }
+  .rating-score { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 400; line-height: 1; color: var(--text); }
+  .rating-platform { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); margin-top: 0.25rem; }
+  .reviews-list { list-style: none; display: grid; gap: 1rem; }
+  @media (min-width: 640px) { .reviews-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .reviews-list { grid-template-columns: repeat(3, 1fr); } }
+  .review-item { background: var(--surface); border: 1px solid var(--muted); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .review-text { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.65; font-style: italic; flex: 1; }
+  .review-author { font-size: 0.8125rem; color: var(--text); letter-spacing: 0.03em; }
+
+  /* NEWSLETTER */
+  .newsletter-section { padding: 3rem 1.25rem; background: var(--surface); border-top: 1px solid var(--muted); text-align: center; }
+  .newsletter-inner { max-width: 480px; margin: 0 auto; }
+  .newsletter-inner h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 400; margin-bottom: 1.25rem; }
+  .newsletter-form { display: flex; gap: 0; }
+  .newsletter-form input {
+    flex: 1;
+    padding: 0.625rem 1rem;
+    border: 1px solid var(--muted);
+    border-right: none;
+    background: #fff;
+    font-size: 0.9375rem;
+    font-family: var(--font-body);
+    color: var(--text);
+    outline: none;
+    border-radius: 0;
+  }
+  .newsletter-form input:focus { border-color: var(--text-secondary); }
+  .newsletter-form button {
+    padding: 0.625rem 1.25rem;
+    background: var(--dark);
+    color: var(--surface);
+    border: 1px solid var(--dark);
+    font-size: 0.875rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    white-space: nowrap;
+    border-radius: 0;
+  }
+  .newsletter-form button:hover { background: var(--text-secondary); border-color: var(--text-secondary); }
+
+  /* CONTACT STRIP */
+  .contact-strip { background: var(--dark); padding: 2rem 1.25rem; }
+  .contact-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact-strip address { font-style: normal; font-size: 0.9375rem; color: var(--muted); line-height: 1.5; }
+  .contact-strip address strong { color: #fff; }
+  .contact-phone { font-size: 1.125rem; font-weight: 600; color: #fff; text-decoration: none; transition: color 0.2s; }
+  .contact-phone:hover { color: var(--muted); }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    background: var(--dark);
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-primary:hover { background: transparent; color: var(--dark); }
+  .btn-primary.btn-sm { padding: 0.4rem 0.9rem; font-size: 0.75rem; }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.35);
+    transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: #fff; }
+  .btn-link { font-size: 0.875rem; color: var(--text); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+  .btn-link:hover { color: var(--text-secondary); }
+  .btn-link-light { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .btn-link-light:hover { color: #fff; }
+  .btn-link-sm { font-size: 0.8125rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  .btn-link-sm:hover { color: var(--text); }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+</style>

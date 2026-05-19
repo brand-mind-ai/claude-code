@@ -1,0 +1,373 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import packagesData from "../data/packages.json";
+
+const bookingBase = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+---
+
+<BaseLayout
+  title="SPA Opole Turawa zaciszeturawa.pl - najlepsze opolskie SPA"
+  description="Hotel Zacisze Turawa zaprasza do SPA w okolicy Opola. Strefa Spa."
+  canonicalPath="/spa"
+  ogImage="/assets/current/hotel/Copy of 062.jpg"
+>
+  <div class="page-hero" style="background-image: url('/assets/current/hotel/Copy of 062.jpg')">
+    <div class="page-hero-inner">
+      <h1>Strefa SPA</h1>
+    </div>
+  </div>
+
+  <section class="spa-section">
+    <div class="spa-inner">
+      <div class="spa-intro">
+        <p class="spa-lead">Strefa SPA w cenie każdego noclegu — bez limitów, codziennie od 16:00 do 22:00. Sauna sucha, jacuzzi, balia z zimną wodą, grota solna i siłownia czekają na Ciebie po całym dniu nad jeziorem.</p>
+        <p>Nie nocujesz u nas? Zapraszamy na 3-godzinny pakiet SPA za 65 zł/os. — pełny dostęp do wszystkich stref.</p>
+      </div>
+
+      <div class="spa-features">
+        <div class="spa-feature">
+          <img src="/assets/current/hotel/Copy of 062.jpg" alt="Sauna" class="spa-feature-img" loading="lazy" />
+          <div class="spa-feature-text">
+            <h2>Sauna</h2>
+            <p>Sauna głównie wpływa na nasz układ krążenia, roszerza naczynia krwionośne, zwiększa szybkość przepływu krwi, przyspiesza akcję serca o około 50%. Sauna powoduje także pocenie się ciała, przez co nasz orgaznizm pozbywa się toksyn. Podwyższona temperatura powoduje rozluźnienie się mięśni oraz poprawia ruchomość stawów.</p>
+            <ul>
+              <li>wzrost sprawności układu oddechowego</li>
+              <li>stymulację układu odpornościowego</li>
+              <li>odprężenie psychiczne</li>
+              <li>oczyszczenie skóry</li>
+              <li>pobudzenie akcji serca i układu krążenia</li>
+              <li>pobudzenie gruczołów dokrewnych</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="spa-feature spa-feature--reversed">
+          <img src="/assets/current/hotel/Copy of 071.jpg" alt="Jacuzzi" class="spa-feature-img" loading="lazy" />
+          <div class="spa-feature-text">
+            <h2>Jacuzzi</h2>
+            <p>Podstawowe korzyści zdrowotne, jakie daje kąpiel w jacuzzi to:</p>
+            <p><strong>Ulga w napięciu</strong> – hydroterapia w parze z terapią ciepłem i zanurzeniem w wodzie pozwalają złagodzić napięcie i usunąć sztywność mięśni. Sprawiają, że krew zaczyna krążyć swobodniej.</p>
+            <p><strong>Ulga w bólach reumatycznych i fibromialgii</strong> – w wannie można poczuć się jak w profesjonalnym salonie masażu, odczuć znaczącą ulgę w stanach przewlekłego reumatyzmu i bólu stawów.</p>
+            <p><strong>Poprawa snu</strong> – ciepło redukuje wewnętrzną temperaturę ciała, pozwalając na naturalny relaks, co prowadzi do odpoczynku i rozluźnienia organizmu.</p>
+          </div>
+        </div>
+
+        <div class="spa-feature">
+          <img src="/assets/current/hotel/Copy of 080.jpg" alt="Grota solna" class="spa-feature-img" loading="lazy" />
+          <div class="spa-feature-text">
+            <h2>Grota solna</h2>
+            <p>Już 45 minut w jaskini solnej wystarczy, by korzyści dla zdrowia były porównywalne z efektami kilkudniowego pobytu nad morzem!</p>
+            <p>Jeśli czujesz potrzebę wzmocnienia odporności organizmu, seans w grocie solnej to doskonały pomysł. Wizyta w komnacie solnej jest wskazana również przy niektórych schorzeniach, takich jak choroby dróg oddechowych, niedoczynność tarczycy, zapalenie zatok, bezsenność, nerwicę, alergię, choroby układu nerwowego oraz układu krążenia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages-section">
+    <div class="packages-inner">
+      <h2 class="section-title">Oferty z SPA</h2>
+      <div class="carousel-wrap">
+        <div class="carousel" id="spa-carousel">
+          {packagesData.map((pkg) => (
+            <article class="pkg-card">
+              <a href={pkg.path} class="pkg-img-wrap">
+                <img src={pkg.image} alt={pkg.title} class="pkg-img" loading="lazy" />
+              </a>
+              <div class="pkg-info">
+                <h3 class="pkg-title">{pkg.title}</h3>
+                <p class="pkg-meta">{pkg.duration} · od {pkg.price} zł / os.</p>
+                <a href={pkg.path} class="btn-details">Szczegóły</a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <button class="carousel-btn carousel-prev" aria-label="Poprzedni">&#8592;</button>
+        <button class="carousel-btn carousel-next" aria-label="Następny">&#8594;</button>
+      </div>
+      <div class="packages-cta">
+        <a href="/pakiety_pobytowe" class="btn-all">Zobacz wszystkie oferty</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-strip">
+    <div class="booking-strip-inner">
+      <p>Zarezerwuj pobyt ze Strefą SPA</p>
+      <a href={bookingBase} target="_blank" rel="noopener noreferrer" class="btn-book">Rezerwuj online</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const carousel = document.getElementById("spa-carousel");
+  document.querySelector(".carousel-prev")?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: -320, behavior: "smooth" });
+  });
+  document.querySelector(".carousel-next")?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: 320, behavior: "smooth" });
+  });
+</script>
+
+<style>
+  .page-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .spa-section {
+    padding: 4rem 0;
+  }
+
+  .spa-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .spa-intro {
+    max-width: 760px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  .spa-lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .spa-features {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .spa-feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .spa-feature {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .spa-feature--reversed .spa-feature-img {
+      order: 2;
+    }
+
+    .spa-feature--reversed .spa-feature-text {
+      order: 1;
+    }
+  }
+
+  .spa-feature-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .spa-feature-text h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .spa-feature-text p {
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .spa-feature-text ul {
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+  }
+
+  .packages-section {
+    background: #f0ebe3;
+    padding: 4rem 0;
+  }
+
+  .packages-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text);
+  }
+
+  .carousel-wrap {
+    position: relative;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+
+  .carousel::-webkit-scrollbar { display: none; }
+
+  .pkg-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .pkg-img-wrap { display: block; overflow: hidden; }
+
+  .pkg-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .pkg-card:hover .pkg-img { transform: scale(1.04); }
+
+  .pkg-info {
+    padding: 1rem;
+  }
+
+  .pkg-title {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+
+  .pkg-meta {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.9rem;
+  }
+
+  .btn-details {
+    display: inline-flex;
+    padding: 0.4rem 1rem;
+    background: var(--dark);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-details:hover { background: var(--text-secondary); }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+    z-index: 2;
+  }
+
+  .carousel-btn:hover { opacity: 1; }
+  .carousel-prev { left: -0.5rem; }
+  .carousel-next { right: -0.5rem; }
+
+  .packages-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-all {
+    display: inline-flex;
+    padding: 0.7rem 2rem;
+    background: transparent;
+    color: var(--dark);
+    border: 1px solid var(--dark);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-all:hover {
+    background: var(--dark);
+    color: #fff;
+  }
+
+  .booking-strip {
+    background: var(--dark);
+    padding: 2.5rem 1.25rem;
+  }
+
+  .booking-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .btn-book {
+    display: inline-flex;
+    padding: 0.6rem 1.75rem;
+    background: var(--surface);
+    color: var(--dark);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--surface);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book:hover {
+    background: transparent;
+    color: var(--surface);
+  }
+</style>

@@ -1,0 +1,219 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import roomsData from "../data/rooms.json";
+import siteData from "../data/site.json";
+
+const bookingBase = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+const { phone } = siteData;
+---
+
+<BaseLayout
+  title="Hotel Zacisze ★★★ Turawa – Pokoje"
+  description="Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób."
+  canonicalPath="/pokoje"
+>
+  <div class="page-hero" style={`background-image: url('/assets/current/hotel/Copy of 104.jpg')`}>
+    <div class="page-hero-inner">
+      <h1>Pokoje</h1>
+    </div>
+  </div>
+
+  <section class="rooms-section">
+    <div class="rooms-inner">
+      <div class="rooms-grid">
+        {roomsData.map((room) => (
+          <article class="room-card">
+            <a href={room.path} class="room-img-link">
+              <img src={room.image} alt={room.title} class="room-img" loading="lazy" />
+            </a>
+            <div class="room-info">
+              <h2 class="room-title">{room.title}</h2>
+              {room.price && (
+                <p class="room-price">od <strong>{room.price} zł</strong> / noc</p>
+              )}
+              <div class="room-actions">
+                <a href={room.path} class="btn-details">Szczegóły</a>
+                <a href={bookingBase} target="_blank" rel="noopener noreferrer" class="btn-book">Rezerwuj</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-strip">
+    <div class="contact-strip-inner">
+      <p>Pytania? Zadzwoń do nas: <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a></p>
+      <a href="/kontakt" class="btn-contact">Kontakt</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .rooms-section {
+    padding: 4rem 0;
+  }
+
+  .rooms-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .rooms-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .room-card {
+    background: var(--surface);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .room-img-link { display: block; }
+
+  .room-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+  }
+
+  .room-card:hover .room-img { transform: scale(1.03); }
+  .room-img-link { overflow: hidden; display: block; }
+
+  .room-info {
+    padding: 1.25rem;
+  }
+
+  .room-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .room-price {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .room-price strong {
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  .room-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-details,
+  .btn-book {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-details {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--muted);
+  }
+
+  .btn-details:hover {
+    background: var(--text);
+    color: #fff;
+    border-color: var(--text);
+  }
+
+  .btn-book {
+    background: var(--dark);
+    color: #fff;
+    border: 1px solid var(--dark);
+  }
+
+  .btn-book:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  .contact-strip {
+    background: var(--dark);
+    padding: 2.5rem 1.25rem;
+  }
+
+  .contact-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .contact-strip-inner a:not(.btn-contact) {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btn-contact {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-contact:hover { color: #fff; border-color: #fff; }
+</style>

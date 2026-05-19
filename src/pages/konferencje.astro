@@ -1,0 +1,368 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import packagesData from "../data/packages.json";
+
+const bookingBase = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+---
+
+<BaseLayout
+  title="Hotel Zacisze ★★★ Turawa – Konferencje"
+  description="Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Sale konferencyjne do 150 osób, 75 miejsc noclegowych, organizacja szkoleń i imprez integracyjnych."
+  canonicalPath="/konferencje"
+  ogImage="/assets/current/hotel/Copy of 017.jpg"
+>
+  <div class="page-hero" style="background-image: url('/assets/current/hotel/Copy of 017.jpg')">
+    <div class="page-hero-inner">
+      <h1>Konferencje i szkolenia</h1>
+    </div>
+  </div>
+
+  <section class="conf-section">
+    <div class="conf-inner">
+      <div class="conf-intro">
+        <p class="conf-lead">Oferujemy kompleksową organizację szkoleń, konferencji, a także imprez integracyjnych i innych wydarzeń firmowych, dostosowanych do indywidualnych potrzeb i oczekiwań naszych klientów.</p>
+        <p>Dysponujemy dwoma klimatyzowanymi salami konferencyjnymi, wyposażonymi w projektory i nagłośnienie, oraz elegancką salą bankietową, zapewniającymi odpowiednie warunki do efektywnej pracy oraz udanych spotkań biznesowych.</p>
+        <p>Dodatkowo, dla wygody naszych gości, oferujemy aż 75 miejsc noclegowych w komfortowych warunkach, umożliwiając udział w wydarzeniach bez konieczności podróżowania poza obiekt.</p>
+      </div>
+
+      <div class="conf-features">
+        <div class="conf-feature">
+          <img src="/assets/current/hotel/Copy of 017.jpg" alt="Sala konferencyjna" class="conf-feature-img" loading="lazy" />
+          <div class="conf-feature-text">
+            <h2>Sale konferencyjne</h2>
+            <ul>
+              <li>2 klimatyzowane sale konferencyjne</li>
+              <li>Projektory multimedialny i nagłośnienie</li>
+              <li>Dostęp do internetu Wi-Fi</li>
+              <li>Catering na zamówienie</li>
+              <li>75 miejsc noclegowych</li>
+              <li>Sala bankietowa do 150 osób</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="conf-cta">
+        <p>Zapoznaj się z naszą kompletną ofertą skierowaną do firm, która obejmuje szeroki zakres usług oraz zróżnicowane propozycje menu.</p>
+        <a
+          href="/up/files/OFERTA%20DLA%20FIRM%202025%20-%20Hotel%20Zacisze%20w%20Turawie(1).pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-pdf"
+        >Otwórz pełną ofertę dla firm</a>
+        <a href="/kontakt" class="btn-contact-link">Kontakt</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages-section">
+    <div class="packages-inner">
+      <h2 class="section-title">Oferty pobytowe</h2>
+      <div class="carousel-wrap">
+        <div class="carousel" id="conf-carousel">
+          {packagesData.map((pkg) => (
+            <article class="pkg-card">
+              <a href={pkg.path} class="pkg-img-wrap">
+                <img src={pkg.image} alt={pkg.title} class="pkg-img" loading="lazy" />
+              </a>
+              <div class="pkg-info">
+                <h3 class="pkg-title">{pkg.title}</h3>
+                <p class="pkg-meta">{pkg.duration} · od {pkg.price} zł / os.</p>
+                <a href={pkg.path} class="btn-details">Szczegóły</a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <button class="carousel-btn carousel-prev" aria-label="Poprzedni">&#8592;</button>
+        <button class="carousel-btn carousel-next" aria-label="Następny">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-strip">
+    <div class="booking-strip-inner">
+      <p>Zarezerwuj nocleg dla uczestników konferencji</p>
+      <a href={bookingBase} target="_blank" rel="noopener noreferrer" class="btn-book">Rezerwuj online</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const carousel = document.getElementById("conf-carousel");
+  document.querySelector(".carousel-prev")?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: -320, behavior: "smooth" });
+  });
+  document.querySelector(".carousel-next")?.addEventListener("click", () => {
+    carousel?.scrollBy({ left: 320, behavior: "smooth" });
+  });
+</script>
+
+<style>
+  .page-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .conf-section {
+    padding: 4rem 0;
+  }
+
+  .conf-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .conf-intro {
+    max-width: 760px;
+  }
+
+  .conf-lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .conf-intro p {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .conf-features {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .conf-feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .conf-feature {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .conf-feature-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .conf-feature-text h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .conf-feature-text ul {
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 2;
+  }
+
+  .conf-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .conf-cta p {
+    max-width: 640px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .conf-cta-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-pdf,
+  .btn-contact-link {
+    display: inline-flex;
+    padding: 0.55rem 1.25rem;
+    background: var(--dark);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-contact-link {
+    background: transparent;
+    color: var(--dark);
+    border: 1px solid var(--dark);
+  }
+
+  .btn-pdf:hover { background: var(--text-secondary); }
+  .btn-contact-link:hover { background: var(--dark); color: #fff; }
+
+  .packages-section {
+    background: #f0ebe3;
+    padding: 4rem 0;
+  }
+
+  .packages-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text);
+  }
+
+  .carousel-wrap { position: relative; }
+
+  .carousel {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+
+  .carousel::-webkit-scrollbar { display: none; }
+
+  .pkg-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .pkg-img-wrap { display: block; overflow: hidden; }
+
+  .pkg-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .pkg-card:hover .pkg-img { transform: scale(1.04); }
+
+  .pkg-info { padding: 1rem; }
+
+  .pkg-title {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+
+  .pkg-meta {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.9rem;
+  }
+
+  .btn-details {
+    display: inline-flex;
+    padding: 0.4rem 1rem;
+    background: var(--dark);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-details:hover { background: var(--text-secondary); }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+    z-index: 2;
+  }
+
+  .carousel-btn:hover { opacity: 1; }
+  .carousel-prev { left: -0.5rem; }
+  .carousel-next { right: -0.5rem; }
+
+  .booking-strip {
+    background: var(--dark);
+    padding: 2.5rem 1.25rem;
+  }
+
+  .booking-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .btn-book {
+    display: inline-flex;
+    padding: 0.6rem 1.75rem;
+    background: var(--surface);
+    color: var(--dark);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--surface);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book:hover {
+    background: transparent;
+    color: var(--surface);
+  }
+</style>

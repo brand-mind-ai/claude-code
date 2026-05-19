@@ -1,0 +1,214 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const bookingBase = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+
+const packages = [
+  { title: "Długi weekend czerwcowy", path: "/boze_cialo_w_zaciszu_", duration: "3 dni", price: "620", image: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg" },
+  { title: "Wakacje nad Jeziorem Turawskim 4 dni", path: "/wakacje-4-dni", duration: "4 dni", price: "608", image: "/assets/current/hotel/490343791_1196676219129774_3695689002660428792_n.jpg" },
+  { title: "Wakacje nad Jeziorem Turawskim 6 dni", path: "/wakacje_6_dni_nad_jeziorem_turawskim_2021", duration: "6 dni", price: "1025", image: "/assets/current/hotel/495793406_1220022830128446_3764504780736735331_n.jpg" },
+  { title: "Wakacje nad Jeziorem Turawskim 8 dni", path: "/wakacje_nad_jeziorem_turawskim_2021", duration: "8 dni", price: "1418", image: "/assets/current/hotel/645740576_1480793004051426_5360198729458927980_n.jpg" },
+  { title: "wSPAniały Weekend", path: "/wspanialy-weekend", duration: "3 dni", price: "615", image: "/assets/current/hotel/Copy of Copy of Zacisze4.jpg" },
+  { title: "Lejdis", path: "/lejdis", duration: "2 dni", price: "370", image: "/assets/current/hotel/Copy of Copy of Zacisze7.jpg" },
+  { title: "Rocznica Ślubu", path: "/rocznica_slubu", duration: "3 dni", price: "705", image: "/assets/current/hotel/Copy of Copy of Zacisze9.jpg" },
+];
+---
+
+<BaseLayout
+  title="Hotel Zacisze ★★★ Turawa – Oferty pobytowe"
+  description="Hotel Zacisze ★★★ w Turawie — oferty pobytowe nad Jeziorem Turawskim. Strefa SPA, restauracja, konferencje. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
+  canonicalPath="/pakiety_pobytowe"
+  ogImage="/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
+>
+  <div class="page-hero" style="background-image: url('/assets/current/hotel/Copy of 103.jpg')">
+    <div class="page-hero-inner">
+      <h1>Oferty pobytowe</h1>
+    </div>
+  </div>
+
+  <section class="packages-section">
+    <div class="packages-inner">
+      <div class="packages-grid">
+        {packages.map((pkg) => (
+          <article class="pkg-card">
+            <a href={pkg.path} class="pkg-img-wrap">
+              <img src={pkg.image} alt={pkg.title} class="pkg-img" loading="lazy" />
+            </a>
+            <div class="pkg-info">
+              <h2 class="pkg-title">{pkg.title}</h2>
+              <p class="pkg-meta">{pkg.duration} · od {pkg.price} zł / os.</p>
+              <div class="pkg-actions">
+                <a href={pkg.path} class="btn-details">Szczegóły</a>
+                <a href={bookingBase} target="_blank" rel="noopener noreferrer" class="btn-book">Rezerwuj</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-strip">
+    <div class="booking-strip-inner">
+      <p>Zarezerwuj pobyt w Hotelu Zacisze</p>
+      <a href={bookingBase} target="_blank" rel="noopener noreferrer" class="btn-book-main">Rezerwuj online</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .packages-section {
+    padding: 4rem 0;
+  }
+
+  .packages-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .packages-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .packages-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .pkg-card {
+    background: var(--surface);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .pkg-img-wrap { display: block; overflow: hidden; }
+
+  .pkg-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    display: block;
+  }
+
+  .pkg-card:hover .pkg-img { transform: scale(1.03); }
+
+  .pkg-info { padding: 1.25rem; }
+
+  .pkg-title {
+    font-size: 1.0625rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+
+  .pkg-meta {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .pkg-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-details,
+  .btn-book {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-details {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--muted);
+  }
+
+  .btn-details:hover {
+    background: var(--text);
+    color: #fff;
+    border-color: var(--text);
+  }
+
+  .btn-book {
+    background: var(--dark);
+    color: #fff;
+    border: 1px solid var(--dark);
+  }
+
+  .btn-book:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  .booking-strip {
+    background: var(--dark);
+    padding: 2.5rem 1.25rem;
+  }
+
+  .booking-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  .btn-book-main {
+    display: inline-flex;
+    padding: 0.6rem 1.75rem;
+    background: var(--surface);
+    color: var(--dark);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--surface);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book-main:hover {
+    background: transparent;
+    color: var(--surface);
+  }
+</style>

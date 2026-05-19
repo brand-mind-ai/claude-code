@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Pokój Classic",
+    "path": "/pokoj_2os_classic",
+    "image": "/assets/current/hotel/Copy of 003.jpg",
+    "price": "220"
+  },
+  {
+    "title": "Pokój Lux TWIN",
+    "path": "/pokoj_2os_lux",
+    "image": "/assets/current/hotel/Copy of 024.jpg",
+    "price": "240"
+  },
+  {
+    "title": "Pokój Lux DBL",
+    "path": "/pokoj_lux_dbl",
+    "image": "/assets/current/hotel/Copy of 084.jpg",
+    "price": "240"
+  },
+  {
+    "title": "Pokój na poddaszu",
+    "path": "/pokoj_na_poddaszu",
+    "image": "/assets/current/hotel/Copy of 073.jpg",
+    "price": null
+  },
+  {
+    "title": "Pokój Classic z dostawką",
+    "path": "/pokoj_classic_z_dostawka",
+    "image": "/assets/current/hotel/Copy of 061.jpg",
+    "price": null
+  },
+  {
+    "title": "Apartament w ogrodzie",
+    "path": "/apartament_w_domku_wolnostojacym",
+    "image": "/assets/current/hotel/Copy of 101.jpg",
+    "price": "270"
+  }
+]

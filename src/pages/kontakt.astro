@@ -1,0 +1,303 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import siteData from "../data/site.json";
+
+const { phone, phoneMobile, email, address, mapsUrl } = siteData;
+---
+
+<BaseLayout
+  title="Hotel Zacisze ★★★ Turawa – Kontakt"
+  description="Hotel Zacisze ★★★ w Turawie — dane kontaktowe, adres, dojazd. ul. Biwakowa 2, 46-045 Turawa k. Opola."
+  canonicalPath="/kontakt"
+>
+  <div class="page-hero" style="background-image: url('/assets/current/hotel/Copy of 103.jpg')">
+    <div class="page-hero-inner">
+      <h1>Kontakt</h1>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-details">
+        <div class="contact-block">
+          <h2>Adres</h2>
+          <address>
+            <strong>Hotel Zacisze</strong><br />
+            ul. Biwakowa 2<br />
+            46-045 Turawa k. Opola
+          </address>
+          <p class="contact-detail-small">NIP: 631-100-77-63 · REGON: 272335020</p>
+          <p class="contact-detail-small">GPS: 50.740835, 18.119496</p>
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="btn-maps">Pokaż na mapie</a>
+        </div>
+
+        <div class="contact-block">
+          <h2>Telefon</h2>
+          <p><a href={`tel:${phone.replace(/\s/g, "")}`} class="contact-link">{phone}</a></p>
+          <p><a href={`tel:${phoneMobile.replace(/\s/g, "")}`} class="contact-link">{phoneMobile}</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h2>Email</h2>
+          <p><a href={`mailto:${email}`} class="contact-link">{email}</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h2>Konto bankowe</h2>
+          <p class="contact-detail-small">72 1140 2004 0000 3502 7736 2950 (mBANK)</p>
+          <p class="contact-detail-small">Hotel Zacisze, ul. Biwakowa 2, 46-045 Turawa k. Opola</p>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.4!2d18.119496!3d50.740835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDQ0JzI3LjAiTiAxOMKwMDcnMTAuMiJF!5e0!3m2!1spl!2spl!4v1"
+          width="100%"
+          height="400"
+          style="border: 0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokalizacja Hotel Zacisze Turawa"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-form-section">
+    <div class="contact-form-inner">
+      <h2>Wyślij wiadomość</h2>
+      <p>Masz pytania? Napisz do nas — odpiszemy najszybciej jak to możliwe.</p>
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Imię i nazwisko</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Wiadomość</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="cf-submit">Wyślij</button>
+        <p class="form-note">Formularz kontaktowy — wiadomość zostanie wysłana na adres hotelu.</p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const btn = document.getElementById("cf-submit") as HTMLButtonElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
+
+    if (!name || !email || !message) return;
+
+    window.location.href = `mailto:biuro@zaciszeturawa.pl?subject=Wiadomość od ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AEmail: ${encodeURIComponent(email)}`;
+  });
+</script>
+
+<style>
+  .page-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  .contact-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .contact-inner {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-block h2 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-block address {
+    font-style: normal;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-detail-small {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.0625rem;
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover { color: var(--text-secondary); }
+
+  .btn-maps {
+    display: inline-flex;
+    margin-top: 0.75rem;
+    padding: 0.45rem 1rem;
+    background: var(--dark);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-maps:hover { background: var(--text-secondary); }
+
+  .contact-map iframe {
+    display: block;
+    width: 100%;
+  }
+
+  .contact-form-section {
+    background: #f0ebe3;
+    padding: 4rem 0;
+  }
+
+  .contact-form-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .contact-form-inner h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .contact-form-inner > p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 600px) {
+    .form-row { grid-template-columns: 1fr 1fr; }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.6rem 0.875rem;
+    background: #fff;
+    border: 1px solid var(--muted);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--text-secondary);
+  }
+
+  .btn-submit {
+    align-self: flex-start;
+    padding: 0.65rem 2rem;
+    background: var(--dark);
+    color: #fff;
+    border: 1px solid var(--dark);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-submit:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  .form-note {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-top: -0.5rem;
+  }
+</style>

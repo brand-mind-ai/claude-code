@@ -1,0 +1,235 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const images = [
+  { src: "/assets/current/hotel/Copy of 103.jpg", alt: "Hotel Zacisze - widok zewnętrzny" },
+  { src: "/assets/current/hotel/Copy of 104.jpg", alt: "Hotel Zacisze - pokoje" },
+  { src: "/assets/current/hotel/Copy of 003.jpg", alt: "Pokój Classic" },
+  { src: "/assets/current/hotel/Copy of 024.jpg", alt: "Pokój Lux TWIN" },
+  { src: "/assets/current/hotel/Copy of 084.jpg", alt: "Pokój Lux DBL" },
+  { src: "/assets/current/hotel/Copy of 073.jpg", alt: "Pokój na poddaszu" },
+  { src: "/assets/current/hotel/Copy of 061.jpg", alt: "Pokój Classic z dostawką" },
+  { src: "/assets/current/hotel/Copy of 101.jpg", alt: "Apartament w ogrodzie" },
+  { src: "/assets/current/hotel/Copy of 062.jpg", alt: "Strefa SPA" },
+  { src: "/assets/current/hotel/Copy of 071.jpg", alt: "Jacuzzi" },
+  { src: "/assets/current/hotel/Copy of 080.jpg", alt: "Grota solna" },
+  { src: "/assets/current/hotel/Copy of 094.jpg", alt: "Hotel - wnętrze" },
+  { src: "/assets/current/hotel/Copy of 017.jpg", alt: "Sala konferencyjna" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze41.jpg", alt: "Restauracja" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze43.jpg", alt: "Sala bankietowa" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze46.jpg", alt: "Restauracja - wnętrze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze4.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze7.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze9.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze11.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze20.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze23.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze34.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze39.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/490343791_1196676219129774_3695689002660428792_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/495793406_1220022830128446_3764504780736735331_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/577554656_1378613710936023_7643053117625877933_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/645740576_1480793004051426_5360198729458927980_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/656482827_1499189358878457_5747975954300345632_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/670749678_1517609237036469_2991438277592298977_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/677620471_1523626006434792_1046167641827680772_n.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/004.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/022.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/032.jpg", alt: "Hotel Zacisze" },
+  { src: "/assets/current/hotel/046.jpg", alt: "Hotel Zacisze" },
+];
+---
+
+<BaseLayout
+  title="Hotel Zacisze ★★★ Turawa – Galeria"
+  description="Hotel Zacisze ★★★ w Turawie — zdjęcia hotelu, pokoi, strefy SPA, restauracji i okolic Jeziora Turawskiego."
+  canonicalPath="/galeria"
+  ogImage="/assets/current/hotel/Copy of 103.jpg"
+>
+  <div class="page-hero" style="background-image: url('/assets/current/hotel/Copy of 103.jpg')">
+    <div class="page-hero-inner">
+      <h1>Galeria</h1>
+    </div>
+  </div>
+
+  <section class="gallery-section">
+    <div class="gallery-inner">
+      <div class="gallery-grid" id="gallery-grid">
+        {images.map((img, i) => (
+          <button
+            class="gallery-item"
+            aria-label={`Powiększ: ${img.alt}`}
+            data-src={img.src}
+            data-alt={img.alt}
+            data-index={i}
+          >
+            <img src={img.src} alt={img.alt} loading="lazy" class="gallery-img" />
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Zamknij">&#10005;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Poprzednie">&#8592;</button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Następne">&#8594;</button>
+    <img src="" alt="" id="lightbox-img" class="lightbox-img" />
+  </div>
+</BaseLayout>
+
+<script>
+  const items = Array.from(document.querySelectorAll<HTMLButtonElement>(".gallery-item"));
+  const lightbox = document.getElementById("lightbox") as HTMLDivElement;
+  const lbImg = document.getElementById("lightbox-img") as HTMLImageElement;
+  let current = 0;
+
+  function open(index: number) {
+    current = index;
+    const btn = items[current];
+    lbImg.src = btn.dataset.src ?? "";
+    lbImg.alt = btn.dataset.alt ?? "";
+    lightbox.hidden = false;
+    document.body.classList.add("nav-open");
+  }
+
+  function close() {
+    lightbox.hidden = true;
+    document.body.classList.remove("nav-open");
+  }
+
+  function prev() { open((current - 1 + items.length) % items.length); }
+  function next() { open((current + 1) % items.length); }
+
+  items.forEach((btn, i) => btn.addEventListener("click", () => open(i)));
+  document.getElementById("lightbox-close")?.addEventListener("click", close);
+  document.getElementById("lightbox-prev")?.addEventListener("click", prev);
+  document.getElementById("lightbox-next")?.addEventListener("click", next);
+
+  lightbox?.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  });
+</script>
+
+<style>
+  .page-hero {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .gallery-section {
+    padding: 4rem 0;
+  }
+
+  .gallery-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .gallery-item {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s, opacity 0.2s;
+  }
+
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+  }
+
+  .lightbox[hidden] { display: none; }
+
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .lightbox-close { top: 1rem; right: 1rem; }
+  .lightbox-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+  .lightbox-next { right: 1rem; top: 50%; transform: translateY(-50%); }
+
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover { background: rgba(255,255,255,0.2); }
+</style>
