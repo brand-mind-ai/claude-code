@@ -40,7 +40,7 @@ const BREADCRUMB_PARENT: Record<string, { name: string; url: string }> = {
   "package-detail": { name: "Pakiety pobytowe", url: "/pakiety_pobytowe" },
 };
 const breadcrumbParent = BREADCRUMB_PARENT[pageType ?? ""] ?? null;
-const siteBase = "https://zaciszeturawa.com";
+const siteBase = (import.meta.env.SITE ?? Astro.site?.toString() ?? "https://zaciszeturawa.com").replace(/\/$/, "");
 ---
 
 <BaseLayout title={seoTitle ?? title} description={description} canonicalPath={canonicalPath} ogImage={heroImage}>

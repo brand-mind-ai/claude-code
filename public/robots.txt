@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zaciszeturawa.com/sitemap-index.xml
+Sitemap: https://pl.zaciszeturawa.com/sitemap-index.xml
