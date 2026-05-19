@@ -1,0 +1,427 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+
+const features = [
+  {
+    title: "Sauna fińska",
+    body: "Rozgrzej się w suchej saunie fińskiej. Przyspiesza krążenie, oczyszcza skórę, relaksuje mięśnie i wzmacnia układ odpornościowy.",
+    icon: "🌡",
+  },
+  {
+    title: "Balia z zimną wodą",
+    body: "Gwałtowna zmiana temperatury po saunie zamknyna pory, dotlenia krew i daje zastrzyk energii. Klasyczne doświadczenie nordyckie.",
+    icon: "❄",
+  },
+  {
+    title: "Jacuzzi",
+    body: "Hydroterapia w połączeniu z ciepłem łagodzi napięcie mięśni, przynosi ulgę w bólach reumatycznych i poprawia jakość snu.",
+    icon: "💧",
+  },
+  {
+    title: "Grota solna",
+    body: "45 minut w mikroklimacie jaskini solnej odpowiada kilkudniowemu pobytowi nad morzem. Zalecana przy schorzeniach dróg oddechowych i alergiach.",
+    icon: "🧂",
+  },
+  {
+    title: "Siłownia",
+    body: "Dobrze wyposażona siłownia dostępna dla gości hotelowych przez całą dobę. Utrzymaj formę nawet podczas weekendowego wypadu.",
+    icon: "💪",
+  },
+];
+
+const photos = [
+  { src: "/assets/current/hotel/Copy of 071.jpg", alt: "Sauna fińska i balia z zimną wodą" },
+  { src: "/assets/current/hotel/Copy of 073.jpg", alt: "Jacuzzi ze światłem relaksacyjnym" },
+  { src: "/assets/current/hotel/Copy of 061.jpg", alt: "Grota solna" },
+  { src: "/assets/current/hotel/Copy of 062.jpg", alt: "Recepcja strefy SPA" },
+];
+---
+
+<BaseLayout
+  title="Strefa SPA — Hotel Zacisze ★★★ Turawa"
+  description="Strefa SPA w cenie każdego noclegu — sauna fińska, jacuzzi, balia z zimną wodą, grota solna i siłownia. Goście zewnętrzni: 3-godzinny pakiet od 65 zł."
+  canonicalPath="/spa"
+  ogImage="/assets/current/hotel/Copy of 071.jpg"
+>
+  <!-- HERO -->
+  <header class="spa-hero">
+    <img src="/assets/current/hotel/Copy of 071.jpg" alt="Strefa SPA — sauna i balia" class="spa-hero-img" />
+    <div class="spa-hero-inner">
+      <p class="kicker">Strefa SPA</p>
+      <h1>Relaks bez limitów</h1>
+      <p class="sub">W cenie każdego noclegu — codziennie 16:00–22:00</p>
+    </div>
+  </header>
+
+  <!-- OFFER STRIP -->
+  <section class="offer-strip">
+    <div class="offer-strip-inner">
+      <div class="offer-item">
+        <strong>Goście hotelowi</strong>
+        <span>Pełny dostęp w cenie noclegu · 16:00–22:00</span>
+      </div>
+      <div class="offer-divider"></div>
+      <div class="offer-item">
+        <strong>Goście zewnętrzni</strong>
+        <span>Pakiet 3-godzinny · 65 zł / osoba</span>
+      </div>
+      <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" class="btn-book">
+        Rezerwuj nocleg ze SPA
+      </a>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="features">
+    <div class="features-inner">
+      <h2>Co znajdziesz w strefie SPA</h2>
+      <ul class="features-grid">
+        {features.map((f) => (
+          <li class="feature-card">
+            <span class="feature-icon" aria-hidden="true">{f.icon}</span>
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- PHOTO GRID -->
+  <section class="spa-gallery">
+    <div class="spa-gallery-inner">
+      {photos.map((p) => (
+        <div class="spa-gallery-item">
+          <img src={p.src} alt={p.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- HEALTH INFO -->
+  <section class="health-info">
+    <div class="health-info-inner">
+      <div class="health-block">
+        <h2>Korzyści z sauny</h2>
+        <ul>
+          <li>Wzrost sprawności układu oddechowego</li>
+          <li>Stymulacja układu odpornościowego</li>
+          <li>Odprężenie psychiczne i poprawa nastroju</li>
+          <li>Głębokie oczyszczenie skóry</li>
+          <li>Pobudzenie krążenia i akcji serca</li>
+          <li>Rozluźnienie mięśni i poprawa ruchomości stawów</li>
+        </ul>
+      </div>
+      <div class="health-block">
+        <h2>Jaskinia solna</h2>
+        <p>Już 45 minut w grocie solnej odpowiada kilkudniowemu pobytowi nad morzem. Mikroklimat soli morskiej działa na drogi oddechowe, wzmacnia odporność i redukuje stres. Wizyta wskazana przy chorobach dróg oddechowych, zapaleniu zatok, alergiach i bezsenności.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <aside class="page-booking">
+    <div class="page-booking-inner">
+      <p>Zarezerwuj nocleg i ciesz się nieograniczonym dostępem do Strefy SPA — bez dopłat, każdego dnia.</p>
+      <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" class="btn-book-page">
+        Sprawdź dostępność i rezerwuj
+      </a>
+    </div>
+  </aside>
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .spa-hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .spa-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.5;
+  }
+
+  .spa-hero-inner {
+    position: relative;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .spa-hero-inner h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--surface);
+    line-height: 1.15;
+    max-width: 16ch;
+  }
+
+  .sub {
+    margin-top: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  /* OFFER STRIP */
+  .offer-strip {
+    background: var(--dark);
+    padding: 2rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .offer-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .offer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .offer-item strong {
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--surface);
+  }
+
+  .offer-item span {
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  .offer-divider {
+    width: 3rem;
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .btn-book {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: var(--surface);
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--surface);
+    transition: background 0.2s, color 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-book:hover {
+    background: transparent;
+    color: var(--surface);
+  }
+
+  @media (min-width: 640px) {
+    .offer-strip-inner {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .offer-divider {
+      width: 1px;
+      height: 2.5rem;
+    }
+    .btn-book { margin-top: 0; margin-left: auto; }
+  }
+
+  /* FEATURES */
+  .features {
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .features-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .features-inner h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+  }
+
+  .features-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    padding: 1.75rem;
+    border: 1px solid var(--muted);
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+  }
+
+  .feature-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* PHOTO GRID */
+  .spa-gallery {
+    padding: 0 1.5rem 4rem;
+    background: var(--bg);
+  }
+
+  .spa-gallery-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .spa-gallery-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+  }
+
+  .spa-gallery-item img:hover {
+    opacity: 0.85;
+  }
+
+  @media (min-width: 640px) {
+    .spa-gallery-inner { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* HEALTH INFO */
+  .health-info {
+    background: var(--surface);
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--muted);
+    border-bottom: 1px solid var(--muted);
+  }
+
+  .health-info-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .health-info-inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  .health-block h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .health-block ul {
+    padding-left: 1.25rem;
+  }
+
+  .health-block li {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.35rem;
+  }
+
+  .health-block p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  /* BOOKING CTA */
+  .page-booking {
+    background: var(--surface);
+    border-top: 1px solid var(--muted);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-booking-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .page-booking-inner p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    max-width: 52ch;
+  }
+
+  .btn-book-page {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: var(--dark);
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book-page:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  @media (min-width: 640px) {
+    .page-booking-inner {
+      flex-direction: row;
+      align-items: center;
+    }
+    .page-booking-inner p { margin: 0; }
+  }
+</style>

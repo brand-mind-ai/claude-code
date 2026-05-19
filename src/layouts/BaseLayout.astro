@@ -37,6 +37,49 @@ const ogImageUrl = `${siteUrl}${ogImage ?? DEFAULT_OG_IMAGE}`;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImageUrl} />
 
+    <!-- Structured data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Hotel Zacisze",
+      "url": siteUrl,
+      "logo": `${siteUrl}/zacisze-logo.svg`,
+      "image": ogImageUrl,
+      "description": "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób.",
+      "starRating": { "@type": "Rating", "ratingValue": "3" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Biwakowa 2",
+        "addressLocality": "Turawa",
+        "postalCode": "46-045",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48774029030",
+      "email": "biuro@zaciszeturawa.pl",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.7192,
+        "longitude": 18.0647
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Strefa SPA", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Restauracja", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Sale konferencyjne", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Basen zewnętrzny", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Sauna fińska", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Jacuzzi", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Grota solna", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true }
+      ],
+      "numberOfRooms": 75,
+      "checkinTime": "14:00",
+      "checkoutTime": "12:00",
+      "sameAs": [
+        "https://www.facebook.com/hotelzacisze",
+        "https://www.instagram.com/hotelzacisze"
+      ]
+    })} />
+
     <link rel="icon" type="image/svg+xml" href="/zacisze-favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
