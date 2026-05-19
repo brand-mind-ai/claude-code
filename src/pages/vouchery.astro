@@ -1,0 +1,445 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const vouchers = [
+  {
+    title: "Voucher SPA",
+    description: "Wejście do Strefy SPA — sauna fińska, jacuzzi, balia, grota solna, siłownia. Idealny prezent dla kogoś, kto potrzebuje odpoczynku.",
+    icon: "🧖",
+  },
+  {
+    title: "Voucher Pobytowy",
+    description: "Nocleg dla dwóch osób z rozbudowanym śniadaniem bufetowym i dostępem do SPA. Ważność 12 miesięcy od daty zakupu.",
+    icon: "🏨",
+  },
+  {
+    title: "Voucher Weekendowy",
+    description: "Dwa noclegi dla pary w standardzie Lux — kolacja przy świecach, śniadania i nielimitowany dostęp do SPA.",
+    icon: "🌿",
+  },
+  {
+    title: "Voucher na Kolację",
+    description: "Romantyczna kolacja przy świecach dla dwóch osób z karafką wina w naszej restauracji z kuchnią regionalną.",
+    icon: "🍷",
+  },
+];
+---
+
+<BaseLayout
+  title="Vouchery prezentowe — Hotel Zacisze ★★★ Turawa"
+  description="Vouchery prezentowe Hotelu Zacisze — idealne na każdą okazję. Nocleg, SPA, kolacja, weekend dla dwojga nad Jeziorem Turawskim."
+  canonicalPath="/vouchery"
+  ogImage="/assets/current/hotel/Copy of 094.jpg"
+>
+  <!-- HERO -->
+  <header class="vchr-hero">
+    <img
+      src="/assets/current/hotel/Copy of 094.jpg"
+      alt="Hotel Zacisze — vouchery prezentowe"
+      class="vchr-hero-img"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="vchr-hero-inner">
+      <p class="kicker">Vouchery prezentowe</p>
+      <h1>Podaruj chwilę relaksu</h1>
+      <p class="sub">Prezent, który zawsze cieszy — pobyt, SPA lub kolacja</p>
+    </div>
+  </header>
+
+  <!-- WHY VOUCHER -->
+  <section class="why">
+    <div class="why-inner">
+      <div class="why-text">
+        <h2>Idealny prezent na każdą okazję</h2>
+        <p>Voucher Hotelu Zacisze to wyjątkowy prezent dla kogoś bliskiego — na urodziny, rocznicę, Walentynki, Dzień Matki lub po prostu jako wyraz troski. Pobyt w malowniczym otoczeniu sosnowego lasu nad Jeziorem Turawskim, relaks w Strefie SPA i wyśmienita kuchnia regionalna.</p>
+        <p>Vouchery wystawiamy na konkretną kwotę lub na wybrany pakiet. Ważność 12 miesięcy od daty zakupu. Możliwość odbioru osobistego lub wysyłki.</p>
+      </div>
+      <ul class="why-list">
+        <li>
+          <span class="why-icon">📅</span>
+          <div>
+            <strong>Ważność 12 miesięcy</strong>
+            <span>Obdarowany wybiera termin w swoim czasie</span>
+          </div>
+        </li>
+        <li>
+          <span class="why-icon">🎁</span>
+          <div>
+            <strong>Wysyłka lub odbiór</strong>
+            <span>Voucher w eleganckim opakowaniu pocztą lub na recepcji</span>
+          </div>
+        </li>
+        <li>
+          <span class="why-icon">✍️</span>
+          <div>
+            <strong>Personalizacja</strong>
+            <span>Dedykacja i życzenia w formie odręcznej notatki</span>
+          </div>
+        </li>
+        <li>
+          <span class="why-icon">💳</span>
+          <div>
+            <strong>Dowolna kwota</strong>
+            <span>Voucher na konkretną kwotę lub wybrany pakiet</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VOUCHER TYPES -->
+  <section class="types">
+    <div class="types-inner">
+      <h2 class="types-heading">Rodzaje voucherów</h2>
+      <ul class="types-grid">
+        {vouchers.map((v) => (
+          <li class="type-card">
+            <span class="type-icon" aria-hidden="true">{v.icon}</span>
+            <h3>{v.title}</h3>
+            <p>{v.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER -->
+  <section class="order">
+    <div class="order-inner">
+      <h2>Jak zamówić voucher?</h2>
+      <ol class="order-steps">
+        <li>
+          <span class="step-num">01</span>
+          <div>
+            <strong>Zadzwoń lub napisz</strong>
+            <span>Skontaktuj się z recepcją — telefonicznie lub e-mailem. Ustalisz rodzaj vouchera, kwotę i formę dostawy.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <div>
+            <strong>Opłać zamówienie</strong>
+            <span>Płatność przelewem lub kartą na miejscu. Po zaksięgowaniu wystawiamy voucher.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <div>
+            <strong>Wręcz prezent</strong>
+            <span>Voucher w eleganckim opakowaniu gotowy do wręczenia. Odbiór osobisty lub wysyłka pocztą.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <aside class="contact-cta">
+    <div class="contact-cta-inner">
+      <div class="cta-text">
+        <h2>Zamów voucher już dziś</h2>
+        <p>Zadzwoń lub napisz — przygotujemy voucher dopasowany do okazji.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="tel:+48774029030" class="btn-call">+48 77 402 90 30</a>
+        <a href="mailto:recepcja@zaciszeturawa.pl" class="btn-mail">recepcja@zaciszeturawa.pl</a>
+      </div>
+    </div>
+  </aside>
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .vchr-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .vchr-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.45;
+  }
+
+  .vchr-hero-inner {
+    position: relative;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .vchr-hero-inner h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--surface);
+    line-height: 1.15;
+    max-width: 20ch;
+  }
+
+  .sub {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* WHY */
+  .why {
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .why-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .why-inner { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+
+  .why-text h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .why-text p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .why-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .why-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .why-list strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .why-list span {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* TYPES */
+  .types {
+    background: var(--surface);
+    border-top: 1px solid var(--muted);
+    border-bottom: 1px solid var(--muted);
+    padding: 4rem 1.5rem;
+  }
+
+  .types-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .types-heading {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .types-grid {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) { .types-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .types-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .type-card {
+    background: var(--bg);
+    border: 1px solid var(--muted);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .type-icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .type-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    margin: 0;
+  }
+
+  .type-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* HOW TO ORDER */
+  .order {
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .order-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .order-inner h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .order-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .order-steps li {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--muted);
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+
+  .order-steps strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .order-steps span {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* CONTACT CTA */
+  .contact-cta {
+    background: var(--dark);
+    padding: 3.5rem 1.5rem;
+  }
+
+  .contact-cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .contact-cta-inner { grid-template-columns: 1fr auto; align-items: center; }
+  }
+
+  .cta-text h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    color: var(--surface);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-text p {
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 480px) {
+    .cta-buttons { flex-direction: row; }
+  }
+
+  .btn-call,
+  .btn-mail {
+    display: inline-flex;
+    padding: 0.65rem 1.5rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .btn-call {
+    background: var(--surface);
+    color: var(--dark);
+    border: 1px solid var(--surface);
+  }
+
+  .btn-call:hover {
+    background: transparent;
+    color: var(--surface);
+  }
+
+  .btn-mail {
+    background: transparent;
+    color: var(--surface);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .btn-mail:hover {
+    border-color: var(--surface);
+  }
+</style>

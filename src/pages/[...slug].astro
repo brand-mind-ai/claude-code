@@ -4,7 +4,7 @@ import ContentLayout from "../layouts/ContentLayout.astro";
 
 export async function getStaticPaths() {
   // These paths have dedicated page files — exclude to avoid route conflicts
-  const DEDICATED = new Set(["/galeria", "/kontakt", "/pokoje", "/spa", "/restauracja", "/pakiety_pobytowe", "/opinie", "/konferencje", "/atrakcje"]);
+  const DEDICATED = new Set(["/galeria", "/kontakt", "/pokoje", "/spa", "/restauracja", "/pakiety_pobytowe", "/opinie", "/konferencje", "/atrakcje", "/vouchery"]);
 
   const entries = await getCollection(
     "pl",

@@ -10,24 +10,28 @@ const packages = await getCollection(
   (e: CollectionEntry<"pl">) => e.data.pageType === "package-detail" && e.data.status === "captured"
 );
 
-const packageMeta: Record<string, { nights: string; price: string }> = {
-  "/boze_cialo_w_zaciszu_":   { nights: "3 noce", price: "od 620 zł / os." },
-  "/wakacje-4-dni":           { nights: "4 noce", price: "od 608 zł / os." },
-  "/wakacje_6_dni_nad_jeziorem_turawskim_2021": { nights: "6 nocy", price: "od 1025 zł / os." },
-  "/wakacje_nad_jeziorem_turawskim_2021":       { nights: "8 nocy", price: "od 1418 zł / os." },
-  "/wspanialy-weekend":       { nights: "3 noce", price: "od 615 zł / os." },
-  "/zawsze_mlodzi_":          { nights: "3 noce", price: "od 610 zł / os." },
-  "/lejdis":                  { nights: "2 noce", price: "od 370 zł / os." },
-  "/rocznica_slubu":          { nights: "3 noce", price: "od 705 zł / os." },
+const packageMeta: Record<string, { name: string; nights: string; price: string }> = {
+  "/boze_cialo_w_zaciszu_":   { name: "Boże Ciało w Zaciszu",              nights: "3 noce", price: "od 620 zł / os." },
+  "/wakacje-4-dni":           { name: "Wakacje 4 dni nad jeziorem",         nights: "4 noce", price: "od 608 zł / os." },
+  "/wakacje_6_dni_nad_jeziorem_turawskim_2021": { name: "Wakacje 6 dni nad jeziorem", nights: "6 nocy", price: "od 1025 zł / os." },
+  "/wakacje_nad_jeziorem_turawskim_2021":       { name: "Wakacje 8 dni nad jeziorem", nights: "8 nocy", price: "od 1418 zł / os." },
+  "/wspanialy-weekend":       { name: "wSPAniały Weekend",                  nights: "3 noce", price: "od 615 zł / os." },
+  "/zawsze_mlodzi_":          { name: "Zawsze Młodzi (55+)",                nights: "3 noce", price: "od 610 zł / os." },
+  "/lejdis":                  { name: "Pakiet Lejdis",                      nights: "2 noce", price: "od 370 zł / os." },
+  "/rocznica_slubu":          { name: "Rocznica Ślubu",                     nights: "3 noce", price: "od 705 zł / os." },
 };
 
-type ProcessedPackage = { path: string; title: string; heroImage: string | undefined; meta: { nights: string; price: string } | undefined };
-const processedPackages: ProcessedPackage[] = packages.map((pkg: CollectionEntry<"pl">) => ({
-  path: pkg.data.canonicalPath,
-  title: pkg.data.title.replace(/^Hotel Zacisze.*?- /i, "").replace(/\s★★★.*$/, "").trim(),
-  heroImage: pkg.data.heroImage,
-  meta: packageMeta[pkg.data.canonicalPath] as { nights: string; price: string } | undefined,
-}));
+type ProcessedPackage = { path: string; title: string; heroImage: string | undefined; meta: { name: string; nights: string; price: string } | undefined };
+const processedPackages: ProcessedPackage[] = packages.map((pkg: CollectionEntry<"pl">) => {
+  const meta = packageMeta[pkg.data.canonicalPath];
+  const rawTitle = pkg.data.title.replace(/^Hotel Zacisze.*?- /i, "").replace(/\s★★★.*$/, "").trim();
+  return {
+    path: pkg.data.canonicalPath,
+    title: meta?.name ?? rawTitle,
+    heroImage: pkg.data.heroImage,
+    meta,
+  };
+});
 ---
 
 <BaseLayout

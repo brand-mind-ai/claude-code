@@ -13,23 +13,23 @@ heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308
 
 Pakiet obejmuje:
 
-● 2 noclegi w ekskluzywnych pokojach
+- 2 noclegi w ekskluzywnych pokojach
 
-● Wykwintna kolacja w blasku świec z karafką doskonałego wina
+- Wykwintna kolacja w blasku świec z karafką doskonałego wina
 
-● Wyśmienita obiadokolacja drugiego dnia pobytu
+- Wyśmienita obiadokolacja drugiego dnia pobytu
 
-● Świeże owoce oraz wino musujące podane do pokoju
+- Świeże owoce oraz wino musujące podane do pokoju
 
-● Bogate śniadania w formie bufetu szwedzkiego
+- Bogate śniadania w formie bufetu szwedzkiego
 
-● Nieograniczony dostęp do hotelowej strefy SPA, wyposażonej w jacuzzi, saunę, grotę solną oraz siłownię
+- Nieograniczony dostęp do hotelowej strefy SPA, wyposażonej w jacuzzi, saunę, grotę solną oraz siłownię
 
-● W sezonie letnim możliwość korzystania z basenu zewnętrznego i hotelowej strefy rekreacyjnej
+- W sezonie letnim możliwość korzystania z basenu zewnętrznego i hotelowej strefy rekreacyjnej
 
-● Masaże na łóżku CERAGEM
+- Masaże na łóżku CERAGEM
 
-● Bezpłatne wypożyczenie kijów Nordic Walking
+- Bezpłatne wypożyczenie kijów Nordic Walking
 
 Pakiet jest dostępny przez cały tydzień, nie tylko w weekendy.
 

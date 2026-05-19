@@ -16,6 +16,23 @@ const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a
 
 // Derive a clean display title (strip trailing " - Rooms" etc. after em-dash or " - ")
 const displayTitle = title.replace(/\s[–—-]\s.*$/, "").replace(/\s★★★.*$/, "").trim();
+
+// Map pageType to a short breadcrumb kicker label shown in the hero overlay
+const PAGE_KICKER: Record<string, string> = {
+  "room-detail": "Pokoje",
+  "package-detail": "Pakiety pobytowe",
+  conferences: "Konferencje i eventy",
+  jobs: "Praca w hotelu",
+  vouchers: "Vouchery prezentowe",
+};
+const kicker = PAGE_KICKER[pageType ?? ""] ?? null;
+
+// Back-links per page type
+const BACK_LINK: Record<string, { href: string; label: string }> = {
+  "room-detail": { href: "/pokoje", label: "← Wszystkie pokoje" },
+  "package-detail": { href: "/pakiety_pobytowe", label: "← Wszystkie pakiety" },
+};
+const backLink = BACK_LINK[pageType ?? ""] ?? null;
 ---
 
 <BaseLayout title={seoTitle ?? title} description={description} canonicalPath={canonicalPath} ogImage={heroImage}>
@@ -26,13 +43,16 @@ const displayTitle = title.replace(/\s[–—-]\s.*$/, "").replace(/\s★★★.
         <img src={heroImage} alt="" class="page-header-img" fetchpriority="high" decoding="async" />
       )}
       <div class:list={["page-header-inner", heroImage && "page-header-inner--overlay"]}>
-        {description && <p class="page-kicker">{description}</p>}
+        {kicker && <p class="page-kicker">{kicker}</p>}
         <h1>{displayTitle}</h1>
       </div>
     </header>
 
     <!-- CONTENT -->
     <main class="prose-wrap">
+      {backLink && (
+        <a href={backLink.href} class="back-link">{backLink.label}</a>
+      )}
       <div class="prose">
         <slot />
       </div>
@@ -112,6 +132,21 @@ const displayTitle = title.replace(/\s[–—-]\s.*$/, "").replace(/\s★★★.
   }
 
   /* ─── PROSE ─────────────────────────────────────── */
+  .back-link {
+    display: inline-block;
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 1.75rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--text);
+  }
+
   .prose-wrap {
     flex: 1;
     padding: 3rem 1.5rem;
@@ -135,6 +170,13 @@ const displayTitle = title.replace(/\s[–—-]\s.*$/, "").replace(/\s★★★.
     font-size: 1.125rem;
     font-weight: 700;
     margin: 1.5rem 0 0.5rem;
+  }
+
+  .prose :global(h4) {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1.25rem 0 0.4rem;
+    letter-spacing: 0.02em;
   }
 
   .prose :global(p) {

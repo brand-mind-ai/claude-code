@@ -13,18 +13,18 @@ heroImage: "/assets/current/hotel/Copy of 094.jpg"
 
 Pakiet skierowany do osób powyżej 55 roku życia:
 
-● 2 noclegi w ekskluzywnych pokojach
+- 2 noclegi w ekskluzywnych pokojach
 
-● bogate śniadania kontynentalne
+- bogate śniadania kontynentalne
 
-● 2 obiadokolacje przygotowane przez szefa kuchni
+- 2 obiadokolacje przygotowane przez szefa kuchni
 
-● 1 dowolny drink na osobę
+- 1 dowolny drink na osobę
 
-● dostęp do strefy Spa ( jacuzzi, sauna, siłownia, grota solna )
+- dostęp do strefy Spa ( jacuzzi, sauna, siłownia, grota solna )
 
-● możliwość wypożyczenia kijków do nordic walking
+- możliwość wypożyczenia kijków do nordic walking
 
-● w sezonie letnim możliwość korzystania z basenu zewnętrznego i hotelowej strefy rekreacyjnej
+- w sezonie letnim możliwość korzystania z basenu zewnętrznego i hotelowej strefy rekreacyjnej
 
-● masaż na łóżku Ceragem ( mechaniczny masaż leczniczy )
+- masaż na łóżku Ceragem ( mechaniczny masaż leczniczy )
