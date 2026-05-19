@@ -23,7 +23,7 @@ const displayTitle = title.replace(/\s[–—-]\s.*$/, "").replace(/\s★★★.
     <!-- PAGE HEADER -->
     <header class:list={["page-header", heroImage && "page-header--photo"]}>
       {heroImage && (
-        <img src={heroImage} alt="" class="page-header-img" />
+        <img src={heroImage} alt="" class="page-header-img" fetchpriority="high" decoding="async" />
       )}
       <div class:list={["page-header-inner", heroImage && "page-header-inner--overlay"]}>
         {description && <p class="page-kicker">{description}</p>}

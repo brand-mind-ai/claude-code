@@ -1,0 +1,16 @@
+{
+  "name": "Hotel Zacisze Turawa",
+  "short_name": "Hotel Zacisze",
+  "description": "Hotel Zacisze ★★★ w Turawie — SPA, restauracja, konferencje nad Jeziorem Turawskim",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f6f1ea",
+  "theme_color": "#231c1a",
+  "icons": [
+    {
+      "src": "/zacisze-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
