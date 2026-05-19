@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "image": "/assets/current/hotel/645740576_1480793004051426_5360198729458927980_n.jpg",
+    "tagline": "Zacisze nad Jeziorem Turawskim",
+    "subline": "Hotel ★★★ · 150 m od plaży · Opole / Turawa"
+  },
+  "usps": [
+    { "label": "150 m od plaży" },
+    { "label": "SPA w cenie noclegu" },
+    { "label": "Śniadanie w cenie" },
+    { "label": "Bezpłatny parking" }
+  ],
+  "intro": {
+    "heading": "Twoja oaza spokoju na Opolszczyźnie",
+    "body": "Położone nad brzegiem Jeziora Turawskiego, otoczone lasem miejsce, w którym naprawdę odpoczniesz — niezależnie od pory roku. Zacznij dzień od kawy na nasłonecznionym tarasie z widokiem na zieleń, potem wybierz swój sposób na relaks.",
+    "body2": "Zaledwie 150 metrów od plaży, nad północnym brzegiem Jeziora Turawskiego. Wokół — sosnowo-dębowy las i Bory Stobrawsko-Turawskie. Żadnych dróg szybkiego ruchu, tylko cisza i natura."
+  },
+  "features": [
+    {
+      "title": "Restauracja",
+      "body": "Kuchnia europejska z regionalnymi akcentami. Codzienne śniadania i obiadokolacje z sezonowych, lokalnych składników. Nastrojowe wnętrze z widokiem na otaczającą przyrodę.",
+      "link": "/restauracja",
+      "linkLabel": "Odkryj menu"
+    },
+    {
+      "title": "Strefa SPA",
+      "body": "Sauna sucha, jacuzzi, balia z zimną wodą, grota solna i siłownia — wliczone w każdy nocleg. Dostęp codziennie od 16:00 do 22:00. Odprężenie bez dopłat.",
+      "link": "/spa",
+      "linkLabel": "Poznaj SPA"
+    },
+    {
+      "title": "Konferencje",
+      "body": "Dwie klimatyzowane sale konferencyjne, sala bankietowa do 100 osób i 75 miejsc noclegowych w jednym obiekcie. Szkolenia i eventy firmowe od A do Z.",
+      "link": "/konferencje",
+      "linkLabel": "Oferta konferencyjna"
+    }
+  ],
+  "packages": [
+    {
+      "title": "Długi weekend czerwcowy",
+      "nights": "3 dni",
+      "price": "od 620 zł / os.",
+      "link": "/boze_cialo_w_zaciszu_"
+    },
+    {
+      "title": "Wakacje 4 dni",
+      "nights": "4 dni",
+      "price": "od 608 zł / os.",
+      "link": "/wakacje-4-dni"
+    },
+    {
+      "title": "Wakacje 6 dni",
+      "nights": "6 dni",
+      "price": "od 1025 zł / os.",
+      "link": "/wakacje_6_dni_nad_jeziorem_turawskim_2021"
+    },
+    {
+      "title": "Wakacje 8 dni",
+      "nights": "8 dni",
+      "price": "od 1418 zł / os.",
+      "link": "/wakacje_nad_jeziorem_turawskim_2021"
+    }
+  ],
+  "reviews": [
+    { "text": "Świetne jedzenie, miła obsługa, dobre drinki :)", "author": "Barbara" },
+    { "text": "Otoczenie, basen, cisza oraz lokalizacja.", "author": "Ryszard" },
+    { "text": "Duży taras.", "author": "Mateusz" },
+    { "text": "Bardzo dobre jedzenie, obsługa w barze bardzo miła, drinki duże.", "author": "Klaudia" },
+    { "text": "Komfort, czystość, miły personel hotelu, piękna okolica.", "author": "Genowefa" }
+  ]
+}

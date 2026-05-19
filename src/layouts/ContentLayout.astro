@@ -1,0 +1,220 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  seoTitle?: string;
+  description?: string;
+  canonicalPath?: string;
+  heroImage?: string;
+  pageType?: string;
+}
+
+const { title, seoTitle, description, canonicalPath, heroImage, pageType } = Astro.props;
+
+const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+
+// Derive a clean display title (strip trailing " - Rooms" etc. after em-dash or " - ")
+const displayTitle = title.replace(/\s[–—-]\s.*$/, "").replace(/\s★★★.*$/, "").trim();
+---
+
+<BaseLayout title={seoTitle ?? title} description={description} canonicalPath={canonicalPath}>
+  <div class="page-wrap">
+    <!-- PAGE HEADER -->
+    <header class:list={["page-header", heroImage && "page-header--photo"]}>
+      {heroImage && (
+        <img src={heroImage} alt="" class="page-header-img" />
+      )}
+      <div class:list={["page-header-inner", heroImage && "page-header-inner--overlay"]}>
+        {description && <p class="page-kicker">{description}</p>}
+        <h1>{displayTitle}</h1>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="prose-wrap">
+      <div class="prose">
+        <slot />
+      </div>
+    </main>
+
+    <!-- BOOKING CTA (not shown on contact/legal pages) -->
+    {!["contact", "legal", "jobs"].includes(pageType ?? "") && (
+      <aside class="page-booking">
+        <div class="page-booking-inner">
+          <p>Rezerwuj bezpośrednio — gwarancja najniższej ceny, śniadanie i SPA w cenie.</p>
+          <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" class="btn-book-page">
+            Sprawdź dostępność i rezerwuj
+          </a>
+        </div>
+      </aside>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .page-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - 4.5rem);
+  }
+
+  /* ─── PAGE HEADER ───────────────────────────────── */
+  .page-header {
+    background: var(--dark);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header--photo {
+    min-height: 40vh;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .page-header-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.45;
+  }
+
+  .page-header-inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .page-header-inner--overlay {
+    padding: 2rem 0;
+  }
+
+  .page-kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    max-width: 60ch;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--surface);
+    line-height: 1.15;
+    max-width: 18ch;
+  }
+
+  /* ─── PROSE ─────────────────────────────────────── */
+  .prose-wrap {
+    flex: 1;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .prose {
+    max-width: 72ch;
+  }
+
+  .prose :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 2rem 0 0.75rem;
+    line-height: 1.3;
+  }
+
+  .prose :global(h3) {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .prose :global(p) {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .prose :global(ul) {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose :global(li) {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.25rem;
+  }
+
+  .prose :global(a) {
+    color: var(--text);
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .prose :global(a:hover) {
+    color: var(--text-secondary);
+  }
+
+  .prose :global(strong) {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ─── BOOKING CTA ───────────────────────────────── */
+  .page-booking {
+    background: var(--surface);
+    border-top: 1px solid var(--muted);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-booking-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .page-booking-inner p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    max-width: 50ch;
+  }
+
+  .btn-book-page {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: var(--dark);
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book-page:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  @media (min-width: 640px) {
+    .page-booking-inner {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .page-booking-inner p { margin: 0; }
+  }
+</style>

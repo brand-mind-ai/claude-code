@@ -1,6 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection(
@@ -21,15 +21,16 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { title, seoTitle, description, canonicalPath } = entry.data;
+const { title, seoTitle, description, canonicalPath, heroImage, pageType } = entry.data;
 ---
 
-<BaseLayout
-  title={seoTitle ?? title}
+<ContentLayout
+  title={title}
+  seoTitle={seoTitle}
   description={description}
   canonicalPath={canonicalPath}
+  heroImage={heroImage}
+  pageType={pageType}
 >
-  <main>
-    <Content />
-  </main>
-</BaseLayout>
+  <Content />
+</ContentLayout>
