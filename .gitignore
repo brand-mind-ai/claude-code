@@ -4,3 +4,7 @@ dist/
 .astro/
 .env
 .env.*
+.claude/worktrees/
+/assets/
+/abacus/
+/knowledge/

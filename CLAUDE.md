@@ -2,267 +2,122 @@
 
 ## ⛔ MANDATORY FIRST CHECK — DO THIS BEFORE ANYTHING ELSE
 
-**Working directory:** `/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/`
+**Working directory:** `/Users/macbookpro/CLAUDE CODE/Zacisze-CC/`
 **GitHub repo:** `https://github.com/brand-mind-ai/claude-code/`
-**Branch:** `main` — always work on main. Never create new branches or worktrees.
+**Branch:** `main` — always work on main. The `zacisze-alternative` branch is an archived snapshot — do not touch it.
 
-Run `git status` as the very first command. If the output does not show `On branch main` inside the folder above — STOP. Do not read files. Do not run any other commands. Tell Martin: "Wrong directory — please close this session and reopen it from `/Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl/`."
+Run `git status` as the very first command. If the output does not show `On branch main` inside the folder above — STOP. Do not read files. Do not run any other commands. Tell Martin: "Wrong directory — please close this session and reopen it from `/Users/macbookpro/CLAUDE CODE/Zacisze-CC/`."
 
 ## Startup
 
-Then read in this order:
+Read in this order:
 
-1. `CLAUDE.md`
+1. `CLAUDE.md` (this file)
 2. `_HANDOVER.md`
 3. `PLAN.md`
-4. `Session Brief Template.md`
 
+## What Went Wrong in Previous Sessions — Read This First
 
-## Project Scope
+An earlier agent ignored the Non-Negotiables and invented:
+- Entirely custom page designs with no basis in the live site
+- Sections, features, and offers that do not exist on zaciszeturawa.pl
+- Image pairings that replaced the original ones
+- Rewritten marketing copy instead of preserving the crawled text
+- Schema markup, FAQs, and CTAs that were invented, not sourced
 
-This project is now about rebuilding `zaciszeturawa.pl`.
+The alternative design is parked in `zacisze-alternative` branch for reference only.
 
-Create and edit files only inside this mounted project folder unless Martin explicitly gives a different mounted folder.
+**Main is now reset to the content-crawl baseline (9d5833c).** The task is to build a faithful HTML/CSS copy of the live site using the already-crawled content.
 
-## Hard Rules
+## Non-Negotiables
 
-1. Verify before asserting.
-2. Do not invent website text, offers, sections, room details, prices, booking IDs, design details, or images.
-3. Preserve current content before rewriting anything.
-4. Preserve current image/page pairing in the first production version.
-5. Preserve the existing URL structure for search traffic.
-6. Polish MVP is built and polished first. No language picker in MVP. EN/DE URLs are preserved in the route contract and can remain dead for about one week before the follow-up rebuild.
-7. Initial deployment goes to temporary `.com`; final canonical domain is `.pl`.
-8. Do not edit or overwrite existing files without checking them first.
-9. Do not delete files without explicit approval.
-10. Use `_HANDOVER.md` as the session continuity file and preserve its structure.
-11. Use Capital Case With Spaces for user-facing planning artifacts unless a tool or convention requires otherwise.
+1. **Do not rewrite copy.** Use the text already in `src/content/pl/pages/*.md` exactly as crawled. Fix typos only if they are clearly transcription errors.
+2. **Do not invent sections, features, offers, claims, or design details.** If it is not on `zaciszeturawa.pl`, it does not go on the new site.
+3. **Preserve image/page pairing.** Each page's hero and gallery images must match what the live site shows for that page. Check `sourceUrl` in the frontmatter and cross-reference.
+4. **Mirror the live site's structure first.** Same sections in the same order. Redesign comes later, with Martin's explicit approval.
+5. **No invented UI components.** Build the carousel, room slider, newsletter form, and date picker to match the live site's behaviour — not a reimagined version of it.
 
-## Source Of Truth
+## What to Build — Version 0.1
 
-Planning:
+The goal is a **faithful functional copy** of `zaciszeturawa.pl`, not a redesign:
 
-```text
-PLAN.md
+- **Homepage**: hero with overlay date picker (arrival / departure / guests → GuestSage), USP bar, intro text, offer carousel (exactly like live), room slider (exactly like live), newsletter signup form (exactly like live), footer
+- **Interior pages**: same sections as live site, same text order, same images
+- **Navigation**: same items as live site header — logo, nav links, phone, book button
+- **Room slider**: sideways scroll, same rooms as live site
+- **Offer carousel**: same packages as live site
+- **Newsletter form**: same fields as live site (email + submit, or email + name if live has that)
+- **Date picker**: minimal, bottom-center on hero, passes arrivalDate + departureDate + personsCount to GuestSage
+
+Do **not** build anything that does not exist on the live site in version 0.1.
+
+## Stack
+
+```
+Astro 5 (static) + plain CSS + Cloudflare Pages
 ```
 
-Session continuity:
+- Plain CSS only for v0.1 — no Tailwind, no GSAP, no Lenis yet
+- Vanilla JS for interactive islands (slider, date picker, mobile nav)
+- No React for v0.1
+- No heavy animation for v0.1
 
-```text
-_HANDOVER.md
-```
+## Source of Truth
 
-Booking integration:
+| Asset | Location |
+|---|---|
+| Crawled content | `src/content/pl/pages/*.md` |
+| URL contract | `src/data/url-map.json` |
+| Contact info / nav | `src/data/site.json`, `src/data/navigation.json` |
+| Booking URL builder | `src/lib/booking.ts` |
+| Brand fonts/colors | `Brand assets/Colors+Fonts.txt` |
+| Logo SVG | `public/zacisze-logo.svg` (create from brand kit) |
+| Favicon | `public/zacisze-favicon.svg` |
+| Images | `public/assets/current/hotel/` (37 files already committed) |
+| Live site | `https://www.zaciszeturawa.pl/` — reference for layout, section order, image pairing |
 
-```text
-guestsage-be-docs.md
-```
+## Image Rules
 
-Brand assets:
-
-```text
-Brand assets/Colors+Fonts.txt
-Brand assets/zacisze-favicon.svg
-Brand assets/zacisze-logo-ogg.svg
-```
-
-Current image baseline:
-
-```text
-assets/photos/
-```
-
-## Build Strategy
-
-Chosen stack:
-
-```text
-Astro + TypeScript + Pages CMS + GitHub content + Cloudflare Pages
-```
-
-Use CSS for the baseline experience. Use Lenis for smooth scroll and GSAP ScrollTrigger for reveal/parallax, loaded only through Astro islands on pages that actually use motion. Use React only for isolated interactive islands when plain Astro/CSS is not enough.
-
-Prefer:
-
-- static pages
-- Pages CMS-backed repository content
-- reusable page layouts
-- one booking URL builder
-- one route inventory
-- one image mapping source
-- progressive animation
-- browser verification after visual changes
-
-Avoid:
-
-- random redesigns
-- invented content
-- unnecessary backend services
-- client-side secrets
-- heavy JavaScript on every page
-- component-level hardcoded page copy
-
-## Content Rules
-
-All visible page text should come from Pages CMS-backed Markdown or JSON files in the GitHub repository.
-
-Initial content must be extracted from the current live site and preserved as-is. Improvements happen only after Martin approves that stage.
-
-Do not hardcode long text inside Astro, React, or JavaScript components.
-
-Pages CMS does not use a separate content database. It edits files directly in the GitHub repository. Local files are only a working copy of the repository source of truth.
-
-Each content page should have:
-
-```text
-locale
-translationKey
-canonicalPath
-sourceUrl
-pageType
-title
-seoTitle
-description
-heroImage
-gallery
-body content
-booking metadata when verified
-```
-
-## URL Rules
-
-Treat URL preservation as a contract.
-
-Preserve the entire existing URL structure in `url-map.json`, including EN/DE paths. The MVP may launch without EN/DE pages and without a language picker, but those URLs must remain tracked for the follow-up rebuild.
-
-Domain policy:
-
-```text
-temporary launch domain: https://zaciszeturawa.com/
-final canonical domain: https://www.zaciszeturawa.pl/
-```
-
-Use relative internal links wherever possible. Canonicals, sitemap URLs, robots behavior, and redirects must be environment-aware so the temporary `.com` launch does not become the long-term SEO canonical by accident.
-
-Before changing routing:
-
-1. Check `PLAN.md` URL inventory.
-2. Check the latest route inventory file if one exists.
-3. Check temporary `.com` vs final `.pl` domain policy.
-4. Verify changed routes locally.
-5. Preserve redirects for stale or legacy URLs.
-
-Known issue:
-
-```text
-/strefa_spa currently returns 404
-/spa currently returns 200 and appears in homepage navigation
-```
-
-Do not remove either from the migration map until final redirect decisions are made.
+- 37 images are committed at `public/assets/current/hotel/`
+- Before assigning an image to a page, verify the live site uses that image for that page (`sourceUrl` in frontmatter)
+- Do not substitute images — if the correct image is not in the 37, leave a `<!-- TODO: image needed -->` comment and note it in `_HANDOVER.md`
+- Do not reference images that are not in `public/assets/current/hotel/`
 
 ## Booking Rules
 
-GuestSage base URL from local docs:
-
-```text
+GuestSage base URL:
+```
 https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a
 ```
 
-When passing parameters, include at minimum:
+Minimum parameters: `arrivalDate`, `departureDate`, `personsCount`
 
-```text
-arrivalDate
-departureDate
-personsCount
+Do not invent: `featuredRoomTypeId`, `featuredRatePlanId`, `ageCategoryId`, `discountCodeName`, `filterCategoryId` — ask Martin for these.
+
+Payment stays inside GuestSage. The site must not process or store payment data.
+
+## URL Rules
+
+- Preserve all URLs in `src/data/url-map.json`
+- Use relative internal links
+- Deployment domain: `https://pl.zaciszeturawa.com` (temporary); final: `https://www.zaciszeturawa.pl`
+- Set `ASTRO_SITE` env var in Cloudflare Pages to match the live domain
+
+## Security
+
+- HTTPS-only, no secrets in repo or client bundles
+- CSP must allow `frame-src` for GuestSage
+- Test security headers in report-only mode before enforcing
+
+## Verification Before Claiming Done
+
 ```
-
-Do not invent:
-
-```text
-featuredRoomTypeId
-featuredRatePlanId
-ageCategoryId
-discountCodeName
-filterCategoryId
+npm run build       — must pass 0 errors
+npm run typecheck   — must pass 0 errors
+visual check in browser for every changed page
+booking flow check if date picker or booking link was touched
 ```
-
-Ask Martin for missing IDs.
-
-The website must not process or store payment data. Payment stays inside the GuestSage iframe.
-
-## Design Rules
-
-- use Martin's brand kit
-
-Hero:
-
-- photo or video first, no massive H1, no tagline
-- minimal bottom-center date picker
-- header includes social icons, phone, and Google Maps link
-- no heavy text overlay
-- no language picker in MVP
-
-Images:
-
-- use current images first
-- keep image/page pairing
-- ask for required aspect ratios
-- do not improvise substitutions
-
-Interactions:
-
-- smooth in-page scrolling
-- room and offer sideways sliders
-- section reveal from bottom
-- footer parallax only if performant
-
-## Security Rules
-
-This site handles around USD 10K monthly in payments through an iframe, so treat security as critical.
-
-Requirements:
-
-- HTTPS-only deployment
-- no secrets in repository or client bundles
-- no custom payment handling
-- strict but tested Content Security Policy
-- `frame-src` allows GuestSage
-- dependency audit before deployment
-- preview checkout test after headers are applied
-
-If security headers break booking, test in report-only mode before enforcing.
-
-## Verification
-
-Before claiming work is done:
-
-```text
-npm run build
-npm run lint
-npm run typecheck
-route/status check for changed URLs
-browser check for changed pages
-booking check if booking was touched
-filesystem readback for created/edited files
-```
-
-If a command does not exist yet, say so and create it during scaffold if appropriate.
 
 ## Handover
 
-At session end, update `_HANDOVER.md` surgically.
-
-Preserve existing frontmatter, headings, heading order, checklist style, and extra sections.
-
-Record:
-
-- current focus
-- completed artifacts
-- decisions made
-- blockers
-- exact next steps
-- files changed
-- verification performed
-
-Use the handover skill when available.
+At session end, update `_HANDOVER.md` surgically. Record: focus, completed artifacts, decisions, blockers, exact next steps, files changed.
