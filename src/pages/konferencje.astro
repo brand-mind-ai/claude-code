@@ -1,0 +1,463 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const BUSINESS_PDF = "/up/files/OFERTA DLA FIRM 2025 - Hotel Zacisze w Turawie(1).pdf";
+
+const capacities = [
+  { label: "Sala konferencyjna A", detail: "do 80 osób · klimatyzacja · projektor · nagłośnienie" },
+  { label: "Sala konferencyjna B", detail: "do 40 osób · klimatyzacja · projektor · nagłośnienie" },
+  { label: "Sala bankietowa", detail: "do 100 osób · całodobowa obsługa gastronomiczna" },
+  { label: "Noclegi", detail: "75 miejsc noclegowych · pokoje Classic, Lux i apartamenty" },
+];
+
+const eventTypes = [
+  {
+    title: "Szkolenia i warsztaty",
+    body: "Idealne warunki do skupionej pracy — dwie sale konferencyjne z profesjonalnym sprzętem AV, szybki internet i catering dostosowany do harmonogramu dnia.",
+  },
+  {
+    title: "Konferencje i zjazdy",
+    body: "Sale konferencyjne do 80 i 40 osób, sala bankietowa do 100 gości — pełna logistyka eventu w jednym miejscu. 75 miejsc noclegowych eliminuje potrzebę dojazdów.",
+  },
+  {
+    title: "Imprezy integracyjne",
+    body: "Sosnowy las, Jezioro Turawskie i Strefa SPA jako naturalne tło dla teambuilding. Możliwość aranżacji terenu zewnętrznego, grillowania i aktywności rowerowych.",
+  },
+  {
+    title: "Wigilie i spotkania firmowe",
+    body: "Elegancka sala bankietowa z pełnym cateringiem — menu dostosowane do wymagań i liczby uczestników. Możliwość aranżacji tematycznej sali.",
+  },
+];
+---
+
+<BaseLayout
+  title="Konferencje i eventy firmowe — Hotel Zacisze ★★★ Turawa"
+  description="Sale konferencyjne do 150 osób, 75 miejsc noclegowych, Strefa SPA — pełna obsługa eventów biznesowych w Turawie k. Opola. Pobierz ofertę dla firm."
+  canonicalPath="/konferencje"
+  ogImage="/assets/current/hotel/Copy of 017.jpg"
+>
+  <!-- HERO -->
+  <header class="conf-hero">
+    <img
+      src="/assets/current/hotel/Copy of 017.jpg"
+      alt="Sala konferencyjna — układ U"
+      class="conf-hero-img"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="conf-hero-inner">
+      <p class="kicker">Konferencje i eventy</p>
+      <h1>Wszystko, czego potrzebujesz — w jednym miejscu</h1>
+      <p class="sub">Sale konferencyjne · 75 noclegów · Strefa SPA · Restauracja</p>
+    </div>
+  </header>
+
+  <!-- CAPACITY STRIP -->
+  <section class="capacity-strip">
+    <div class="capacity-inner">
+      {capacities.map((c) => (
+        <div class="capacity-item">
+          <strong>{c.label}</strong>
+          <span>{c.detail}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="conf-intro">
+    <div class="conf-intro-inner">
+      <div class="conf-intro-text">
+        <h2>Kompleksowa organizacja wydarzeń firmowych</h2>
+        <p>Oferujemy kompleksową organizację szkoleń, konferencji, a także imprez integracyjnych i innych wydarzeń firmowych — dostosowanych do indywidualnych potrzeb i oczekiwań naszych klientów.</p>
+        <p>Dysponujemy dwoma klimatyzowanymi salami konferencyjnymi wyposażonymi w projektory i nagłośnienie oraz elegancką salą bankietową. Aż 75 miejsc noclegowych w komfortowych pokojach pozwala uczestnikom wydarzeń pozostać na miejscu bez konieczności podróżowania.</p>
+        <div class="conf-links">
+          <a href={BUSINESS_PDF} target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Pobierz ofertę dla firm (PDF)
+          </a>
+          <a href="/kontakt" class="btn-outline">Zapytaj o wycenę</a>
+        </div>
+      </div>
+      <div class="conf-intro-img">
+        <img
+          src="/assets/current/hotel/Copy of 017.jpg"
+          alt="Sala konferencyjna Hotelu Zacisze"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT TYPES -->
+  <section class="event-types">
+    <div class="event-types-inner">
+      <h2>Organizujemy m.in.</h2>
+      <ul class="event-grid">
+        {eventTypes.map((e) => (
+          <li class="event-card">
+            <h3>{e.title}</h3>
+            <p>{e.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- INCLUDED -->
+  <section class="conf-included">
+    <div class="conf-included-inner">
+      <h2>Co zapewniamy</h2>
+      <ul class="included-grid">
+        <li>✓ Klimatyzowane sale z profesjonalnym sprzętem AV</li>
+        <li>✓ Catering i przerwy kawowe</li>
+        <li>✓ 75 miejsc noclegowych w standardzie ★★★</li>
+        <li>✓ Strefa SPA dla uczestników (w pakiecie z noclegiem)</li>
+        <li>✓ Restauracja czynna przez cały dzień</li>
+        <li>✓ Bezpłatny parking</li>
+        <li>✓ Szybki internet Wi-Fi</li>
+        <li>✓ Spokojna lokalizacja — las i jezioro, 50 km od Katowic</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <aside class="page-booking">
+    <div class="page-booking-inner">
+      <p>Zainteresowany organizacją eventu? Skontaktuj się z nami lub pobierz pełną ofertę dla firm.</p>
+      <div class="page-booking-actions">
+        <a href="/kontakt" class="btn-book-page">Zapytaj o termin</a>
+        <a href={BUSINESS_PDF} target="_blank" rel="noopener noreferrer" class="btn-outline-light">
+          Oferta PDF
+        </a>
+      </div>
+    </div>
+  </aside>
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .conf-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .conf-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.45;
+  }
+
+  .conf-hero-inner {
+    position: relative;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .conf-hero-inner h1 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--surface);
+    line-height: 1.2;
+    max-width: 24ch;
+  }
+
+  .sub {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* CAPACITY STRIP */
+  .capacity-strip {
+    background: var(--dark);
+    padding: 2rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .capacity-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) { .capacity-inner { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .capacity-inner { grid-template-columns: repeat(4, 1fr); } }
+
+  .capacity-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .capacity-item strong {
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--surface);
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+
+  .capacity-item span {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* INTRO */
+  .conf-intro {
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .conf-intro-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .conf-intro-inner { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+
+  .conf-intro-text h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .conf-intro-text p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .conf-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: var(--dark);
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: transparent;
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover {
+    background: var(--dark);
+    color: var(--surface);
+  }
+
+  .conf-intro-img img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* EVENT TYPES */
+  .event-types {
+    background: var(--surface);
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--muted);
+    border-bottom: 1px solid var(--muted);
+  }
+
+  .event-types-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .event-types-inner h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .event-grid {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) { .event-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .event-card {
+    padding: 1.75rem;
+    border: 1px solid var(--muted);
+    background: var(--bg);
+  }
+
+  .event-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    margin-bottom: 0.5rem;
+  }
+
+  .event-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* INCLUDED */
+  .conf-included {
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .conf-included-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .conf-included-inner h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 1.75rem;
+  }
+
+  .included-grid {
+    list-style: none;
+    display: grid;
+    gap: 0.625rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) { .included-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .included-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .included-grid li {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--muted);
+    line-height: 1.5;
+  }
+
+  /* BOOKING CTA */
+  .page-booking {
+    background: var(--dark);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-booking-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .page-booking-inner p {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    max-width: 54ch;
+  }
+
+  .page-booking-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .btn-book-page {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: var(--surface);
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--surface);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book-page:hover {
+    background: transparent;
+    color: var(--surface);
+  }
+
+  .btn-outline-light {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: transparent;
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline-light:hover {
+    border-color: var(--surface);
+  }
+
+  @media (min-width: 640px) {
+    .page-booking-inner {
+      flex-direction: row;
+      align-items: center;
+    }
+    .page-booking-inner p { margin: 0; }
+    .page-booking-actions { margin-left: auto; }
+  }
+</style>
