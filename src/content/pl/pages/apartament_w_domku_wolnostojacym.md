@@ -18,13 +18,3 @@ heroImage: "/assets/current/hotel/Copy of 101.jpg"
 Luksusowo wyposażony apartament w wolnostojącym domku letniskowym w standardzie hotelu ★★★ Posiada przedsionek, duży pokój dzienny z łóżkiem małżeńskim i dodatkowym kompletem wypoczynkowym oraz osobną sypialnię, wyposażoną w dwa osobne łóżka.
 
 [Rezerwuj](/ceny_i_rezerwacja)
-
-- Gwarancja bezpieczeństwa każdej transakcji
-
-- Natychmiastowe potwierdzenie rezerwacji
-
-- Najkorzystniejsze oferty tylko na naszej stronie
-
-#### Adres
-
-- ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30

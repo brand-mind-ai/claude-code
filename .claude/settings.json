@@ -2,6 +2,20 @@
   "permissions": {
     "defaultMode": "bypassPermissions",
     "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "LS",
+      "WebFetch",
+      "WebSearch",
+      "Edit(/Users/macbookpro/Claude Code/**)",
+      "Edit(/Users/macbookpro/CLAUDE CODE/**)",
+      "Write(/Users/macbookpro/Claude Code/**)",
+      "Write(/Users/macbookpro/CLAUDE CODE/**)",
+      "MultiEdit(/Users/macbookpro/Claude Code/**)",
+      "MultiEdit(/Users/macbookpro/CLAUDE CODE/**)",
+      "NotebookEdit(/Users/macbookpro/Claude Code/**)",
+      "NotebookEdit(/Users/macbookpro/CLAUDE CODE/**)",
       "Bash(npm *)",
       "Bash(npx *)",
       "Bash(node *)",
@@ -10,7 +24,6 @@
       "Bash(gh *)",
       "Bash(ls *)",
       "Bash(find . *)",
-      "Bash(find /Users/macbookpro/Documents/Claude/Projects/Claude\\ Code/zaciszeturawa-pl/*)",
       "Bash(mkdir *)",
       "Bash(cp *)",
       "Bash(mv *)",
@@ -24,9 +37,7 @@
     ],
     "deny": [
       "Bash(find /Users/macbookpro/Downloads*)",
-      "Bash(find /Users/macbookpro/Desktop*)",
-      "Bash(find /Users/macbookpro/Documents/Claude/Projects/Claude\\ Code/zaciszeturawa-pl/../*)",
-      "Bash(cat /Users/macbookpro/Documents/Claude/Projects/Claude\\ Code/zaciszeturawa-pl/../*)"
+      "Bash(find /Users/macbookpro/Desktop*)"
     ]
   }
 }

@@ -6,7 +6,11 @@ Copy this into the next session prompt and fill only the relevant fields.
 
 Session goal:
 
-```text
+Project: zaciszeturawa-pl website rebuild
+Folder: /Users/macbookpro/Documents/Claude/Projects/Claude Code/zaciszeturawa-pl
+Repo: https://github.com/brand-mind-ai/claude-code
+Stage: Day 1 / Session 2 — Astro scaffold + url-map.json + .pages.yml + content stubs
+Read first: CLAUDE.md → _HANDOVER.md → PLAN.md
 
 ```
 
@@ -88,8 +92,6 @@ npm run build
 npm run lint
 npm run typecheck
 route/status check for changed URLs
-browser check for changed pages
-booking check if booking was touched
 filesystem readback for created/edited files
 ```
 

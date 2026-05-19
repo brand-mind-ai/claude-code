@@ -18,13 +18,3 @@ heroImage: "/assets/current/hotel/004.jpg"
 Luksusowo wyposażony pokój o standardzie hotelu ★★★ Pokoje występują w dwóch wariantach - z osobnymi łóżkami, bądź z jednym łóżkiem małżeńskim. Istnieje możliwość łączenia łóżek.
 
 [Rezerwuj](/ceny_i_rezerwacja)
-
-- Gwarancja bezpieczeństwa każdej transakcji
-
-- Natychmiastowe potwierdzenie rezerwacji
-
-- Najkorzystniejsze oferty tylko na naszej stronie
-
-#### Adres
-
-- ul. Biwakowa 2 46-045 Turawa k. Opola +48 77 402 90 30
