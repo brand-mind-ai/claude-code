@@ -1,5 +1,5 @@
 ---
-session_id: claude-code-session-2026-05-19-a
+session_id: claude-code-session-2026-05-19-b
 updated: 2026-05-19
 ---
 
@@ -27,14 +27,15 @@ Run `git status` first. Confirm `On branch main` and the working directory above
 ---
 
 ## Current focus
-Sessions 5–10 complete. Full Polish MVP built: homepage, rooms, gallery, contact, all 27 content pages via `[...slug].astro`, security headers, redirects, sitemap, OG meta. Build clean. Site is ready to deploy to Cloudflare Pages.
+Sessions 5–19 complete. Full Polish MVP built. All dedicated pages done. Site is feature-complete and ready to deploy.
 
 ## Next steps (prioritized)
 1. **Deploy to Cloudflare Pages** — Martin action: Cloudflare Dashboard → Pages → Connect to Git → brand-mind-ai/claude-code → build: `npm run build`, output dir: `dist`, no env vars needed.
 2. **GuestSage booking integration** — get room IDs, rate plan IDs from Martin; wire targeted room booking links once IDs confirmed.
-3. **Motion layer** — Lenis + GSAP ScrollTrigger as Astro islands; deferred until MVP deployed and approved.
-4. **EN/DE rebuild** — after Polish MVP live and Martin approves design.
-5. **Final cutover** — switch `ASTRO_SITE` env var from `.com` to `.pl` in Cloudflare, update robots.txt, verify canonicals.
+3. **Vouchery page** — needs GuestSage voucher URL from Martin; currently renders as placeholder with hero only.
+4. **Motion layer** — Lenis + GSAP ScrollTrigger as Astro islands; deferred until MVP deployed and approved.
+5. **EN/DE rebuild** — after Polish MVP live and Martin approves design.
+6. **Final cutover** — switch `ASTRO_SITE` env var from `.com` to `.pl` in Cloudflare, update robots.txt, verify canonicals.
 
 ## Cleanup completed (2026-05-18)
 - `main` already contained all work from `claude/crazy-euler-7d514a` — no merge needed.
@@ -59,23 +60,37 @@ Sessions 5–10 complete. Full Polish MVP built: homepage, rooms, gallery, conta
 - Design references Martin selected for this build: `https://www.dangleterre.com/en`, `https://www.odins-crow.com/`, `https://farmform.be/`, `https://hutstuf.com/`.
 - Initial build must preserve current content and images before design refinement.
 
-## Active artifacts (Sessions 5–10)
+## Active artifacts (Sessions 5–19)
+**Dedicated pages (11 + 404):**
 - `src/pages/index.astro` — homepage: hero + booking widget, USPs, intro, features, packages, reviews, CTA
-- `src/pages/pokoje.astro` — room grid (6 rooms from `rooms.json`); responsive 1→2→3 col
-- `src/pages/galeria.astro` — photo gallery (5 categories, 33 photos from `gallery.json`); hero + hover grid
-- `src/pages/kontakt.astro` — contact info, Google Maps embed, 3-col directions section
-- `src/pages/[...slug].astro` — dynamic route for all 27 content pages via `pl` collection
-- `src/layouts/ContentLayout.astro` — dark hero header + prose area + conditional booking CTA strip
-- `src/layouts/BaseLayout.astro` — full OG/Twitter meta, canonical, default OG image
-- `src/data/homepage.json` — homepage CMS data (hero, USPs, features, packages, reviews)
-- `src/data/rooms.json` — 6 room objects with photos, descriptions, capacities
-- `src/data/gallery.json` — 33 photos across 5 categories (all real hotel photos)
-- `src/content/pl/pages/*.md` — 31 pages with real crawled content + heroImage frontmatter; boilerplate stripped
+- `src/pages/pokoje.astro` — room grid (6 rooms from `rooms.json`)
+- `src/pages/spa.astro` — rich SPA page: features grid, photo grid, health info, pricing
+- `src/pages/restauracja.astro` — restaurant: opening hours, food gallery, event cards
+- `src/pages/pakiety_pobytowe.astro` — packages grid from content collection
+- `src/pages/galeria.astro` — 5-category photo gallery (33 photos)
+- `src/pages/kontakt.astro` — contact info, Google Maps, directions
+- `src/pages/opinie.astro` — 20 real guest reviews with rating badge
+- `src/pages/konferencje.astro` — conference/corporate page with capacity details
+- `src/pages/atrakcje.astro` — amenities: pool, gym, bikes, playground, BBQ, SPA
+- `src/pages/404.astro` — custom not-found page
+- `src/pages/[...slug].astro` — dynamic route for remaining content pages (DEDICATED set excludes all above)
+
+**Layouts & components:**
+- `src/layouts/ContentLayout.astro` — dark hero header + prose + conditional booking CTA
+- `src/layouts/BaseLayout.astro` — OG/Twitter meta, JSON-LD Hotel schema, skip-to-content, manifest
+- `src/components/Header.astro` — active nav state via aria-current, mobile hamburger
+- `src/components/Footer.astro` — brand, primary nav, secondary links (atrakcje, opinie, vouchery, legal)
+
+**Data & content:**
+- `src/data/homepage.json`, `rooms.json`, `gallery.json`, `site.json`, `navigation.json`
+- `src/content/pl/pages/*.md` — 31 pages with real crawled content + heroImages
+
+**Public:**
 - `public/_headers` — CSP, X-Frame-Options, Referrer-Policy, Permissions-Policy
-- `public/_redirects` — /strefa_spa→/spa, /strona_glowna→/, /restauracja_→/restauracja, /ceny_i_rezerwacja→GuestSage
-- `public/robots.txt` — Allow: /, sitemap link
-- `astro.config.mjs` — sitemap integration, ASTRO_SITE env var for domain switching
-- `npm run build` → 31 pages, 0 errors ✓ | `npm run typecheck` → 0 errors, 0 warnings, 0 hints ✓
+- `public/_redirects` — /strefa_spa, /strona_glowna, /restauracja_, /ceny_i_rezerwacja, /rodo
+- `public/robots.txt`, `public/site.webmanifest`
+
+**Build:** 32 pages, 0 errors ✓ | **Typecheck:** 0 errors, 0 warnings, 0 hints ✓
 
 ## Open questions / blockers
 - **Deploy action needed by Martin**: Cloudflare Pages → Connect to Git → brand-mind-ai/claude-code → build cmd: `npm run build`, output dir: `dist`
