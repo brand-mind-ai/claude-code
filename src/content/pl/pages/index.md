@@ -8,6 +8,7 @@ title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Je
 seoTitle: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim"
 description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
 status: captured
+heroImage: "/assets/current/hotel/645740576_1480793004051426_5360198729458927980_n.jpg"
 ---
 
 Twoja oaza spokoju na Opolszczyźnie. Położone nad brzegiem Jeziora Turawskiego, otoczone lasem miejsce, w którym naprawdę odpoczniesz — niezależnie od pory roku. Zacznij dzień od kawy na nasłonecznionym tarasie z widokiem na zieleń, a potem wybierz swój sposób na relaks. Latem dzień płynie przy basenie — w leżaku, z książką, bez pośpiechu. Gdy ciągnie Cię do ruchu, okoliczne lasy kryją kilometry szlaków rowerowych wiodących przez bory sosnowe, idealnych zarówno na rodzinną przejażdżkę, jak i dłuższą trasę. Po aktywnym dniu — grill na świeżym powietrzu albo odprężenie w strefie SPA. Odkryj uroki Hotelu Zacisze nad Jeziorem Turawskim.

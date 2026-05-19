@@ -8,6 +8,7 @@ title: "SPA Opole Turawa zaciszeturawa.pl - najlepsze opolskie SPA"
 seoTitle: "SPA Opole Turawa zaciszeturawa.pl - najlepsze opolskie SPA"
 description: "Hotel Zacisze Turawa zaprasza do SPA w okolicy Opola. Strefa Spa."
 status: captured
+heroImage: "/assets/current/hotel/Copy of 071.jpg"
 ---
 
 Strefa SPA w cenie każdego noclegu — bez limitów, codziennie od 16:00 do 22:00. Sauna sucha, jacuzzi, balia z zimną wodą, grota solna i siłownia czekają na Ciebie po całym dniu nad jeziorem. Nie nocujesz u nas? Zapraszamy na 3-godzinny pakiet SPA za 65 zł/os. — pełny dostęp do wszystkich stref.

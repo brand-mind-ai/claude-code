@@ -8,6 +8,7 @@ title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Je
 seoTitle: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Atrakcje"
 description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
 status: captured
+heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
 ---
 
 Odkryj niezapomnianą przyjemność wypoczynku w naszym hotelu z odkrytym basenem w sezonie letnim. Nasz elegancki i przestronny basen zewnętrzny to idealne miejsce na odprężenie podczas ciepłych letnich dni. Dla pełnego komfortu i relaksu przygotowaliśmy dla Państwa bezpłatne leżaki oraz ręczniki basenowe.
