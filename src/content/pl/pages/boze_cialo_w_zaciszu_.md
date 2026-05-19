@@ -11,8 +11,6 @@ status: captured
 heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
 ---
 
-Boże Ciało w Zaciszu !!!
-
 Pakiet obejmuje:
 
 - 2 noclegi w komfortowych pokojach lub apartamentach w terminie pomiędzy 4, a 6 czerwca (czwartek - sobota)

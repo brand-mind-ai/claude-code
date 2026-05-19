@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const BUSINESS_PDF = "/up/files/OFERTA DLA FIRM 2025 - Hotel Zacisze w Turawie(1).pdf";
-
 const capacities = [
   { label: "Sala konferencyjna A", detail: "do 80 osób · klimatyzacja · projektor · nagłośnienie" },
   { label: "Sala konferencyjna B", detail: "do 40 osób · klimatyzacja · projektor · nagłośnienie" },
@@ -72,10 +70,8 @@ const eventTypes = [
         <p>Oferujemy kompleksową organizację szkoleń, konferencji, a także imprez integracyjnych i innych wydarzeń firmowych — dostosowanych do indywidualnych potrzeb i oczekiwań naszych klientów.</p>
         <p>Dysponujemy dwoma klimatyzowanymi salami konferencyjnymi wyposażonymi w projektory i nagłośnienie oraz elegancką salą bankietową. Aż 75 miejsc noclegowych w komfortowych pokojach pozwala uczestnikom wydarzeń pozostać na miejscu bez konieczności podróżowania.</p>
         <div class="conf-links">
-          <a href={BUSINESS_PDF} target="_blank" rel="noopener noreferrer" class="btn-primary">
-            Pobierz ofertę dla firm (PDF)
-          </a>
-          <a href="/kontakt" class="btn-outline">Zapytaj o wycenę</a>
+          <a href="/kontakt" class="btn-primary">Zapytaj o wycenę</a>
+          <a href="tel:+48774029030" class="btn-outline">+48 77 402 90 30</a>
         </div>
       </div>
       <div class="conf-intro-img">
@@ -123,12 +119,10 @@ const eventTypes = [
   <!-- CTA -->
   <aside class="page-booking">
     <div class="page-booking-inner">
-      <p>Zainteresowany organizacją eventu? Skontaktuj się z nami lub pobierz pełną ofertę dla firm.</p>
+      <p>Zainteresowany organizacją eventu? Zadzwoń lub wyślij zapytanie — przygotujemy ofertę skrojoną pod Twoje potrzeby.</p>
       <div class="page-booking-actions">
-        <a href="/kontakt" class="btn-book-page">Zapytaj o termin</a>
-        <a href={BUSINESS_PDF} target="_blank" rel="noopener noreferrer" class="btn-outline-light">
-          Oferta PDF
-        </a>
+        <a href="/kontakt" class="btn-book-page">Wyślij zapytanie</a>
+        <a href="tel:+48774029030" class="btn-outline-light">+48 77 402 90 30</a>
       </div>
     </div>
   </aside>
