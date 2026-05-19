@@ -5,7 +5,7 @@ canonicalPath: /zawsze_mlodzi_
 sourceUrl: https://www.zaciszeturawa.pl/zawsze_mlodzi_
 pageType: package-detail
 title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Oferta"
-seoTitle: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Oferta"
+seoTitle: "Zawsze Młodzi (55+) — Pakiet pobytowy | Hotel Zacisze Turawa"
 description: "Pakiet Zawsze Młodzi (55+) w Hotelu Zacisze Turawa — 2 noclegi, 2 obiadokolacje, Strefa SPA i masaż Ceragem. Specjalna oferta dla seniorów nad Jeziorem Turawskim."
 status: captured
 heroImage: "/assets/current/hotel/Copy of 094.jpg"

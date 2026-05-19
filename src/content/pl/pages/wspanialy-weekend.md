@@ -5,7 +5,7 @@ canonicalPath: /wspanialy-weekend
 sourceUrl: https://www.zaciszeturawa.pl/wspanialy-weekend
 pageType: package-detail
 title: "wSPAniały Weekend w Hotelu Zacisze w Turawie koło Opola"
-seoTitle: "wSPAniały Weekend w Hotelu Zacisze w Turawie koło Opola"
+seoTitle: "wSPAniały Weekend — Pakiet relaksacyjny ze SPA i kolacją | Hotel Zacisze"
 description: "Hotel Zacisze w Turawie koło Opola zaprasza na pakiet wSPAniały Weekend. Spędź romantyczny weekend tylko we dwoje, zakosztuj wyśmienitych dań w naszej restauracji."
 status: captured
 heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
