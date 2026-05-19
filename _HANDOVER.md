@@ -1,6 +1,6 @@
 ---
-session_id: claude-code-session-2026-05-19-reset
-updated: 2026-05-19
+session_id: claude-code-session-2026-05-20
+updated: 2026-05-20
 ---
 
 # Zacisze Handover
@@ -34,46 +34,50 @@ Martin parked that work in `zacisze-alternative` branch and reset `main` to `9d5
 
 ---
 
-## Current State (after reset to 9d5833c)
+## Current State (commit 5244955 on main)
 
-### What exists
-- `src/content/pl/pages/*.md` — 31 PL pages, all with real body text crawled from live site
-- `src/data/url-map.json` — 76-entry URL contract (34 PL, 22 EN, 20 DE)
-- `src/data/site.json` — contact info (phone, email, address, social URLs)
-- `src/data/navigation.json` — primary nav links
-- `src/lib/booking.ts` — GuestSage URL builder
-- `src/layouts/BaseLayout.astro` — bare HTML shell with brand CSS variables and fonts
-- `src/pages/index.astro` — renders index.md content only (no real homepage layout)
-- `src/pages/[...slug].astro` — catch-all renders content MD as plain text only
-- `public/assets/current/hotel/` — 37 images committed
-- `public/zacisze-favicon.svg` — favicon
-- `.pages.yml` — Pages CMS config
-- `astro.config.mjs`, `package.json`, `tsconfig.json` — Astro 5 scaffold
+### Built and live (all on main, auto-deployed to pl.zaciszeturawa.com)
 
-### What does NOT exist yet
-- No Header / Footer components
-- No actual page layouts (homepage, rooms, packages, SPA, restaurant, etc.)
-- No navigation
-- No hero images
-- No carousel, slider, date picker, newsletter form
-- No `public/zacisze-logo.svg` (needs to be created from brand kit)
+**Components:**
+- `src/components/Header.astro` — two-row sticky header: dark util bar (phone, maps, FB, IG, Rezerwuj) + white nav bar with hamburger mobile
+- `src/components/Footer.astro` — 3-col dark footer: brand/address/social + nav + legal links
+
+**Data files:**
+- `src/data/navigation.json` — 8 primary nav links matching live site
+- `src/data/site.json` — phone, phoneMobile, email, address, all social URLs, mapsUrl, youtubeEmbedUrl
+- `src/data/rooms.json` — 6 rooms with images and prices
+- `src/data/packages.json` — 4 package offers with images
+
+**Pages (all 31 build, 0 errors):**
+- `src/pages/index.astro` — full homepage: hero + date picker, intro, restauracja/konferencje banners, vouchery, packages carousel, rooms slider, reviews (5 cards), newsletter, contact strip
+- `src/pages/pokoje.astro` — 6-room grid with Szczegóły + Rezerwuj buttons
+- `src/pages/spa.astro` — hero + sauna/jacuzzi/grota solna sections + packages carousel
+- `src/pages/restauracja.astro` — hero + śniadania/wesela/imprezy sections + PDF links + packages carousel
+- `src/pages/konferencje.astro` — hero + conference content + PDF link + packages carousel
+- `src/pages/pakiety_pobytowe.astro` — 7-package grid
+- `src/pages/galeria.astro` — 36-image grid with keyboard-accessible lightbox
+- `src/pages/kontakt.astro` — address/phone/NIP/REGON, Google Maps embed, mailto contact form
+- `src/pages/[...slug].astro` — catch-all for 23 interior pages (rooms, packages, atrakcje, vouchery, etc.)
+
+**Public:**
+- `public/zacisze-logo.svg` — hotel logo (placed by Martin)
+- `public/_redirects` — `/oferta_dla_firm`→`/konferencje`, `/restauracja_`→`/restauracja`, `/strefa_spa`→`/spa`, `/ceny_i_rezerwacja`→GuestSage
+- `public/robots.txt` — allow all, sitemap pointer
 
 ### Build status
-- `npm run build` → builds 31 pages, but they render bare content (no nav, no layout, no images)
-- `npm run typecheck` → 0 errors
+- `npm run build` → 31 pages, 0 errors ✓
 
 ---
 
 ## Current Focus
 
-**Build a faithful copy of `zaciszeturawa.pl` — Version 0.1**
+**Version 0.1 is complete and deployed.** Next priorities for review/polish:
 
-Priority order:
-1. `Header.astro` — logo, nav links (same as live), phone, book button, social icons, Google Maps link
-2. `Footer.astro` — same columns and links as live site
-3. Homepage layout — hero with date picker, USP strip, intro text, offer carousel, room slider, newsletter form
-4. Interior page layout template — same sections as live site in same order
-5. Individual pages: Pokoje, SPA, Restauracja, Konferencje, Galeria, Kontakt, packages, rooms
+1. **Visual check** — Martin should review `pl.zaciszeturawa.com` in browser
+2. **Atrakcje page** — has real content in the MD, catch-all renders it; check appearance
+3. **GuestSage room IDs** — when Martin provides them, add to booking URLs on room detail pages
+4. **CSP headers** — add `_headers` file to public/ with strict CSP allowing GuestSage iframe; test in report-only mode first
+5. **Sitemap** — add `@astrojs/sitemap` integration if needed for SEO
 
 ## Non-Negotiables (enforced from this session forward)
 
@@ -118,13 +122,14 @@ Screenshot 2026-04-27 at 16.37.29.png — unknown, verify before use
 
 ## Open Blockers
 
-- `public/zacisze-logo.svg` does not exist — needs to be created from `Brand assets/zacisze-logo-ogg.svg` or ask Martin for the SVG file
 - GuestSage room IDs, rate plan IDs, child age IDs — not yet known, do not invent
-- `/strefa_spa` → `/spa` redirect — confirmed needed, add to `public/_redirects` when that file is created
-- Newsletter form: does the live site send to an email service or just display? Check the live site before implementing
+- Newsletter form: live site shows a plain email input → sends to MailChimp or similar; current implementation shows "Dziękujemy za zapis!" on submit (no actual subscription). Martin to confirm if integration is needed
+- CSP headers not yet added (no `public/_headers` file). Add when Martin confirms booking still works after.
+- Contact form uses `mailto:` fallback — fine for v0.1 but not a real form. Martin to decide if real email service needed.
 
 ## Decisions Log
 
+- 2026-05-20: V0.1 faithful copy complete — 31 pages built, all dedicated pages created, pushed to main and deployed
 - 2026-05-19: Main reset to 9d5833c; all previous design work archived to `zacisze-alternative` branch
 - 2026-05-19: Deployment is `pl.zaciszeturawa.com` (Cloudflare Pages from main, auto-deploy)
 - 2026-05-19: `.gitignore` updated to use `/assets/` (root-only) so public/assets/ images remain tracked
