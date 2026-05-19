@@ -34,6 +34,37 @@ const eventTypes = [
   canonicalPath="/konferencje"
   ogImage="/assets/current/hotel/Copy of 017.jpg"
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ile osób może pomieścić sala konferencyjna w Hotelu Zacisze?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hotel Zacisze dysponuje dwiema klimatyzowanymi salami konferencyjnymi: Sala A na do 80 osób i Sala B na do 40 osób. Sala bankietowa mieści do 100 osób. Łącznie obiekt oferuje przestrzeń dla ok. 150 uczestników."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ile miejsc noclegowych oferuje Hotel Zacisze dla uczestników konferencji?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hotel Zacisze oferuje 75 miejsc noclegowych w pokojach Classic, Lux i apartamentach. Uczestnicy konferencji mogą zostać na miejscu bez konieczności szukania noclegu poza obiektem."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak zamówić ofertę konferencyjną dla firmy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "W celu uzyskania wyceny proszę skontaktować się z recepcją: telefon +48 77 402 90 30 lub e-mail biuro@zaciszeturawa.pl. Możliwy też kontakt przez formularz na stronie /kontakt."
+        }
+      }
+    ]
+  })} />
+
   <!-- HERO -->
   <header class="conf-hero">
     <img

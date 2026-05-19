@@ -12,6 +12,9 @@
 # Redirect bare domain to www (handled by Cloudflare domain settings, but belt+braces)
 # https://zaciszeturawa.com  https://www.zaciszeturawa.com  301
 
+# Legacy conference offer URL → dedicated conferences page
+/oferta_dla_firm  /konferencje  301
+
 # Catch legacy hotel system booking URLs
 /ceny_i_rezerwacja  https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a  302
 

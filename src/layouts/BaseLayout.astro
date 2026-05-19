@@ -72,9 +72,25 @@ const ogImageUrl = `${siteUrl}${ogImage ?? DEFAULT_OG_IMAGE}`;
         { "@type": "LocationFeatureSpecification", "name": "Grota solna", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true }
       ],
+      "priceRange": "$$",
       "numberOfRooms": 75,
       "checkinTime": "14:00",
       "checkoutTime": "12:00",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "9.3",
+        "bestRating": "10",
+        "worstRating": "1",
+        "reviewCount": "20"
+      },
       "sameAs": [
         "https://www.facebook.com/hotelzacisze",
         "https://www.instagram.com/hotelzacisze"

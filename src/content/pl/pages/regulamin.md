@@ -4,9 +4,9 @@ translationKey: legal
 canonicalPath: /regulamin
 sourceUrl: https://www.zaciszeturawa.pl/regulamin
 pageType: legal
-title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Regulamin"
-seoTitle: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Regulamin"
-description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
+title: "Regulamin Hotelu Zacisze"
+seoTitle: "Regulamin — Hotel Zacisze ★★★ Turawa | Rezerwacje, anulacja, zasady pobytu"
+description: "Regulamin Hotelu Zacisze w Turawie: zasady rezerwacji online, polityka anulacji, opłaty, zasady zachowania się na terenie obiektu."
 status: captured
 heroImage: "/assets/current/hotel/022.jpg"
 ---

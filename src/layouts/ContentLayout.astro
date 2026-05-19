@@ -33,9 +33,28 @@ const BACK_LINK: Record<string, { href: string; label: string }> = {
   "package-detail": { href: "/pakiety_pobytowe", label: "← Wszystkie pakiety" },
 };
 const backLink = BACK_LINK[pageType ?? ""] ?? null;
+
+// BreadcrumbList structured data for detail pages
+const BREADCRUMB_PARENT: Record<string, { name: string; url: string }> = {
+  "room-detail": { name: "Pokoje i apartamenty", url: "/pokoje" },
+  "package-detail": { name: "Pakiety pobytowe", url: "/pakiety_pobytowe" },
+};
+const breadcrumbParent = BREADCRUMB_PARENT[pageType ?? ""] ?? null;
+const siteBase = "https://zaciszeturawa.com";
 ---
 
 <BaseLayout title={seoTitle ?? title} description={description} canonicalPath={canonicalPath} ogImage={heroImage}>
+  {breadcrumbParent && canonicalPath && (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": siteBase + "/" },
+        { "@type": "ListItem", "position": 2, "name": breadcrumbParent.name, "item": siteBase + breadcrumbParent.url },
+        { "@type": "ListItem", "position": 3, "name": displayTitle, "item": siteBase + canonicalPath }
+      ]
+    })} />
+  )}
   <div class="page-wrap">
     <!-- PAGE HEADER -->
     <header class:list={["page-header", heroImage && "page-header--photo"]}>

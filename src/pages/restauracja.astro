@@ -24,6 +24,46 @@ const hours = [
   canonicalPath="/restauracja"
   ogImage="/assets/current/hotel/Copy of Copy of Zacisze7.jpg"
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Restauracja Hotel Zacisze",
+    "url": "https://zaciszeturawa.com/restauracja",
+    "image": "https://zaciszeturawa.com/assets/current/hotel/Copy of Copy of Zacisze7.jpg",
+    "servesCuisine": "European, Regional Polish",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Biwakowa 2",
+      "addressLocality": "Turawa",
+      "postalCode": "46-045",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48774029030",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:30",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "08:30",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "08:30",
+        "closes": "21:00"
+      }
+    ],
+    "menu": "https://zaciszeturawa.com/restauracja",
+    "acceptsReservations": "True"
+  })} />
+
   <!-- HERO -->
   <header class="rest-hero">
     <img

@@ -4,9 +4,9 @@ translationKey: jobs
 canonicalPath: /praca
 sourceUrl: https://www.zaciszeturawa.pl/praca
 pageType: jobs
-title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Praca"
-seoTitle: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Praca"
-description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
+title: "Praca w Hotelu Zacisze"
+seoTitle: "Praca w Hotelu Zacisze — Oferty pracy | Turawa k. Opola"
+description: "Dołącz do zespołu Hotelu Zacisze ★★★ w Turawie nad Jeziorem Turawskim. Praca w wyjątkowym miejscu otoczonym sosnowym lasem. Skontaktuj się z recepcją i zapytaj o aktualne oferty."
 status: captured
 heroImage: "/assets/current/hotel/022.jpg"
 ---

@@ -45,6 +45,45 @@ const photos = [
   canonicalPath="/spa"
   ogImage="/assets/current/hotel/Copy of 071.jpg"
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Czy strefa SPA jest wliczona w cenę noclegu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, goście hotelowi mają pełny, bezpłatny dostęp do strefy SPA w godzinach 16:00–22:00 każdego dnia. W cenie noclegu wliczone są: sauna fińska, jacuzzi, balia z zimną wodą, grota solna i siłownia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy goście zewnętrzni mogą korzystać ze strefy SPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak. Goście spoza hotelu mogą zakupić 3-godzinny pakiet dostępu do strefy SPA w cenie 65 zł od osoby."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Co znajduje się w strefie SPA Hotelu Zacisze?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Strefa SPA obejmuje: saunę fińską, jacuzzi, balię z zimną wodą, grotę solną oraz siłownię krytą. Siłownia dostępna jest dla gości hotelowych całą dobę."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "W jakich godzinach czynna jest strefa SPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Strefa SPA jest czynna codziennie w godzinach 16:00–22:00. Siłownia wewnętrzna dostępna jest dla gości hotelowych przez całą dobę."
+        }
+      }
+    ]
+  })} />
+
   <!-- HERO -->
   <header class="spa-hero">
     <img src="/assets/current/hotel/Copy of 071.jpg" alt="Strefa SPA — sauna i balia" class="spa-hero-img" fetchpriority="high" decoding="async" />

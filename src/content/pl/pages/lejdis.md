@@ -5,7 +5,7 @@ canonicalPath: /lejdis
 sourceUrl: https://www.zaciszeturawa.pl/lejdis
 pageType: package-detail
 title: "Pakiet Lejdis"
-seoTitle: "Pakiet Lejdis"
+seoTitle: "Pakiet Lejdis — babski weekend w SPA | Hotel Zacisze Turawa"
 description: "Pakiet Lejdis — babski wieczór w Hotelu Zacisze Turawa. Nocleg, obiadokolacja, Strefa SPA, deser i 2 drinki. Idealne na wyjazd ze znajomymi. Od 370 zł / os."
 status: captured
 heroImage: "/assets/current/hotel/Copy of 094.jpg"
