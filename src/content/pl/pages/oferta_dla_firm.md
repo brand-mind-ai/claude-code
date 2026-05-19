@@ -17,4 +17,4 @@ Dodatkowo, dla wygody naszych gości, oferujemy aż 75 miejsc noclegowych w komf
 
 Zapraszamy do zapoznania się z naszą kompletną ofertą skierowaną do firm, która obejmuje szeroki zakres usług oraz zróżnicowane propozycje menu, dostępną w linku poniżej. Dzięki naszemu doświadczeniu i profesjonalnemu podejściu zapewniamy pełne wsparcie w organizacji każdego rodzaju wydarzenia biznesowego, dbając o jego perfekcyjny przebieg i satysfakcję naszych klientów.
 
-[Otwórz pełną ofertę dla firm](/up/files/OFERTA DLA FIRM 2025 - Hotel Zacisze w Turawie(1).pdf)
+[Zobacz pełną ofertę konferencyjną i dla firm](/konferencje)

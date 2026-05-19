@@ -10,3 +10,13 @@ description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Tura
 status: captured
 heroImage: "/assets/current/hotel/022.jpg"
 ---
+
+Pracuj w wyjątkowym miejscu — hotelu otoczonym sosnowym lasem nad Jeziorem Turawskim. Jeśli chcesz dołączyć do naszego zespołu, skontaktuj się z nami bezpośrednio.
+
+**Recepcja Hotelu Zacisze**
+
+Telefon: [+48 77 402 90 30](tel:+48774029030)
+
+E-mail: [recepcja@zaciszeturawa.pl](mailto:recepcja@zaciszeturawa.pl)
+
+Adres: ul. Biwakowa 2, 46-045 Turawa
