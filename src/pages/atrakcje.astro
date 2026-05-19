@@ -1,0 +1,362 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const BOOKING_BASE = "https://be.guestsage.com/pl/0bf0dc4c-089f-42f4-8bf0-3ea22a76ad8a";
+
+const amenities = [
+  {
+    title: "Basen zewnętrzny",
+    body: "Odkryty basen z podgrzewaną wodą, otoczony sosnami. Bezpłatne leżaki i ręczniki basenowe dla gości hotelowych. Czynny w sezonie letnim.",
+    icon: "🏊",
+  },
+  {
+    title: "Plac zabaw",
+    body: "Bezpieczny plac zabaw dla dzieci z huśtawkami, zjeżdżalnią i konstrukcjami do wspinaczki. Idealne dla rodzin z małymi dziećmi.",
+    icon: "🧒",
+  },
+  {
+    title: "Siłownia zewnętrzna",
+    body: "Nowoczesny sprzęt do ćwiczeń na świeżym powietrzu, dostępny przez cały rok. Utrzymaj kondycję w otoczeniu przyrody.",
+    icon: "💪",
+  },
+  {
+    title: "Wypożyczalnia rowerów",
+    body: "Rowery do dyspozycji gości hotelowych — odkrywaj majestatyczne trasy wzdłuż Jeziora Turawskiego i przez sosnowe lasy.",
+    icon: "🚴",
+  },
+  {
+    title: "Miejsce do grillowania",
+    body: "Specjalnie przygotowane miejsce grillowania w ogrodzie — idealne dla grup z pakietów wakacyjnych i imprez na świeżym powietrzu.",
+    icon: "🔥",
+  },
+  {
+    title: "Strefa SPA",
+    body: "Sauna fińska, jacuzzi, balia z zimną wodą, grota solna i siłownia kryta — wliczone w każdy nocleg. Czynne codziennie 16:00–22:00.",
+    icon: "🧖",
+    link: "/spa",
+    linkLabel: "Poznaj SPA",
+  },
+];
+
+const photos = [
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze39.jpg", alt: "Basen zewnętrzny z leżakami" },
+  { src: "/assets/current/hotel/490343791_1196676219129774_3695689002660428792_n.jpg", alt: "Basen zewnętrzny z kaskadą" },
+  { src: "/assets/current/hotel/495793406_1220022830128446_3764504780736735331_n.jpg", alt: "Sosnowy las wokół hotelu" },
+  { src: "/assets/current/hotel/Copy of Copy of Zacisze20.jpg", alt: "Ogród i plac zabaw" },
+];
+---
+
+<BaseLayout
+  title="Atrakcje i udogodnienia — Hotel Zacisze ★★★ Turawa"
+  description="Odkryty basen, SPA, plac zabaw, siłownia zewnętrzna, wypożyczalnia rowerów — Hotel Zacisze w Turawie nad Jeziorem Turawskim."
+  canonicalPath="/atrakcje"
+  ogImage="/assets/current/hotel/Copy of Copy of Zacisze39.jpg"
+>
+  <!-- HERO -->
+  <header class="attr-hero">
+    <img
+      src="/assets/current/hotel/Copy of Copy of Zacisze39.jpg"
+      alt="Basen zewnętrzny Hotelu Zacisze"
+      class="attr-hero-img"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="attr-hero-inner">
+      <p class="kicker">Atrakcje i udogodnienia</p>
+      <h1>Aktywny wypoczynek nad jeziorem</h1>
+      <p class="sub">Basen · SPA · Rowery · Las · Jezioro Turawskie</p>
+    </div>
+  </header>
+
+  <!-- AMENITIES GRID -->
+  <section class="amenities">
+    <div class="amenities-inner">
+      <ul class="amenities-grid">
+        {amenities.map((a) => (
+          <li class="amenity-card">
+            <span class="amenity-icon" aria-hidden="true">{a.icon}</span>
+            <h2>{a.title}</h2>
+            <p>{a.body}</p>
+            {a.link && (
+              <a href={a.link} class="amenity-link">{a.linkLabel} →</a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <section class="attr-gallery">
+    <div class="attr-gallery-inner">
+      {photos.map((p) => (
+        <div class="attr-gallery-item">
+          <img src={p.src} alt={p.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- LAKE PROXIMITY -->
+  <section class="lake-section">
+    <div class="lake-inner">
+      <div class="lake-text">
+        <h2>150 m od plaży Jeziora Turawskiego</h2>
+        <p>Jezioro Turawskie to jedno z największych sztucznych jezior w Polsce — doskonałe miejsce na pływanie, żeglarstwo, kajaki i odpoczynek na plaży. Z Hotelu Zacisze dotrzesz tam w zaledwie 2 minuty spacerkiem.</p>
+        <p>W okolicy znajdziesz dziesiątki kilometrów szlaków rowerowych przez malownicze lasy i brzegi jezior. Rowery wypożyczysz bezpłatnie na recepcji.</p>
+      </div>
+      <div class="lake-photo">
+        <img
+          src="/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
+          alt="Jezioro Turawskie"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <aside class="page-booking">
+    <div class="page-booking-inner">
+      <p>Zarezerwuj pobyt i korzystaj z basenu, SPA i rowerów — bez dodatkowych opłat.</p>
+      <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" class="btn-book-page">
+        Sprawdź dostępność i rezerwuj
+      </a>
+    </div>
+  </aside>
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .attr-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  .attr-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.5;
+  }
+
+  .attr-hero-inner {
+    position: relative;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .attr-hero-inner h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--surface);
+    line-height: 1.15;
+    max-width: 20ch;
+  }
+
+  .sub {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* AMENITIES */
+  .amenities {
+    padding: 4rem 1.5rem;
+    background: var(--bg);
+  }
+
+  .amenities-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .amenities-grid {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .amenities-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .amenity-card {
+    background: var(--surface);
+    border: 1px solid var(--muted);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .amenity-icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .amenity-card h2 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    margin: 0;
+  }
+
+  .amenity-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .amenity-link {
+    display: inline-flex;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .amenity-link:hover {
+    color: var(--text-secondary);
+  }
+
+  /* PHOTO STRIP */
+  .attr-gallery {
+    padding: 0 1.5rem 4rem;
+    background: var(--bg);
+  }
+
+  .attr-gallery-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .attr-gallery-inner { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .attr-gallery-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+  }
+
+  .attr-gallery-item img:hover {
+    opacity: 0.85;
+  }
+
+  /* LAKE SECTION */
+  .lake-section {
+    background: var(--surface);
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--muted);
+    border-bottom: 1px solid var(--muted);
+  }
+
+  .lake-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .lake-inner { grid-template-columns: 1fr 1fr; align-items: center; }
+  }
+
+  .lake-text h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .lake-text p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .lake-photo img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* BOOKING CTA */
+  .page-booking {
+    background: var(--surface);
+    border-top: 1px solid var(--muted);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .page-booking-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .page-booking-inner p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    max-width: 52ch;
+  }
+
+  .btn-book-page {
+    display: inline-flex;
+    padding: 0.65rem 1.75rem;
+    background: var(--dark);
+    color: var(--surface);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-book-page:hover {
+    background: transparent;
+    color: var(--dark);
+  }
+
+  @media (min-width: 640px) {
+    .page-booking-inner {
+      flex-direction: row;
+      align-items: center;
+    }
+    .page-booking-inner p { margin: 0; }
+  }
+</style>
