@@ -6,7 +6,7 @@ sourceUrl: https://www.zaciszeturawa.pl/pokoj_classic_z_dostawka
 pageType: room-detail
 title: "Hotel Zacisze - Pokój Classic z opcją dostawki - Pokoje - Turawa k. Opola"
 seoTitle: "Hotel Zacisze - Pokój Classic z opcją dostawki - Pokoje - Turawa k. Opola"
-description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
+description: "Pokój Classic z dostawką w Hotelu Zacisze ★★★ Turawa — idealny dla rodziny z dzieckiem. Łóżko małżeńskie lub dwa oddzielne i dostawka. Śniadanie i SPA w cenie."
 status: captured
 heroImage: "/assets/current/hotel/032.jpg"
 ---

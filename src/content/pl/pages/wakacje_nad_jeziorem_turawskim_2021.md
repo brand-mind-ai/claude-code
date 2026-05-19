@@ -6,7 +6,7 @@ sourceUrl: https://www.zaciszeturawa.pl/wakacje_nad_jeziorem_turawskim_2021
 pageType: package-detail
 title: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Oferta"
 seoTitle: "Hotel Zacisze ★★★ Turawa – SPA, restauracja i konferencje nad Jeziorem Turawskim - Oferta"
-description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną. Rezerwuj bezpośrednio."
+description: "Pakiet Wakacje 8 dni nad Jeziorem Turawskim — 7 noclegów, śniadania, SPA, basen, ognisko i rower w cenie. Idealne dla rodzin. Od 1418 zł / os."
 status: captured
 heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
 ---

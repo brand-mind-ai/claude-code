@@ -6,7 +6,7 @@ sourceUrl: https://www.zaciszeturawa.pl/lejdis
 pageType: package-detail
 title: "Pakiet Lejdis"
 seoTitle: "Pakiet Lejdis"
-description: "Hotel Zacisze koło Opola zaprasza na Pakiet Lejdis (Babski wieczór), pobyt stworzony specjalnie dla kobiet. Zrelaksuj się nad jeziorem z dala od miasta, skorzystaj z usług SPA."
+description: "Pakiet Lejdis — babski wieczór w Hotelu Zacisze Turawa. Nocleg, obiadokolacja, Strefa SPA, deser i 2 drinki. Idealne na wyjazd ze znajomymi. Od 370 zł / os."
 status: captured
 heroImage: "/assets/current/hotel/Copy of 094.jpg"
 ---

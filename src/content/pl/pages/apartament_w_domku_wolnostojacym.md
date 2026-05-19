@@ -6,7 +6,7 @@ sourceUrl: https://www.zaciszeturawa.pl/apartament_w_domku_wolnostojacym
 pageType: room-detail
 title: "Hotel Zacisze - Apartament w ogrodzie - Pokoje - Turawa k. Opola"
 seoTitle: "Hotel Zacisze - Apartament w ogrodzie - Pokoje - Turawa k. Opola"
-description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną, sale konferencyjne do 150 osób. Rezerwuj bezpośrednio — gwarancja najniższej ceny."
+description: "Apartament w ogrodzie Hotelu Zacisze ★★★ Turawa — luksusowy domek wolnostojący z przedsionkiem, salonem, łóżkiem małżeńskim i oddzielną sypialnią. Dla 2–4 osób."
 status: captured
 heroImage: "/assets/current/hotel/Copy of 101.jpg"
 ---
