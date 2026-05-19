@@ -6,7 +6,7 @@ sourceUrl: https://www.zaciszeturawa.pl/boze_cialo_w_zaciszu_
 pageType: package-detail
 title: "Boże Ciało w Zaciszu"
 seoTitle: "Boże Ciało w Zaciszu — Pakiet długi weekend | Hotel Zacisze Turawa"
-description: "Hotel Zacisze ★★★ w Turawie — 150 m od plaży Jeziora Turawskiego. Strefa SPA, restauracja z kuchnią regionalną. Rezerwuj bezpośrednio."
+description: "Pakiet Boże Ciało w Zaciszu — 2 noclegi, śniadania, grill w ogrodzie, obiadokolacja i pełny dostęp do SPA. Zniżki dla dzieci. Jezioro Turawskie 150 m. Od 620 zł / os."
 status: captured
 heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
 ---

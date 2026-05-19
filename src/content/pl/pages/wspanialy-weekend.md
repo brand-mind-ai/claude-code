@@ -6,7 +6,7 @@ sourceUrl: https://www.zaciszeturawa.pl/wspanialy-weekend
 pageType: package-detail
 title: "wSPAniały Weekend"
 seoTitle: "wSPAniały Weekend — Pakiet relaksacyjny ze SPA i kolacją | Hotel Zacisze"
-description: "Hotel Zacisze w Turawie koło Opola zaprasza na pakiet wSPAniały Weekend. Spędź romantyczny weekend tylko we dwoje, zakosztuj wyśmienitych dań w naszej restauracji."
+description: "Pakiet wSPAniały Weekend w Hotelu Zacisze Turawa — 2 noclegi, kolacja przy świecach z winem, obiadokolacja, wino musujące do pokoju i nielimitowane SPA. Od 615 zł / os."
 status: captured
 heroImage: "/assets/current/hotel/490175062_1194433046020758_6544292665433459308_n.jpg"
 ---
